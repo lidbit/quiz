@@ -1,37 +1,31 @@
 var questions = [];
+var currentQuestion = 0;
 
 var question1 = {
     "id": "1",
-    "type": "image",
+    "type": "type1",
     "imageUrl": "/images/1.png",
     "imageCaption": "caption"
 };
 
 var question2 = {
     "id": "1",
-    "type": "image",
+    "type": "type2",
     "imageUrl": "/images/1.png",
     "imageCaption": "caption"
 };
 
 var question3 = {
     "id": "1",
-    "type": "image",
+    "type": "type3",
     "imageUrl": "/images/1.png",
     "imageCaption": "caption"
 };
 
-var question4 = {
-    "id": "1",
-    "type": "image",
-    "imageUrl": "/images/1.png",
-    "imageCaption": "caption"
-};
 
 questions.push(question1);
 questions.push(question2);
 questions.push(question3);
-questions.push(question4);
 
 $(document).ready(function() {
     console.log("loaded");
@@ -39,6 +33,18 @@ $(document).ready(function() {
 });
 
 function init() {
+
+    $("#nextQuestion").click(function() {
+        loadQuestion(currentQuestion);
+        currentQuestion++;
+    });
     // get divs
-    var divs = $("#results-section").hide();
+    $("#results-section").hide();
+    $("#qtype2-section").hide();
+    $("#qtype3-section").hide();
+}
+
+function loadQuestion(index) {
+    var question = questions[index];
+    console.log(question);
 }
