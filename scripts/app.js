@@ -99,7 +99,7 @@ function loadQuestion(index) {
         });
 
         $("#qtype1-section").show();
-    } else if (question.type === "type1") {
+    } else if (question.type === "type2") {
         $("#qtype1-section").hide();
 
         console.log("qtype2-section");
