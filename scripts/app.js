@@ -1,4 +1,5 @@
 var questions = [];
+var answers = [];
 var currentQuestion = 0;
 var username = "";
 
@@ -39,7 +40,24 @@ var question3 = {
     "id": "3",
     "type": "type3",
     "imageUrl": "/images/image3.png",
-    "imageCaption": "caption"
+    "imageCaption": "caption",
+    "answers": [{
+            "imageUrl": "/images/image1.png",
+            "correct": false
+        },
+        {
+            "imageUrl": "/images/image2.png",
+            "correct": true
+        },
+        {
+            "imageUrl": "/images/image3.png",
+            "correct": false
+        },
+        {
+            "imageUrl": "/images/image4.png",
+            "correct": false
+        }
+    ]
 };
 
 
@@ -56,6 +74,7 @@ function hideAllSections() {
     $("#qtype1-section").hide();
     $("#qtype2-section").hide();
     $("#qtype3-section").hide();
+    $("#results-section").hide();
 }
 
 function init() {
@@ -67,6 +86,7 @@ function init() {
     $("#nextQuestion").hide();
 
     $("#startQuiz").click(function() {
+        hideAllSections();
         username = $("#usernameinput").val();
         $("#name").html(username);
         $("#nameInput").hide();
@@ -83,6 +103,7 @@ function init() {
         } else {
             hideAllSections();
             $("#nextQuestion").html("Restart");
+            loadAnswers();
             $("#results-section").show();
             currentQuestion = 0;
         }
@@ -95,6 +116,23 @@ function init() {
 function updateStatus() {
     $("#answeredQuestions").html(currentQuestion);
     $("#totalQuestions").html(questions.length);
+}
+
+// TODO
+function loadAnswers() {
+    for (let index = 0; index < answers.length; index++) {
+        var ansElement = $("<div></div>").text(answers[index]);
+        const element = answers[index];
+        $("#results-page").append(ansElement);
+    }
+}
+
+function appendTextExample() {
+    var txt1 = "<p>Text.</p>"; // Create element with HTML  
+    var txt2 = $("<p></p>").text("Text."); // Create with jQuery
+    var txt3 = document.createElement("p"); // Create with DOM
+    txt3.innerHTML = "Text.";
+    $("body").append(txt1, txt2, txt3); // Append the new elements 
 }
 
 function loadQuestion(index) {
@@ -115,7 +153,6 @@ function loadQuestion(index) {
         var qOneButton2 = $("#question2button");
         var qOneButton3 = $("#question3button");
         var qOneButton4 = $("#question4button");
-        console.log(question.answers);
         qOneButton1.html(question.answers[0].choice);
         qOneButton2.html(question.answers[1].choice);
         qOneButton3.html(question.answers[2].choice);
@@ -149,13 +186,37 @@ function loadQuestion(index) {
     } else if (question.type === "type3") {
         $("#qtype2-section").hide();
 
+        $("#qtype3Img1").prop("src", question.answers[0].imageUrl);
+        $("#qtype3Img2").prop("src", question.answers[1].imageUrl);
+        $("#qtype3Img3").prop("src", question.answers[2].imageUrl);
+        $("#qtype3Img4").prop("src", question.answers[3].imageUrl);
 
+        $("#qtype3Img1").unbind("click");
+        $("#qtype3Img2").unbind("click");
+        $("#qtype3Img3").unbind("click");
+        $("#qtype3Img4").unbind("click");
+
+        $("#qtype3Img1").click(function() {
+            checkAnswer(this);
+        });
+        $("#qtype3Img2").click(function() {
+            checkAnswer(this);
+        });
+        $("#qtype3Img3").click(function() {
+            checkAnswer(this);
+        });
+        $("#qtype3Img4").click(function() {
+            checkAnswer(this);
+        });
 
         $("#qtype3-section").show();
     }
     console.log(question);
 }
 
+// TODO
 function checkAnswer(element) {
-    console.log(element);
+    $(element).attr("data-ans-val", true);
+    console.log($(element).attr("data-ans-val"));
+    answers.push($(element).attr("data-ans-val"));
 }
