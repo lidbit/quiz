@@ -1,5 +1,6 @@
 var questions = [];
 var currentQuestion = 0;
+var username = "";
 
 var question1 = {
     "id": "1",
@@ -63,9 +64,18 @@ function init() {
     $("#qtype1-section").hide();
     $("#qtype2-section").hide();
     $("#qtype3-section").hide();
+    $("#nextQuestion").hide();
+
+    $("#startQuiz").click(function() {
+        username = $("#usernameinput").val();
+        $("#name").html(username);
+        $("#nameInput").hide();
+        $("#startQuiz").hide();
+        loadQuestion();
+        $("#nextQuestion").show();
+    });
 
     $("#nextQuestion").click(function() {
-        console.log(currentQuestion);
         if (currentQuestion < questions.length) {
             $("#nextQuestion").html("Next");
             loadQuestion(currentQuestion);
@@ -88,6 +98,9 @@ function updateStatus() {
 }
 
 function loadQuestion(index) {
+    if (typeof(index) === 'undefined' || index === null) {
+        index = 0;
+    }
     var question = questions[index];
 
     if (question.type === "type1") {

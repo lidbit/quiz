@@ -26,68 +26,82 @@
         <button>Start</button>
         </div>
     </div>-->
-    <section id="name-section">
-        <div id="namepage">
-            <p>Hi what's your name?</p>
-            <textarea id="usernameinput"></textarea>
-            <p id="namegreating"> nice to meet you</p>
-            <p id="name">.....</p>
-            <p> Let start!</p>
+    <div class="row">
+        <div class="col-4">
+            <section id="name-section">
+                <div class="row">
+                    <div class="col-4">
+                        <div id="nameInput">
+                            <p>Hi what's your name?</p>
+                            <textarea id="usernameinput"></textarea>
+                        </div>
+                        <p id="namegreating"> nice to meet you</p>
+                        <p id="name"></p>
+                        <p><button id="startQuiz">start</button> </p>
+                    </div>
+                </div>
+
+            </section>
+
+            <section id="qtype1-section" class="section">
+                <p id="type1-question-number">Qnumber type 1</p>
+                <p id="type1-question"></p>
+                <div id="qtype1-page">
+                    <div><img id="qtype1Img" src=""></div>
+                    <div>
+                        <div><button id="question1button"></button></div>
+                        <div><button id="question2button"></button></div>
+                        <div><button id="question3button"></button></div>
+                        <div><button id="question4button"></button></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="qtype2-section" class="section">
+                <div id="qtype2-page">
+                    <!--In here need to do css to align these side by side.-->
+                    <p id="type2-question-number">Qnumber type2</p>
+                    <container>
+                        <div class="row" id="question-row1">
+                            <div class="col-1" id="option1">row 1 this is column1 25%</div>
+                            <div class="col-1" id="option2"> row 1 this is column2 25% </div>
+                            <div class="col-1" id="option3">row 1 this is column3 25%</div>
+                            <div class="col-1" id="option4">row 1 this is column4 25%</div>
+                        </div>
+                        <div class="row" id="question-row2">
+                            <div class="col-2" id="option3">row 2 this is column 1 50% </div>
+                            <div class="col-2" id="option4">row 2 this is column 2 50%</div>
+                        </div>
+                        <div class="row" id="question-row3">
+                            <div class="col-3" id="option3">row 2 this is column1 75%</div>
+                            <div class="col-1" id="option4">row 2 this is column2 25%</div>
+                        </div>
+                    </container>
+                </div>
+            </section>
+            <section id="qtype3-section" class="section">
+                <div id="qtype3-page">
+                    <p id="type3-question-number">Qnumber type3</p>
+                    <container>
+                        <div class="row" id="question-row1">
+                            <div class="col-4" id="option1"> this is column1 + image + caption</div>
+                            <div class="col-4" id="option2">this is column2 + image + caption</div>
+                        </div>
+                        <div class="row" id="question-row2">
+                            <div class="col-4" id="option3">this is column3 + image + caption</div>
+                            <div class="col-4" id="option4">this is column4 + image + caption</div>
+                        </div>
+                    </container>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
             <button id="nextQuestion">Next</button>
         </div>
-    </section>
+    </div>
 
-    <section id="qtype1-section">
-        <p id="type1-question-number">Qnumber type 1</p>
-        <p id="type1-question"></p>
-        <div id="qtype1-page">
-            <div><img id="qtype1Img" src=""></div>
-            <div>
-                <div><button id="question1button"></button></div>
-                <div><button id="question2button"></button></div>
-                <div><button id="question3button"></button></div>
-                <div><button id="question4button"></button></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="qtype2-section">
-        <div id="qtype2-page">
-            <!--In here need to do css to align these side by side.-->
-            <p id="type2-question-number">Qnumber type2</p>
-            <container>
-                <div class="row" id="question-row1">
-                    <div class="col-1" id="option1">row 1 this is column1 25%</div>
-                    <div class="col-1" id="option2"> row 1 this is column2 25% </div>
-                    <div class="col-1" id="option3">row 1 this is column3 25%</div>
-                    <div class="col-1" id="option4">row 1 this is column4 25%</div>
-                </div>
-                <div class="row" id="question-row2">
-                    <div class="col-2" id="option3">row 2 this is column 1 50% </div>
-                    <div class="col-2" id="option4">row 2 this is column 2 50%</div>
-                </div>
-                <div class="row" id="question-row3">
-                    <div class="col-3" id="option3">row 2 this is column1 75%</div>
-                    <div class="col-1" id="option4">row 2 this is column2 25%</div>
-                </div>
-            </container>
-        </div>
-    </section>
-    <section id="qtype3-section">
-        <div id="qtype3-page">
-            <p id="type3-question-number">Qnumber type3</p>
-            <container>
-                <div class="row" id="question-row1">
-                    <div class="col-4" id="option1"> this is column1 + image + caption</div>
-                    <div class="col-4" id="option2">this is column2 + image + caption</div>
-                </div>
-                <div class="row" id="question-row2">
-                    <div class="col-4" id="option3">this is column3 + image + caption</div>
-                    <div class="col-4" id="option4">this is column4 + image + caption</div>
-                </div>
-            </container>
-        </div>
-    </section>
     <section id="results-section">
         <div id="results-page">
             <p>
