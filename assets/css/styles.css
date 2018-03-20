@@ -37,6 +37,10 @@ button {
     background-color: darkseagreen;
 }
 
+#statubar {
+    text-align: center;
+}
+
 footer {
     background-color: darkgrey;
 }

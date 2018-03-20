@@ -56,12 +56,18 @@ function init() {
     $("#nextQuestion").click(function() {
         loadQuestion(currentQuestion);
         currentQuestion++;
+        updateStatus();
     });
 
     $("#results-section").hide();
     $("#qtype1-section").hide();
     $("#qtype2-section").hide();
     $("#qtype3-section").hide();
+}
+
+function updateStatus() {
+    $("#answeredQuestions").html(currentQuestion);
+    $("#totalQuestions").html(questions.length);
 }
 
 function loadQuestion(index) {
