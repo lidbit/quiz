@@ -51,18 +51,35 @@ $(document).ready(function() {
     init();
 });
 
+function hideAllSections() {
+    $("#qtype1-section").hide();
+    $("#qtype2-section").hide();
+    $("#qtype3-section").hide();
+}
+
 function init() {
-
-    $("#nextQuestion").click(function() {
-        loadQuestion(currentQuestion);
-        currentQuestion++;
-        updateStatus();
-    });
-
+    $("#statubar").hide();
     $("#results-section").hide();
     $("#qtype1-section").hide();
     $("#qtype2-section").hide();
     $("#qtype3-section").hide();
+
+    $("#nextQuestion").click(function() {
+        console.log(currentQuestion);
+        if (currentQuestion < questions.length) {
+            $("#nextQuestion").html("Next");
+            loadQuestion(currentQuestion);
+            currentQuestion++;
+        } else {
+            hideAllSections();
+            $("#nextQuestion").html("Restart");
+            $("#results-section").show();
+            currentQuestion = 0;
+        }
+
+        $("#statubar").show();
+        updateStatus();
+    });
 }
 
 function updateStatus() {
@@ -91,6 +108,11 @@ function loadQuestion(index) {
         qOneButton3.html(question.answers[2].choice);
         qOneButton4.html(question.answers[3].choice);
 
+        qOneButton1.unbind("click");
+        qOneButton2.unbind("click");
+        qOneButton3.unbind("click");
+        qOneButton4.unbind("click");
+
         qOneButton1.click(function() {
             checkAnswer(this);
         });
@@ -111,6 +133,12 @@ function loadQuestion(index) {
         console.log("qtype2-section");
 
         $("#qtype2-section").show();
+    } else if (question.type === "type3") {
+        $("#qtype2-section").hide();
+
+
+
+        $("#qtype3-section").show();
     }
     console.log(question);
 }
