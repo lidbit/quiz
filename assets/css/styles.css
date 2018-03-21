@@ -76,7 +76,6 @@ div[class*='col-'] {
 .col-4 {
     float: left;
     width: 100%;
-    background-color: #1d770b;
 }
 
 .row {
@@ -89,6 +88,54 @@ div[class*='col-'] {
     clear: both;
 }
 
-.col-2 > img {
+.col-2>img {
     cursor: pointer;
+}
+
+#editor {
+    background-color: white;
+    min-height: 200px;
+    min-width: 600px;
+    display: none;
+    box-shadow: 10px 5px 5px black;
+    position: absolute;
+    z-index: 9;
+}
+
+#editor>div>div {
+    text-align: right;
+}
+
+#editor>div>div>button {
+    font-size: 1.1em;
+    border: 0px;
+    cursor: pointer;
+    border: none;
+    border-radius: 0px;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+#editorheader {
+    padding: 10px;
+    cursor: move;
+    z-index: 10;
+    background-color: #d4dee6;
+    color: #fff;
+}
+
+#editorcontent>div {
+    min-height: 300px;
+}
+
+#editor>div>div>#editor_save {
+    padding: 5px;
+    background-color: rgb(7, 177, 72)
+}
+
+#editorcontent>div>div>div {
+    background-color: #fff;
+}
+
+#newqType {
+    width: 63%;
 }
