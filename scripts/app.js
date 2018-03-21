@@ -75,7 +75,6 @@ questions.push(question2);
 questions.push(question3);
 
 $(document).ready(function() {
-    console.log("loaded");
     init();
 });
 
@@ -151,6 +150,7 @@ function loadQuestion(index) {
     var question = questions[index];
 
     if (question.type === "type1") {
+        $(".section").hide();
         // update div values and show div
 
         var questionText = $("#type1-question");
@@ -187,7 +187,7 @@ function loadQuestion(index) {
 
         $("#qtype1-section").show();
     } else if (question.type === "type2") {
-        $("#qtype1-section").hide();
+        $(".section").hide();
 
         var img1 = $("#type2-img1");
         var img2 = $("#type2-img2");
@@ -206,11 +206,10 @@ function loadQuestion(index) {
             console.log("img2 clicked");
         });
 
-        console.log("qtype2-section");
 
         $("#qtype2-section").show();
     } else if (question.type === "type3") {
-        $("#qtype2-section").hide();
+        $(".section").hide();
 
         $("#qtype3Img1").prop("src", question.answers[0].imageUrl);
         $("#qtype3Img2").prop("src", question.answers[1].imageUrl);
@@ -237,13 +236,11 @@ function loadQuestion(index) {
 
         $("#qtype3-section").show();
     }
-    console.log(question);
 }
 
 // TODO
 function checkAnswer(element) {
     $(element).attr("data-ans-val", true);
-    console.log($(element).attr("data-ans-val"));
     answers.push($(element).attr("data-ans-val"));
 }
 
@@ -264,23 +261,25 @@ function editor_load() {
 
     $("#add_answer").click(function() {
         var row = $("<div class='row'></div>");
-        var col1 = $("<div class='col-3'></div>");
-        var col2 = $("<div class='col-1'></div>");
+        var col1 = $("<div class='col-1'></div>");
+        var col2 = $("<div class='col-3'></div>");
 
         var newchoice = $("<input id='newchoice' type='text'></input>").text("");
         var newChoiceCorrect = $("<input id='newChoiceCorrect' type='checkbox'></input>");
         var newChoiceAdd = $("<button>+</button>");
 
-        $("#answers_edit").append(row, col1, newchoice, newChoiceCorrect, col2, newChoiceAdd);
+        col2.append(newChoiceAdd, newchoice, newChoiceCorrect);
+        var newRow = row.append(col2);
+
+        $("#answers_edit").append(newRow);
 
         newChoiceAdd.click(function() {
             newAnswers.push({
                 "choice": $("#newchoice").val(),
                 "correct": $("#newChoiceCorrect").is(":checked")
             });
-            $("#answers").append(row, $("#newchoice").val(), " ", $("#newChoiceCorrect").is(":checked"));
+            $("#answers").append($("#newchoice").val(), " ", $("#newChoiceCorrect").is(":checked"), "<br />");
             $("#answers_edit").empty();
-            console.log(newAnswers);
         });
     });
 
@@ -289,8 +288,6 @@ function editor_load() {
         var newQType = $("select#newqType option:checked").val();
         var newQText = $("#newqText").val();
 
-        // TODO: answers
-        console.log(newAnswers);
         var newQuestion = {
             "id": newQId,
             "type": newQType,
@@ -308,7 +305,6 @@ function editor_load() {
 }
 
 function dragElement(elmnt) {
-    console.log(elmnt);
     var pos1 = 0,
         pos2 = 0,
         pos3 = 0,
