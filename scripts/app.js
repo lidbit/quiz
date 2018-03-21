@@ -35,6 +35,7 @@ var question2 = {
     "answers": [{
             "imageUrl": "images/image3.png",
             "correct": false
+
         },
         {
             "imageUrl": "images/image4.png",
