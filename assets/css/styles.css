@@ -101,7 +101,7 @@ div[class*='col-']>img {
     min-height: 200px;
     min-width: 600px;
     display: none;
-    box-shadow: 10px 5px 5px black;
+    box-shadow: 7px 5px 5px rgb(83, 83, 83);
     position: absolute;
     z-index: 9;
 }
@@ -120,11 +120,16 @@ div[class*='col-']>img {
 }
 
 #editorheader {
-    padding: 10px;
+    padding: 5px;
     cursor: move;
     z-index: 10;
-    background-color: #d4dee6;
+    background-color: #e8edf1;
     color: #fff;
+}
+
+#editorheader>div>span {
+    float: left;
+    color: #000000;
 }
 
 #editorcontent>div {
@@ -132,7 +137,7 @@ div[class*='col-']>img {
 }
 
 #editor>div>div>#editor_save {
-    padding: 5px;
+    padding: 10px;
     background-color: rgb(7, 177, 72)
 }
 

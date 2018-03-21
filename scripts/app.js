@@ -247,7 +247,11 @@ function checkAnswer(element) {
     answers.push($(element).attr("data-ans-val"));
 }
 
+
+////////////////////////////////// EDITOR ONLY ///////////////////////////////////////
+
 function editor_load() {
+    var newAnswers = [];
     var editor = $("#editor");
     dragElement($(editor)[0]);
     $("#editor_close").click(function() {
@@ -258,33 +262,38 @@ function editor_load() {
         addQuestion();
     });
 
+    $("#add_answer").click(function() {
+        var row = $("<div class='row'></div>");
+        var col1 = $("<div class='col-3'></div>");
+        var col2 = $("<div class='col-1'></div>");
+
+        var newchoice = $("<input id='newchoice' type='text'></input>").text("");
+        var newChoiceCorrect = $("<input id='newChoiceCorrect' type='checkbox'></input>");
+        var newChoiceAdd = $("<button>+</button>");
+
+        $("#answers").append(row, col1, newchoice, newChoiceCorrect, col2, newChoiceAdd);
+        newChoiceAdd.click(function() {
+            newAnswers.push({
+                "choice": $("#newchoice").val(),
+                "correct": $("#newChoiceCorrect").is(":checked")
+            });
+            $("#answers").empty();
+            console.log(newAnswers);
+        });
+    });
+
     function addQuestion() {
         var newQId = $("#newqId").val();
         var newQType = $("select#newqType option:checked").val();
         var newQText = $("#newqText").val();
 
         // TODO: answers
+        console.log(newAnswers);
         var newQuestion = {
             "id": newQId,
             "type": newQType,
             "questionText": newQText,
-            "answers": [{
-                    "imageUrl": "images/image1.png",
-                    "correct": false
-                },
-                {
-                    "imageUrl": "images/image2.png",
-                    "correct": true
-                },
-                {
-                    "imageUrl": "images/image3.png",
-                    "correct": false
-                },
-                {
-                    "imageUrl": "images/image4.png",
-                    "correct": false
-                }
-            ]
+            "answers": newAnswers
         };
         questions.push(newQuestion);
 
