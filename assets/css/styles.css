@@ -62,7 +62,6 @@ div[class*='col-']>img {
 .col-1 {
     float: left;
     width: 25%;
-    background-color: #b1980f;
 }
 
 .col-2 {
@@ -74,7 +73,6 @@ div[class*='col-']>img {
 .col-3 {
     float: left;
     width: 75%;
-    background-color: #0b7777;
 }
 
 .col-4 {

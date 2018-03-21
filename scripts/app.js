@@ -271,13 +271,15 @@ function editor_load() {
         var newChoiceCorrect = $("<input id='newChoiceCorrect' type='checkbox'></input>");
         var newChoiceAdd = $("<button>+</button>");
 
-        $("#answers").append(row, col1, newchoice, newChoiceCorrect, col2, newChoiceAdd);
+        $("#answers_edit").append(row, col1, newchoice, newChoiceCorrect, col2, newChoiceAdd);
+
         newChoiceAdd.click(function() {
             newAnswers.push({
                 "choice": $("#newchoice").val(),
                 "correct": $("#newChoiceCorrect").is(":checked")
             });
-            $("#answers").empty();
+            $("#answers").append(row, $("#newchoice").val(), " ", $("#newChoiceCorrect").is(":checked"));
+            $("#answers_edit").empty();
             console.log(newAnswers);
         });
     });
