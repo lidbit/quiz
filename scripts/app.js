@@ -7,7 +7,7 @@ var question1 = {
     "id": "1",
     "type": "type1",
     "questionValue": "What are three primary numbers?",
-    "imageUrl": "/images/image1.png",
+    "imageUrl": "images/image1.png",
     "imageCaption": "caption",
     "answers": [{
             "choice": "7 colours",
@@ -32,29 +32,29 @@ var question2 = {
     "id": "2",
     "type": "type2",
     "questionValue": "What are three primary numbers?",
-    "imageUrl": "/images/image2.pngg",
+    "imageUrl": "images/image2.pngg",
     "imageCaption": "caption",
 };
 
 var question3 = {
     "id": "3",
     "type": "type3",
-    "imageUrl": "/images/image3.png",
+    "imageUrl": "images/image3.png",
     "imageCaption": "caption",
     "answers": [{
-            "imageUrl": "/images/image1.png",
+            "imageUrl": "images/image1.png",
             "correct": false
         },
         {
-            "imageUrl": "/images/image2.png",
+            "imageUrl": "images/image2.png",
             "correct": true
         },
         {
-            "imageUrl": "/images/image3.png",
+            "imageUrl": "images/image3.png",
             "correct": false
         },
         {
-            "imageUrl": "/images/image4.png",
+            "imageUrl": "images/image4.png",
             "correct": false
         }
     ]
@@ -179,6 +179,23 @@ function loadQuestion(index) {
         $("#qtype1-section").show();
     } else if (question.type === "type2") {
         $("#qtype1-section").hide();
+
+        var img1 = $("#type2-img1");
+        var img2 = $("#type2-img2");
+
+        console.log(img1);
+        console.log(img2);
+
+        img1.unbind("click");
+        img2.unbind("click");
+
+        img1.click(function(){
+            console.log("img1 clicked");
+        });
+
+        img2.click(function(){
+            console.log("img2 clicked");
+        });
 
         console.log("qtype2-section");
 
