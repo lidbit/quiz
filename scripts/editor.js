@@ -1,4 +1,15 @@
 ////////////////////////////////// EDITOR ONLY ///////////////////////////////////////
+$(document).ready(function() {
+
+    setTimeout(
+        function() {
+            $(".frog").removeClass("showing");
+        }, 5000);
+
+    $(".frog").click(function() {
+        console.log("frog clicked");
+    })
+});
 
 function editor_load() {
     var newAnswers = [];
