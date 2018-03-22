@@ -136,7 +136,17 @@ div[class*='col-']>img {
 
 #editor>div>div>#editor_save {
     padding: 10px;
-    background-color: rgb(7, 177, 72)
+    background-color: rgb(7, 177, 72);
+    transition: background-color 0.5s, color 0.8s, box-shadow 0.5s;
+    color: #0f140e;
+    box-shadow: 7px 5px 5px rgb(83, 83, 83);
+}
+
+#editor>div>div>#editor_save:hover {
+    padding: 10px;
+    background-color: rgb(15, 116, 54);
+    color: #d8e6c9;
+    box-shadow: 1px 1px 1px rgb(83, 83, 83);
 }
 
 #editorcontent>div>div>div {
