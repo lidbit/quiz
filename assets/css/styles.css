@@ -67,7 +67,6 @@ div[class*='col-']>img {
 .col-2 {
     float: left;
     width: 50%;
-    background-color: #550b77;
 }
 
 .col-3 {
@@ -92,67 +91,4 @@ div[class*='col-']>img {
 
 .col-2>img {
     cursor: pointer;
-}
-
-#editor {
-    background-color: white;
-    min-height: 200px;
-    min-width: 600px;
-    display: none;
-    box-shadow: 7px 5px 5px rgb(83, 83, 83);
-    position: absolute;
-    z-index: 9;
-}
-
-#editor>div>div {
-    text-align: right;
-}
-
-#editor>div>div>button {
-    font-size: 1.1em;
-    border: 0px;
-    cursor: pointer;
-    border: none;
-    border-radius: 0px;
-    background-color: rgba(255, 255, 255, 0);
-}
-
-#editorheader {
-    padding: 5px;
-    cursor: move;
-    z-index: 10;
-    background-color: #e8edf1;
-    color: #fff;
-}
-
-#editorheader>div>span {
-    float: left;
-    color: #000000;
-}
-
-#editorcontent>div {
-    min-height: 300px;
-}
-
-#editor>div>div>#editor_save {
-    padding: 10px;
-    background-color: rgb(7, 177, 72);
-    transition: background-color 0.5s, color 0.8s, box-shadow 0.5s;
-    color: #0f140e;
-    box-shadow: 7px 5px 5px rgb(83, 83, 83);
-}
-
-#editor>div>div>#editor_save:hover {
-    padding: 10px;
-    background-color: rgb(15, 116, 54);
-    color: #d8e6c9;
-    box-shadow: 1px 1px 1px rgb(83, 83, 83);
-}
-
-#editorcontent>div>div>div {
-    background-color: #fff;
-}
-
-#newqType {
-    width: 63%;
 }

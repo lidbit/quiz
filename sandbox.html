@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="assets/css/styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+    <link href="assets/css/editor.css" rel="stylesheet">
+    <script src="scripts/jquery-3.3.1.min.js"></script>
+    <script src="scripts/editor.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="row">
+
+    </div>
+    <!--################################## EDITOR MARKUP BEGIN ##################################-->
+
+    <div id="editor" class="editor">
+        <div id="editorheader" class="row">
+            <div class="col-4">
+                <span>Question Editor</span><button id="editor_close">X</button>
+            </div>
+        </div>
+        <div id="editorcontent" class="row">
+            <div class="col-4">
+                <div class="row">
+                    <div class="col-2">Question id</div>
+                    <div class="col-2"><input id="newqId" type="text"></div>
+                </div>
+                <div class="row">
+                    <div class="col-2">Question type</div>
+                    <div class="col-2">
+                        <select id="newqType">
+                        <option value="">select value</option>
+                        <option value="type1">Type 1</option>
+                        <option value="type2">Type 2</option>
+                        <option value="type3">Type 3</option>
+                      </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2">Question text</div>
+                    <div class="col-2"><input id="newqText" type="text"></div>
+                </div>
+                <div class="row">
+                    <div id="add_answer" class="col-1">
+                        <button>Create New Answer</button>
+                        <p>Answers</p>
+                        <div id="answers" class="row">
+
+                        </div>
+                    </div>
+                    <div id="answers_edit" class="col-3"></div>
+                </div>
+            </div>
+        </div>
+        <div id="editorfooter" class="row">
+            <div class="col-4">
+                <button id="editor_save">Add</button>
+            </div>
+        </div>
+    </div>
+    <!--################################## EDITOR MARKUP END ##################################-->
+</body>
+
+</html>
