@@ -9,6 +9,7 @@
 }
 
 .frog {
+    cursor: pointer;
     min-height: 80%;
     min-width: 80%;
     text-align: center;
