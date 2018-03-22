@@ -23,7 +23,7 @@
 .frog:hover {
     background-color: rgba(0, 0, 0, 0.1);
     box-shadow: 7px 5px 5px rgb(83, 83, 83);
-    transform: scale(1.1) translate(2px, 2px) rotate(-1deg);
+    transform: scale(1.1) translate(1px, 1px);
 }
 
 .frog.showing {
