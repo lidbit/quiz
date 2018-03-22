@@ -17,12 +17,13 @@
     background-size: cover;
     background-image: url("http://localhost/images/greenbox.png") rgba(0, 0, 0, 0);
     box-shadow: 1px 1px 1px rgb(83, 83, 83);
-    transition: background-color 5s, box-shadow 0.5s;
+    transition: background-color 5s, box-shadow 0.5s, transform 0.5s;
 }
 
 .frog:hover {
     background-color: rgba(0, 0, 0, 0.1);
     box-shadow: 7px 5px 5px rgb(83, 83, 83);
+    transform: scale(1.1) translate(2px, 2px) rotate(-1deg);
 }
 
 .frog.showing {
