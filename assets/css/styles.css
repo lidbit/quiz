@@ -19,7 +19,7 @@ button {
     background-color: transparent;
     border: 2px solid #0fe468;
     border-radius: 8px;
-    color:#0fe468;
+    color: #0fe468;
     font-size: 18px;
     width: 80%;
     transition: background-color 0.5s, color 0.8s, transform 0.5s;
