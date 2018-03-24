@@ -5,12 +5,13 @@
 }
 
 h1 {
-    color: darkblue;
+    color: rgb(235, 109, 247);
 }
 
 button {
-    background-color: cadetblue;
-    border-radius: 10px;
+    background-color:rgb(158, 79, 204);
+    border-radius: 8px;
+    width:100px;
 }
 
 .section {
@@ -18,7 +19,68 @@ button {
 }
 
 #hero-section {
-    background-color: silver;
+    background-color: red;
+    min-height: 200;
+}
+
+#hero_wrapper {
+    background-color: black;
+    position: relative;
+    left: 0px;
+    top: 0px;
+}
+
+#black_image {
+    position: relative;
+    width: 1000px;
+    height: 600px;
+    top: 0px;
+    left: 10%;
+    right: 10%;
+}
+
+#color_image {
+    position: absolute;
+    width: 1000px;
+    height: 600px;
+    top: 0px;
+    left: 10%;
+    right: 10%;
+    z-index: 2;
+}
+
+/*hero image animations */
+
+@keyframes blackFadeInOut {
+    0% {
+        opacity: 1;
+    }
+    45% {
+        opacity: 1;
+    }
+    55% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+#color_image {
+    animation-name: blackFadeInOut;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 6s;
+    animation-direction: alternate;
+}
+
+#hero-text {
+    color: rgb(102, 175, 204);
+    position: absolute;
+    top: 20%;
+    left: 15%;
+    size: 25%;
+    z-index: 3;
 }
 
 #name-section {

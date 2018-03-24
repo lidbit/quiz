@@ -15,7 +15,8 @@
     text-align: center;
     margin: auto;
     background-size: cover;
-    background-image: url("http://localhost/images/greenbox.png") rgba(0, 0, 0, 0);
+    background-image: url("http://localhost:5500/images/frog_image.jpg");
+    background-repeat: no-repeat;
     box-shadow: 1px 1px 1px rgb(83, 83, 83);
     transition: background-color 5s, box-shadow 0.5s, transform 0.5s;
 }
