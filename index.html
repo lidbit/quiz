@@ -13,10 +13,10 @@
 </head>
 
 <body>
-     <div id ="hero-section">
+    <div id="hero-section">
         <div id="hero_wrapper">
-            <img id="black_image" src="images/image_hero4_black.jpg" alt="Colour image"  width="80%">
-            <img id="color_image" src="images/image_hero4_color.jpg" alt="Colour image"  width="60%">
+            <img id="black_image" src="images/image_hero4_black.jpg" alt="Colour image" width="80%">
+            <img id="color_image" src="images/image_hero4_color.jpg" alt="Colour image" width="60%">
             <div id="hero-text">
                 <h1>Colour Quiz</h1>
                 <p>How much do you know?</p>
@@ -34,9 +34,11 @@
                             <p>Hi what's your name?</p>
                             <textarea id="usernameinput"></textarea>
                         </div>
-                        <p id="namegreating"> nice to meet you</p>
+                        <p id="namegreating">nice to meet you</p>
                         <p id="name"></p>
-                        <p><button id="startQuiz">start</button> </p>
+                        <p>
+                            <button id="startQuiz">start</button>
+                        </p>
                     </div>
                 </div>
 
@@ -46,12 +48,22 @@
                 <p id="type1-question-number">Qnumber type 1</p>
                 <p id="type1-question"></p>
                 <div id="qtype1-page">
-                    <div><img id="qtype1Img" src=""></div>
                     <div>
-                        <div><button id="question1button"></button></div>
-                        <div><button id="question2button"></button></div>
-                        <div><button id="question3button"></button></div>
-                        <div><button id="question4button"></button></div>
+                        <img id="qtype1Img" src="">
+                    </div>
+                    <div>
+                        <div>
+                            <button id="question1button"></button>
+                        </div>
+                        <div>
+                            <button id="question2button"></button>
+                        </div>
+                        <div>
+                            <button id="question3button"></button>
+                        </div>
+                        <div>
+                            <button id="question4button"></button>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -62,8 +74,12 @@
                     <p id="type2-question-number">Qnumber type2</p>
                     <container>
                         <div class="row" id="qtype2-question-row1">
-                            <div class="col-2" id="option1"><img id="type2-img1" src=""></div>
-                            <div class="col-2" id="option2"><img id="type2-img2" src=""></div>
+                            <div class="col-2" id="option1">
+                                <img id="type2-img1" src="">
+                            </div>
+                            <div class="col-2" id="option2">
+                                <img id="type2-img2" src="">
+                            </div>
                         </div>
                     </container>
                 </div>
@@ -119,7 +135,10 @@
         </div>
     </section>
     <div id="progress-bar"></div>
-    <section id="statubar">status info goes here <span id="answeredQuestions"></span>&nbsp;out of&nbsp;<span id="totalQuestions">questions</span></section>
+    <section id="statubar">status info goes here
+        <span id="answeredQuestions"></span>&nbsp;out of&nbsp;
+        <span id="totalQuestions">questions</span>
+    </section>
 
     <footer role="contentinfo">
         <p>&copy; copyright Lydia Douglas. All rights reserved</p>
