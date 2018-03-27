@@ -6,39 +6,43 @@ var username = "";
 var question1 = {
     "id": "1",
     "type": "type1",
-    "questionText": "What are three primary numbers?",
-    "imageUrl": "images/image1.png",
+    "questionText": "We see our world in combination of three colours: red yellow blue. What about dogs? how many colours do they see?",
+    "imageUrl": "images/dog1_color.jpg",
     "imageCaption": "caption",
     "answers": [{
-            "choice": "7 colours",
+            "choice": "Black and White",
             "correct": false
         },
         {
-            "choice": "3 colours",
+            "choice": "Combination of 2 Colours",
             "correct": true
         },
         {
-            "choice": "2 colours",
+            "choice": "Combination of 3 Colours",
             "correct": false
         },
         {
-            "choice": "11 colours",
+            "choice": "Combination of 4 colours",
             "correct": false
         }
     ]
 };
+
+
+
+
 
 var question2 = {
     "id": "2",
     "type": "type2",
     "questionText": "What are three primary numbers?",
     "answers": [{
-            "imageUrl": "images/image3.png",
+            "imageUrl": "images/tomato_black_600.jpg",
             "correct": false
 
         },
         {
-            "imageUrl": "images/image4.png",
+            "imageUrl": "images/tomato_color_600.jpg",
             "correct": true
         },
     ]
@@ -47,23 +51,23 @@ var question2 = {
 var question3 = {
     "id": "3",
     "type": "type3",
-    "questionText": "What are three primary numbers?",
-    "imageUrl": "images/image3.png",
+    "questionText": "What is the colour of the year 2018, according to the Pantone colour institute.",
+    "imageUrl": "images/colour2018square.jpg",
     "imageCaption": "caption",
     "answers": [{
-            "imageUrl": "images/image1.png",
+            "imageUrl": "images/colour2018.jpg",
             "correct": false
         },
         {
-            "imageUrl": "images/image2.png",
+            "imageUrl": "images/colour2018.jpg",
             "correct": true
         },
         {
-            "imageUrl": "images/image3.png",
+            "imageUrl": "images/colour2018.jpg",
             "correct": false
         },
         {
-            "imageUrl": "images/image4.png",
+            "imageUrl": "images/colour2018.jpg",
             "correct": false
         }
     ]
@@ -83,6 +87,7 @@ function hideAllSections() {
     $("#qtype2-section").hide();
     $("#qtype3-section").hide();
     $("#results-section").hide();
+    $("#hero-section").hide();
 }
 
 function init() {
@@ -93,12 +98,12 @@ function init() {
     $("#qtype3-section").hide();
     $("#nextQuestion").hide();
 
-    $("#startQuiz").click(function() {
+    $("#quiz-start").click(function() {
         hideAllSections();
-        username = $("#usernameinput").val();
-        $("#name").html(username);
-        $("#nameInput").hide();
-        $("#startQuiz").hide();
+        //username = $("#usernameinput").val();
+        //$("#name").html(username);
+       // $("#nameInput").hide();
+        $("#quiz-start").hide();
         loadQuestion();
         $("#nextQuestion").show();
     });

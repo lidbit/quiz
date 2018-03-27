@@ -3,9 +3,16 @@
 * {
     box-sizing: border-box;
 }
+header {
+    background-color: #0d1b13;
+    color:rgb(235, 109, 247);
+    text-align: center;
+    padding:10px,0;
+}
+
 
 h1 {
-    color: rgb(235, 109, 247);
+    color: rgb(101, 226, 248);
 }
 
 button {
@@ -21,7 +28,7 @@ button {
     border-radius: 8px;
     color: #0fe468;
     font-size: 18px;
-    width: 80%;
+    width: 100%;
     transition: background-color 0.5s, color 0.8s, transform 0.5s;
 }
 
@@ -31,12 +38,21 @@ button {
     transform: scale(1.1) translate(1px, 1px);
 }
 
+#quiz-start:active {
+    outline: none;
+    border: none;
+}
+
+#quiz-start:focus {
+    outline: 0;
+}
+
 .section {
     min-height: 200px;
 }
 
 #hero-section {
-    background-color: red;
+
     min-height: 200;
 }
 
@@ -96,16 +112,31 @@ button {
     position: absolute;
     top: 20%;
     left: 15%;
-    size: 25%;
     z-index: 3;
 }
-
+/*
 #name-section {
+    background-color: antiquewhite;
+}*/
+
+
+#qtype1-section {
+    background-color:black;
+}
+
+#qtype1-image {
     background-color: antiquewhite;
 }
 
-#qtype1-section {
-    background-color: floralwhite;
+.type1button {
+    display:block;
+    margin-top: 20px;
+    min-width: 100px;
+}
+
+#qtype1Img {
+    width:400px;
+    height: 400px;
 }
 
 #qtype2-section {
