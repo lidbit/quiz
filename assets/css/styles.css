@@ -9,7 +9,7 @@ html {
   }
 
 body{
-    background-color: black;
+    background-color: red;
     color:#6B5B95;
     font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, sans-serif;
     /*font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
@@ -25,14 +25,24 @@ button {
     width: 100px;
 }
 
-/*even sections with little info will have width*/
-.section {
-    min-height: 200px;
-    background-color: rgb(116, 132, 185);
+container{
+   
+    background-color: sienna;
 }
 
+/*even sections with little info will have width*/
+.section {
+    min-height: 100vh;
+    background-color: white;
+}
 
-/*container for images*/
+/******************** Hero section  ****************************/
+#hero-section{
+    margin-left:0;
+    margin-right:0;
+}
+
+/*container for hero  images*/
 #hero_wrapper {
     position: relative;
     left: 0px;
@@ -41,20 +51,18 @@ button {
 /*hero images for animations*/ 
 #black_image {
     position: relative;
-    width: 1000px;
-    height: 600px;
+    width:100%;
     top: 0px;
-    left: 10%;
-    right: 10%;
+    left: 0px;
+    right: 0px;
 }
 /*top image with colour*/
 #color_image {
     position: absolute;
-    width: 1000px;
-    height: 600px;
+    width: 100%;
     top: 0px;
-    left: 10%;
-    right: 10%;
+    left: 0px;
+    right: 0px;
     z-index: 2;
 }
 
@@ -86,10 +94,11 @@ button {
 /*text near the hero image*/
 #hero-text-container {
     position: absolute;
-    min-width:30%;
-    top: 50%;
+    align-items: stretch;
+    top: 40%;
     left: 10%;
     z-index: 3;
+    text-align: center;
 
 }
 
@@ -98,16 +107,16 @@ button {
     /*font-family: 'Akronim', cursive, sans-serif;*/
     font-family: 'Fredericka the Great', cursive;
     color: #6B5B95;
-    font-size: 55px;
-    letter-spacing: 0.3em
+    font-size: 66px;
+    letter-spacing: 0.3em;
+    margin-bottom:  30px;
 }
 /*tag line text under hero text*/
 #hero-sentence {
     font-family: 'Nothing You Could Do', cursive;
     color:#6F9FD8;
-    font-size: 30px;
-    margin-top: -12px; 
-
+    font-size: 20px;
+    margin-bottom:20px;
 }
 
 /*start button*/
@@ -126,8 +135,8 @@ button {
 }
 
 #quiz-start:hover {
-    background-color: #0fe468;
-    color: #0d1b13;
+    background-color: #1b75f7;
+    color: #415c4d;
     transform: scale(1.1) translate(1px, 1px);
 }
 
@@ -139,15 +148,27 @@ button {
 #quiz-start:focus {
     outline: 0;
 }
-
-
+/************************************************/
+/*quiz section for question of type1*/
 #qtype1-section {
-    background-color:black;
+    background-color:red;
+}
+#qtype1-page{
+    background-color:yellow;
 }
 
 #qtype1-image {
     background-color: antiquewhite;
 }
+
+#qtype1-question-row1
+{
+    background-color: grey;
+}
+#option1{
+    background-color: darkgrey;
+}
+
 
 .type1button {
     display:block;
@@ -159,6 +180,8 @@ button {
     width:400px;
     height: 400px;
 }
+
+/************************************************/
 
 #qtype2-section {
     background-color: gainsboro;
@@ -176,11 +199,12 @@ button {
     text-align: center;
 }
 
-
+/************************************************/
 
 footer {
-    background-color: black;
-    text-align: center
+    background-color: #DBB1CD;
+    text-align: center;
+    height: 100px;
 }
 
 div[class*='col-'] {
