@@ -8,23 +8,26 @@
     <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
     <script src="scripts/jquery-3.3.1.min.js"></script>
     <script src="scripts/app.js" type="text/javascript"></script>
-    <title>Colour Quiz</title>
+   <!--fonts  -->
+    <link href="https://fonts.googleapis.com/css?family=Akronim" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Audiowide|Caveat|Courgette|Finger+Paint|Fredericka+the+Great|Nothing+You+Could+Do" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Audiowide|Caveat|Courgette|Finger+Paint|Fredericka+the+Great|Nothing+You+Could+Do" rel="stylesheet">
 
+
+    <title>Colour Quiz</title>
 </head>
 
 <body>
-    <header>
-        <h1>Colour Quiz</h1>
-    </header>
-    
     <div id="hero-section">
         <div id="hero_wrapper">
-            <img id="black_image" src="images/image_hero4_black.jpg" alt="Colour image" width="80%">
-            <img id="color_image" src="images/image_hero4_color.jpg" alt="Colour image" width="60%">
-            <div id="hero-text">
-                <h1>Colour Quiz</h1>
-                <p>How much do you know?</p>
-                <button id="quiz-start">Start</button>
+            <img id="black_image" src="images/image_hero4_black.jpg" alt="Colour image" >
+            <img id="color_image" src="images/image_hero4_color.jpg" alt="Colour image" >
+            <div id="hero-text-container">
+                <h1 id="hero-title">Colour</h1>
+                <!--<p id="app-sentence">Beyond the black and white</p>-->
+                <p id="hero-sentence">How much do you know?</p>
+                <button id="quiz-start">Find out</button>
             </div>
         </div>
     </div>
@@ -158,9 +161,7 @@
         <div id="results-page">
             <img src="images/image_hero3_color.jpg" alt="Colour image" width="80%">
             <p>
-                well done!! here is your results!
-
-                <p>
+                well done!! here is your results!<p>
         </div>
     </section>
     <div id="progress-bar"></div>
@@ -168,10 +169,10 @@
         <span id="answeredQuestions"></span>&nbsp;out of&nbsp;
         <span id="totalQuestions">questions</span>
     </section>
-
-    <footer role="contentinfo">
+  
+      <footer role="contentinfo">
         <p>&copy; copyright Lydia Douglas. All rights reserved</p>
-    </footer>
+      </footer>
 </body>
 
 </html>

@@ -1,0 +1,17 @@
+body{
+    
+    background-color: red;
+  /*  background-image: url("http://127.0.0.1:5500/quiz/images/image_hero1_black.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;*/
+
+}
+
+body { font-family: arial, helvetica, sans-serif; }
+h1 {background-colour:#FFFFFF;}
+h1 {background-color:#FFFFFF;}
+#color_image {
+    width:100%;
+    z-index:2;
+}

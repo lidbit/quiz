@@ -52,23 +52,23 @@ var question3 = {
     "id": "3",
     "type": "type3",
     "questionText": "What is the colour of the year 2018, according to the Pantone colour institute.",
-    "imageUrl": "images/colour2018square.jpg",
+    "imageUrl": "images/colour2018.jpg",
     "imageCaption": "caption",
     "answers": [{
-            "imageUrl": "images/colour2018.jpg",
+            "imageUrl": "images/meadowlank2018.jpg",
+            "correct": false
+        },
+        {
+            "imageUrl": "images/littleboyblue2018.jpg",
+            "correct": false
+        },
+        {
+            "imageUrl": "images/cherry_tomato2018.jpg",
             "correct": false
         },
         {
             "imageUrl": "images/colour2018.jpg",
             "correct": true
-        },
-        {
-            "imageUrl": "images/colour2018.jpg",
-            "correct": false
-        },
-        {
-            "imageUrl": "images/colour2018.jpg",
-            "correct": false
         }
     ]
 };

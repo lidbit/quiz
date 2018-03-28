@@ -1,68 +1,44 @@
 /*styles for quiz app*/
 
-* {
+/*setting boxing: width and height not affected by changes in padding/border*/
+html {
     box-sizing: border-box;
-}
-header {
-    background-color: #0d1b13;
-    color:rgb(235, 109, 247);
-    text-align: center;
-    padding:10px,0;
-}
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
 
+body{
+    background-color: black;
+    color:#6B5B95;
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, sans-serif;
+    /*font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+*/
+}
 
 h1 {
-    color: rgb(101, 226, 248);
+    color: #6F9FD8;
 }
-
 button {
-    background-color: rgb(158, 79, 204);
+    background-color:#6F9FD8;
     border-radius: 8px;
     width: 100px;
 }
 
-#quiz-start {
-    cursor: pointer;
-    background-color: transparent;
-    border: 2px solid #0fe468;
-    border-radius: 8px;
-    color: #0fe468;
-    font-size: 18px;
-    width: 100%;
-    transition: background-color 0.5s, color 0.8s, transform 0.5s;
-}
-
-#quiz-start:hover {
-    background-color: #0fe468;
-    color: #0d1b13;
-    transform: scale(1.1) translate(1px, 1px);
-}
-
-#quiz-start:active {
-    outline: none;
-    border: none;
-}
-
-#quiz-start:focus {
-    outline: 0;
-}
-
+/*even sections with little info will have width*/
 .section {
     min-height: 200px;
+    background-color: rgb(116, 132, 185);
 }
 
-#hero-section {
 
-    min-height: 200;
-}
-
+/*container for images*/
 #hero_wrapper {
-    background-color: black;
     position: relative;
     left: 0px;
     top: 0px;
 }
-
+/*hero images for animations*/ 
 #black_image {
     position: relative;
     width: 1000px;
@@ -71,7 +47,7 @@ button {
     left: 10%;
     right: 10%;
 }
-
+/*top image with colour*/
 #color_image {
     position: absolute;
     width: 1000px;
@@ -83,7 +59,6 @@ button {
 }
 
 /*hero image animations */
-
 @keyframes blackFadeInOut {
     0% {
         opacity: 1;
@@ -107,17 +82,63 @@ button {
     animation-direction: alternate;
 }
 
-#hero-text {
-    color: rgb(102, 175, 204);
+
+/*text near the hero image*/
+#hero-text-container {
     position: absolute;
-    top: 20%;
-    left: 15%;
+    min-width:30%;
+    top: 50%;
+    left: 10%;
     z-index: 3;
+
 }
-/*
-#name-section {
-    background-color: antiquewhite;
-}*/
+
+/*hero text*/
+#hero-title {
+    /*font-family: 'Akronim', cursive, sans-serif;*/
+    font-family: 'Fredericka the Great', cursive;
+    color: #6B5B95;
+    font-size: 55px;
+    letter-spacing: 0.3em
+}
+/*tag line text under hero text*/
+#hero-sentence {
+    font-family: 'Nothing You Could Do', cursive;
+    color:#6F9FD8;
+    font-size: 30px;
+    margin-top: -12px; 
+
+}
+
+/*start button*/
+#quiz-start {
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid #1b75f7;
+    border-radius: 8px;
+    color: #1b75f7;
+    font-size: 20px;
+    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 90%;
+    transition: background-color 0.5s, color 0.8s, transform 0.5s;
+    padding-top:5px;
+    padding-bottom: 5px;
+}
+
+#quiz-start:hover {
+    background-color: #0fe468;
+    color: #0d1b13;
+    transform: scale(1.1) translate(1px, 1px);
+}
+
+#quiz-start:active {
+    outline: none;
+    border: none;
+}
+
+#quiz-start:focus {
+    outline: 0;
+}
 
 
 #qtype1-section {
@@ -155,8 +176,11 @@ button {
     text-align: center;
 }
 
+
+
 footer {
-    background-color: darkgrey;
+    background-color: black;
+    text-align: center
 }
 
 div[class*='col-'] {
