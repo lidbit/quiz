@@ -1,8 +1,10 @@
 var questions = [];
 var answers = [];
+//corectanswers?
 var currentQuestion = 0;
-var username = "";
+//var username = "";
 
+//creating question objects
 var question1 = {
     "id": "1",
     "type": "type1",
@@ -27,10 +29,6 @@ var question1 = {
         }
     ]
 };
-
-
-
-
 
 var question2 = {
     "id": "2",
@@ -73,15 +71,17 @@ var question3 = {
     ]
 };
 
-
+//putting question objects into questions array
 questions.push(question1);
 questions.push(question2);
 questions.push(question3);
 
+//calling init function
 $(document).ready(function() {
     init();
 });
 
+//hiding all sections expect the scroll section
 function hideAllSections() {
     $("#qtype1-section").hide();
     $("#qtype2-section").hide();
@@ -89,7 +89,7 @@ function hideAllSections() {
     $("#results-section").hide();
     $("#hero-section").hide();
 }
-
+//initialising document
 function init() {
     $("#statubar").hide();
     $("#results-section").hide();
@@ -98,6 +98,7 @@ function init() {
     $("#qtype3-section").hide();
     $("#nextQuestion").hide();
 
+    //when user clicks start quiz nutton hide all sections and load question
     $("#quiz-start").click(function() {
         hideAllSections();
         //username = $("#usernameinput").val();
@@ -108,6 +109,7 @@ function init() {
         $("#nextQuestion").show();
     });
 
+    //when next button is clicked load next question, if test finished load answers 
     $("#nextQuestion").click(function() {
         if (currentQuestion < questions.length) {
             $("#nextQuestion").html("Next");
@@ -121,7 +123,8 @@ function init() {
             currentQuestion = 0;
         }
 
-        $("#statubar").show();
+        //show how many questions been answered
+        $("#statusbar").show();
         updateStatus();
     });
 }

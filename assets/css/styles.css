@@ -9,11 +9,17 @@ html {
   }
 
 body{
-    background-color: red;
-    color:#6B5B95;
+    background-color: #6B5B95;
     font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, sans-serif;
     /*font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 */
+}
+header{
+    height:40px;
+    color:white;
+    text-align: center;
+    padding:1%;
+   
 }
 
 h1 {
@@ -25,14 +31,18 @@ button {
     width: 100px;
 }
 
-container{
-   
-    background-color: sienna;
+.width-wrapper {
+   background-color: sienna;
+   width: 90%;
+   margin-left: auto;
+   margin-right: auto;
+   text-align: center;
+
 }
 
 /*even sections with little info will have width*/
 .section {
-    min-height: 100vh;
+    min-height: 60%vh;
     background-color: white;
 }
 
@@ -151,40 +161,43 @@ container{
 /************************************************/
 /*quiz section for question of type1*/
 #qtype1-section {
-    background-color:red;
+  
+    
 }
 #qtype1-page{
     background-color:yellow;
 }
 
 #qtype1-image {
-    background-color: antiquewhite;
+    background-color: green;
 }
 
-#qtype1-question-row1
+#qtype1-question-1
 {
     background-color: grey;
 }
 #option1{
-    background-color: darkgrey;
+    background-color: purple;
+}
+#option2{
+    background-color: royalblue;
 }
 
-
 .type1button {
-    display:block;
+
     margin-top: 20px;
     min-width: 100px;
+
 }
 
 #qtype1Img {
-    width:400px;
-    height: 400px;
+    width:90%;
 }
 
 /************************************************/
 
 #qtype2-section {
-    background-color: gainsboro;
+    background-color: teal;
 }
 
 #qtype3-section {
@@ -195,16 +208,19 @@ container{
     background-color: darkseagreen;
 }
 
-#statubar {
+#statusbar {
+    background-color:brown; 
     text-align: center;
+    min-width:30px;
 }
 
 /************************************************/
 
 footer {
-    background-color: #DBB1CD;
+    background-color: #6B5B95;
     text-align: center;
-    height: 100px;
+    height: 50px;
+    margin-top:-25px;
 }
 
 div[class*='col-'] {

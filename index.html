@@ -16,6 +16,9 @@
 </head>
 
 <body>
+
+    <header>Beyond the black and white</header>
+
     <div id="hero-section">
         <div id="hero_wrapper">
             <img id="black_image" src="images/image_hero4_black.jpg" alt="Colour image" >
@@ -26,8 +29,12 @@
                 <p id="hero-sentence">How much do you know?</p>
                 <button id="quiz-start">Find out</button>
             </div>
+
         </div>
     </div>
+
+
+
     <!--
     <div class="row">
         <div class="col-4">
@@ -49,11 +56,10 @@
             </section>
     -->
 
+    <!---************ question type1 - 1 image and buttons ***************** -->
     <section id="qtype1-section" class="section">
             <div id="qtype1-page">
-                <p id="type1-question-number">Qnumber type1</p>
-                <p id="type1-question-text">Qnumber text</p>
-                <container>
+                <div class="width-wrapper">
                         <p id="type1-question-number">Qnumber type1</p>
                         <p id="type1-question-text">Qnumber text</p>
                     <div class="row" id="qtype1-question-row1">
@@ -61,13 +67,15 @@
                             <img id="qtype1Img" src="">
                         </div>
                         <div class="col-2" id="option2">
-                                        <button id="question1button" class="type1button"></button>
-                                        <button id="question2button" class="type1button"></button>
-                                        <button id="question3button" class="type1button"></button>
-                                        <button id="question4button" class="type1button"></button>
+                            <div id="t1-button-group">
+                            <button id="question1button" class="type1button"></button>
+                            <button id="question2button" class="type1button"></button>
+                            <button id="question3button" class="type1button"></button>
+                            <button id="question4button" class="type1button"></button>
+                        </div>
                         </div>
                     </div>
-                </container>
+                </div>
             </div>
         </section>
 
@@ -94,9 +102,11 @@
                 </div>
             </section>
         -->
-            <section id="qtype2-section" class="section">
+   <!---************ question type2 - two clickable images ***************** -->
+        
+        <section id="qtype2-section" class="section">
                 <div id="qtype2-page">
-                    <!--In here need to do css to align these side by side.-->
+
                     <p id="type2-question-number">Qnumber type2</p>
                     <container>
                         <div class="row" id="qtype2-question-row1">
@@ -110,6 +120,8 @@
                     </container>
                 </div>
             </section>
+
+<!---************ question type3 - four clickable cards with caption ***************** -->
             <section id="qtype3-section" class="section">
                 <div id="qtype3-page">
                     <p id="type3-question-number">Qnumber type3</p>
@@ -147,23 +159,35 @@
             </section>
         </div>
     </div>
-    <div class="row">
+  <!--  <div class="row">
         <div class="col-4">
             <button id="nextQuestion">Next</button>
         </div>
-    </div>
+    </div> -->
 
-    <section id="results-section">
+  <!--  <section id="results-section">
         <div id="results-page">
             <img src="images/image_hero3_color.jpg" alt="Colour image" width="80%">
             <p>
                 well done!! here is your results!<p>
         </div>
     </section>
-    <div id="progress-bar"></div>
-    <section id="statubar">status info goes here
+
+
+    <div id="qnav-section">
+            <button id="buttonNext">NextButton</button> 
+            scroll bar goes here!-->
+        <!--   <p>Hi from scroll ball</p>
+           <div id="scrollbar"></div>srcoll bar
+       
+           </div>
+       </div> 
+    <div id="progress-bar"></div>-->
+
+    <section id="statusbar">status info goes here
         <span id="answeredQuestions"></span>&nbsp;out of&nbsp;
         <span id="totalQuestions">questions</span>
+        <p>from status bar</p>
     </section>
   
       <footer role="contentinfo">
