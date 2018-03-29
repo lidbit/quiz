@@ -17,8 +17,9 @@ body{
 header{
     height:40px;
     color:white;
+
     text-align: center;
-    padding:1%;
+    padding:2%;
    
 }
 
@@ -31,14 +32,40 @@ button {
     width: 100px;
 }
 
-.width-wrapper {
-   background-color: sienna;
+/*****classes for elements in the quiz*/
+
+.page-container {
+   background-color: rgb(248, 186, 16);
    width: 90%;
    margin-left: auto;
    margin-right: auto;
    text-align: center;
-
 }
+
+.question-text
+{
+   background-color:aliceblue;
+   color:  #333;
+   font-size: 16px;
+   min-height: 40px;
+   padding-left:10px;
+   padding-right:10px;
+}
+/*to add styling to question images*/
+div.qcard {
+    background-color: aliceblue;
+    width: 100%;
+  /*  margin-left: auto;
+    margin-right: auto;
+    text-align: center;*/
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 3%;
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    text-align: center;
+
+  }
 
 /*even sections with little info will have width*/
 .section {
@@ -109,6 +136,7 @@ button {
     left: 10%;
     z-index: 3;
     text-align: center;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue
 
 }
 
@@ -158,40 +186,23 @@ button {
 #quiz-start:focus {
     outline: 0;
 }
-/************************************************/
-/*quiz section for question of type1*/
-#qtype1-section {
-  
-    
-}
-#qtype1-page{
-    background-color:yellow;
-}
+/**********************Question type1 one image 4 buttons**************************/
 
-#qtype1-image {
-    background-color: green;
+#tqtype1-buttons{
+    margin-right:20px;
+    margin-left:20px;
 }
-
-#qtype1-question-1
-{
-    background-color: grey;
-}
-#option1{
-    background-color: purple;
-}
-#option2{
-    background-color: royalblue;
-}
-
-.type1button {
-
-    margin-top: 20px;
-    min-width: 100px;
+/*
+.type1button {  
+    margin-right:20px;
+    margin-left:20px;
+}*/
+#qtext-container{
+    width:80%;
 
 }
-
 #qtype1Img {
-    width:90%;
+    width:80%;
 }
 
 /************************************************/

@@ -9,7 +9,7 @@ var question1 = {
     "id": "1",
     "type": "type1",
     "questionText": "We see our world in combination of three colours: red yellow blue. What about dogs? how many colours do they see?",
-    "imageUrl": "images/dog1_color.jpg",
+    "imageUrl": "images/dog2_color.jpg",
     "imageCaption": "caption",
     "answers": [{
             "choice": "Black and White",
