@@ -1,0 +1,119 @@
+/*
+website color palletes
+
+
+grey purple: #c8c3cc
+
+reybrown: #563f46
+
+greeins grey: #8ca3a3
+
+deep green: #484f4f
+
+
+Different Pallete
+
+
+teal: #5b9aa0
+
+light: #d6d4e0
+
+lilac: #b8a9c9
+
+deep purple: #622569
+
+
+/**/
+* {
+    box-sizing: border-box;
+}
+
+/*---------------------Setting up coloumns-----------------------------------*/
+
+div[class*='col-'] {
+    text-align: center;
+    padding: 5px;
+    display: inline-block;
+}
+
+div[class*='col-']>img {
+    cursor: pointer;
+}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+.row {
+    margin: 5px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.col-6>img {
+    cursor: pointer;
+}
+/*--------------------------------------------------------*/
+
+/* 
+    What does . mean? 
+    What is the difference between 
+    .body { background-color: red; } and just 
+    body { background-color: red; }  
+    There are class selectors, id selectors, element selectors and pseudo selectors
+    You are using class selector by using a . and needs to apply this class to an element
+*/
+body{
+    background-color:#8ca3a3;  
+}
+
+ .card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px; /* 5px rounded corners */
+    background-color: aliceblue;
+    min-height:600px
+
+}
+/* Add rounded corners to the top left and the top right corner of the image */
+
+/*style for image in the card*/
+/*#card-container{
+    width:80%;
+}*/
+#q1-image{
+    width:100%;
+}
+
+#question-container{
+
+    background-color: blanchedalmond;
+}
+
+h4{
+    marging-top:20px;
+}
+
+#button-group {
+    margin-top: 10px;
+    display: inline-flex;
+}
+
+.q1button {
+    float: left;
+    min-height: 40px;
+    padding:10px;
+}

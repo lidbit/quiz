@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="assets/css/styles_reset.css" rel="stylesheet" type="text/css"> 
+    <link href="assets/css/styles_old.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+    <script src="scripts/jquery-3.3.1.min.js"></script>
+    <script src="scripts/app.js" type="text/javascript"></script>
+   <!--fonts  -->
+     <link href="https://fonts.googleapis.com/css?family=Audiowide|Caveat|Courgette|Finger+Paint|Fredericka+the+Great|Nothing+You+Could+Do" rel="stylesheet">
+
+
+    <title>Colour Quiz</title>
+</head>
+
+<body>
+
+    <header>Beyond the black and white</header>
+
+    <div id="hero-section">
+        <div id="hero_wrapper">
+            <img id="black_image" src="images/image_hero4_black.jpg" alt="Colour image" >
+            <img id="color_image" src="images/image_hero4_color.jpg" alt="Colour image" >
+            <div id="hero-text-container">
+                <h1 id="hero-title">Colour</h1>
+                <!--<p id="app-sentence">Beyond the black and white</p>-->
+                <p id="hero-sentence">How much do you know?</p>
+                <button id="quiz-start">Find out</button>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <!--
+    <div class="row">
+        <div class="col-4">
+            <section id="name-section">
+                <div class="row">
+                    <div class="col-4">
+                        <div id="nameInput">
+                            <p>Hi what's your name?</p>
+                            <textarea id="usernameinput"></textarea>
+                        </div>
+                        <p id="namegreating">nice to meet you</p>
+                        <p id="name"></p>
+                        <p>
+                            <button id="startQuiz">start</button>
+                        </p>
+                    </div>
+                </div>
+
+            </section>
+    -->
+
+    <!---************ question type1 - 1 image and buttons ***************** -->
+  <!--  <section id="qtype1-section" class="section">
+            <div id="qtype1-page">
+                <div class="width-wrapper">
+                        <p id="type1-question-number">Qnumber type1</p>
+                        <p id="type1-question-text">Qnumber text</p>
+                    <div class="row" id="qtype1-question-row1">
+                        <div class="col-2" id="option1">
+                            <img id="qtype1Img" src="">
+                        </div>
+                        <div class="col-2" id="option2">
+                            <div id="t1-button-group">
+                            <button id="question1button" class="type1button"></button>
+                            <button id="question2button" class="type1button"></button>
+                            <button id="question3button" class="type1button"></button>
+                            <button id="question4button" class="type1button"></button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>-->
+
+
+            <section id="qtype1-section" class="section">
+                <div id="qtype1-page" class="page-container">
+                        <div id="question-wrapper" class="qcard">
+                            <div id="qtext-container" class="question-text">
+                               <p id="type1-question-number"></p>
+                               <p id="type1-question"></p>
+                            </div>  
+                            <div id="qtype1-image" >
+                                <img id="qtype1Img" src="">
+                             </div>
+                             <div id="qtype1-buttons">
+                                <button id="question1button"></button>
+                                <button id="question2button"></button>
+                                <button id="question3button"></button>
+                                <button id="question4button"></button>
+                             </div>
+                        </div>
+                </div>
+            </section>
+        
+   <!---************ question type2 - two clickable images ***************** -->
+        
+        <section id="qtype2-section" class="section">
+                <div id="qtype2-page" >
+                    <div id="qtext-container" class="question-text">
+                           <p id="type2-question-number"></p>
+                           <p id="type2-question"></p>
+                    </div>
+                    <container>
+                        <div class="row" id="qtype2-question-row1">
+                            <div class="col-2" id="option1">
+                                <img id="type2-img1" src="">
+                            </div>
+                            <div class="col-2" id="option2">
+                                <img id="type2-img2" src="">
+                            </div>
+                        </div>
+                    </container>
+                </div>
+            </section>
+
+<!---************ question type3 - four clickable cards with caption ***************** -->
+            <section id="qtype3-section" class="section">
+                <div id="qtype3-page">
+                    <p id="type3-question-number"></p>
+                    <p id="type3-question"></p>
+                    <container>
+                        <div class="row" id="qtype3-question-row1">
+                            <div class="col-2" id="qtype3-option1">
+                                <img id="qtype3Img1" src="" data-ans-val="">
+                                <p>
+                                    this is column4 + image + caption
+                                </p>
+                            </div>
+                            <div class="col-2" id="qtype3-option2">
+                                <img id="qtype3Img2" src="" data-ans-val="">
+                                <p>
+                                    this is column4 + image + caption
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row" id="question-row2">
+                            <div class="col-2" id="qtype3-option3">
+                                <img id="qtype3Img3" src="" data-ans-val="">
+                                <p>
+                                    this is column4 + image + caption
+                                </p>
+                            </div>
+                            <div class="col-2" id="qtype3-option4">
+                                <img id="qtype3Img4" src="" data-ans-val="">
+                                <p>
+                                    this is column4 + image + caption
+                                </p>
+                            </div>
+                        </div>
+                    </container>
+                </div>
+            </section>
+        </div>
+    </div>
+   <div class="row">
+        <div class="col-4">
+            <button id="nextQuestion">Next</button>
+        </div>
+    </div>
+
+  <!--  <section id="results-section">
+        <div id="results-page">
+            <img src="images/image_hero3_color.jpg" alt="Colour image" width="80%">
+            <p>
+                well done!! here is your results!<p>
+        </div>
+    </section>
+
+
+    <div id="qnav-section">
+            <button id="buttonNext">NextButton</button> 
+            scroll bar goes here!-->
+        <!--   <p>Hi from scroll ball</p>
+           <div id="scrollbar"></div>srcoll bar
+       
+           </div>
+       </div> 
+    <div id="progress-bar"></div>-->
+
+    <section id="statusbar">
+        <span id="answeredQuestions"></span>&nbsp;out of&nbsp;
+        <span id="totalQuestions">questions</span>
+        <p>from status bar</p>
+    </section>
+  
+      <footer role="contentinfo">
+        <p>&copy; copyright Lydia Douglas. All rights reserved</p>
+      </footer>
+</body>
+
+</html>

@@ -1,0 +1,295 @@
+/*styles for quiz app*/
+
+/*setting boxing: width and height not affected by changes in padding/border*/
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: #6B5B95;
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, sans-serif;
+    /*font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+*/
+}
+
+header {
+    height: 40px;
+    color: white;
+    text-align: center;
+    padding: 2%;
+}
+
+h1 {
+    color: #6F9FD8;
+}
+
+button {
+    background-color: #6F9FD8;
+    border-radius: 8px;
+    width: 100px;
+}
+
+/*****classes for elements in the quiz*/
+
+.page-container {
+    background-color: rgb(248, 186, 16);
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.question-text {
+    background-color: aliceblue;
+    color: #333;
+    font-size: 16px;
+    min-height: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/*to add styling to question images*/
+
+div.qcard {
+    background-color: aliceblue;
+    width: 100%;
+    /*  margin-left: auto;
+    margin-right: auto;
+    text-align: center;*/
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+/*even sections with little info will have width*/
+
+.section {
+    min-height: 60%vh;
+    background-color: white;
+}
+
+/******************** Hero section  ****************************/
+
+#hero-section {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/*container for hero  images*/
+
+#hero_wrapper {
+    position: relative;
+    left: 0px;
+    top: 0px;
+}
+
+/*hero images for animations*/
+
+#black_image {
+    position: relative;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+/*top image with colour*/
+
+#color_image {
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 2;
+}
+
+/*hero image animations */
+
+@keyframes blackFadeInOut {
+    0% {
+        opacity: 1;
+    }
+    45% {
+        opacity: 1;
+    }
+    55% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+#color_image {
+    animation-name: blackFadeInOut;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 6s;
+    animation-direction: alternate;
+}
+
+/*text near the hero image*/
+
+#hero-text-container {
+    position: absolute;
+    align-items: stretch;
+    top: 40%;
+    left: 10%;
+    z-index: 3;
+    text-align: center;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue
+}
+
+/*hero text*/
+
+#hero-title {
+    /*font-family: 'Akronim', cursive, sans-serif;*/
+    font-family: 'Fredericka the Great', cursive;
+    color: #6B5B95;
+    font-size: 66px;
+    letter-spacing: 0.3em;
+    margin-bottom: 30px;
+}
+
+/*tag line text under hero text*/
+
+#hero-sentence {
+    font-family: 'Nothing You Could Do', cursive;
+    color: #6F9FD8;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+/*start button*/
+
+#quiz-start {
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid #1b75f7;
+    border-radius: 8px;
+    color: #1b75f7;
+    font-size: 20px;
+    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 90%;
+    transition: background-color 0.5s, color 0.8s, transform 0.5s;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#quiz-start:hover {
+    background-color: #1b75f7;
+    color: #415c4d;
+    transform: scale(1.1) translate(1px, 1px);
+}
+
+#quiz-start:active {
+    outline: none;
+    border: none;
+}
+
+#quiz-start:focus {
+    outline: 0;
+}
+
+/**********************Question type1 one image 4 buttons**************************/
+
+#tqtype1-buttons {
+    text-align: left;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+/*
+.type1button {  
+    margin-right:20px;
+    margin-left:20px;
+}*/
+
+#qtext-container {
+    width: 100%;
+    text-align: center;
+}
+
+#qtype1Img {
+    width: 80%;
+}
+
+/************************************************/
+
+#qtype2-section {
+    background-color: teal;
+}
+
+#qtype3-section {
+    background-color: navajowhite;
+}
+
+#results-section {
+    background-color: darkseagreen;
+}
+
+#statusbar {
+    text-align: center;
+    min-width: 30px;
+}
+
+/************************************************/
+
+footer {
+    background-color: #6B5B95;
+    text-align: center;
+    height: 50px;
+}
+
+div[class*='col-'] {
+    text-align: center;
+    padding: 5px;
+    display: inline-block;
+}
+
+div[class*='col-']>img {
+    cursor: pointer;
+}
+
+.col-1 {
+    float: left;
+    width: 25%;
+}
+
+.col-2 {
+    float: left;
+    width: 50%;
+}
+
+.col-3 {
+    float: left;
+    width: 75%;
+}
+
+.col-4 {
+    float: left;
+    width: 100%;
+}
+
+.row {
+    margin: 5px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.col-2>img {
+    cursor: pointer;
+}
