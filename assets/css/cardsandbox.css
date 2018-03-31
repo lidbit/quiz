@@ -47,6 +47,15 @@ p{
     color:#27496d;
 }
 
+#quiz-header{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 36px;
+    color:white; 
+    background-color:#6B5B95;
+
+}
+
+
 /*---------------------Setting up coloumns-----------------------------------*/
 
 div[class*='col-'] {
@@ -95,9 +104,6 @@ div[class*='col-']>img {
     There are class selectors, id selectors, element selectors and pseudo selectors
     You are using class selector by using a . and needs to apply this class to an element
 */
-
-
-
 
  .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
