@@ -12,21 +12,21 @@ var question1 = {
     "imageUrl": "images/dog2_color.jpg",
     "imageCaption": "caption",
     "answers": [{
-            "choice": "Black and White",
-            "correct": false
-        },
-        {
-            "choice": "Combination of 2 Colours",
-            "correct": true
-        },
-        {
-            "choice": "Combination of 3 Colours",
-            "correct": false
-        },
-        {
-            "choice": "Combination of 4 colours",
-            "correct": false
-        }
+        "choice": "Black and White",
+        "correct": false
+    },
+    {
+        "choice": "Combination of 2 Colours",
+        "correct": true
+    },
+    {
+        "choice": "Combination of 3 Colours",
+        "correct": false
+    },
+    {
+        "choice": "Combination of 4 colours",
+        "correct": false
+    }
     ]
 };
 
@@ -34,15 +34,16 @@ var question2 = {
     "id": "2",
     "type": "type2",
     "questionText": "What are three primary numbers?",
+    imageUrl: "images/tomato_black_600.jpg",
     "answers": [{
-            "imageUrl": "images/tomato_black_600.jpg",
-            "correct": false
+        "imageUrl": "images/tomato_black_600.jpg",
+        "correct": false
 
-        },
-        {
-            "imageUrl": "images/tomato_color_600.jpg",
-            "correct": true
-        },
+    },
+    {
+        "imageUrl": "images/tomato_color_600.jpg",
+        "correct": true
+    },
     ]
 };
 
@@ -53,21 +54,21 @@ var question3 = {
     "imageUrl": "images/colour2018.jpg",
     "imageCaption": "caption",
     "answers": [{
-            "imageUrl": "images/meadowlank2018.jpg",
-            "correct": false
-        },
-        {
-            "imageUrl": "images/littleboyblue2018.jpg",
-            "correct": false
-        },
-        {
-            "imageUrl": "images/cherry_tomato2018.jpg",
-            "correct": false
-        },
-        {
-            "imageUrl": "images/colour2018.jpg",
-            "correct": true
-        }
+        "imageUrl": "images/meadowlank2018.jpg",
+        "correct": false
+    },
+    {
+        "imageUrl": "images/littleboyblue2018.jpg",
+        "correct": false
+    },
+    {
+        "imageUrl": "images/cherry_tomato2018.jpg",
+        "correct": false
+    },
+    {
+        "imageUrl": "images/colour2018.jpg",
+        "correct": true
+    }
     ]
 };
 
@@ -77,7 +78,7 @@ questions.push(question2);
 questions.push(question3);
 
 //calling init function
-$(document).ready(function() {
+$(document).ready(function () {
     init();
 });
 
@@ -99,18 +100,18 @@ function init() {
     $("#nextQuestion").hide();
 
     //when user clicks start quiz nutton hide all sections and load question
-    $("#quiz-start").click(function() {
+    $("#quiz-start").click(function () {
         hideAllSections();
         //username = $("#usernameinput").val();
         //$("#name").html(username);
-       // $("#nameInput").hide();
+        // $("#nameInput").hide();
         $("#quiz-start").hide();
         loadQuestion();
         $("#nextQuestion").show();
     });
 
     //when next button is clicked load next question, if test finished load answers 
-    $("#nextQuestion").click(function() {
+    $("#nextQuestion").click(function () {
         if (currentQuestion < questions.length) {
             $("#nextQuestion").html("Next");
             loadQuestion(currentQuestion);
@@ -152,7 +153,7 @@ function appendTextExample() {
 }
 
 function loadQuestion(index) {
-    if (typeof(index) === 'undefined' || index === null) {
+    if (typeof (index) === 'undefined' || index === null) {
         index = 0;
     }
     var question = questions[index];
@@ -180,16 +181,16 @@ function loadQuestion(index) {
         qOneButton3.unbind("click");
         qOneButton4.unbind("click");
 
-        qOneButton1.click(function() {
+        qOneButton1.click(function () {
             checkAnswer(this);
         });
-        qOneButton2.click(function() {
+        qOneButton2.click(function () {
             checkAnswer(this);
         });
-        qOneButton3.click(function() {
+        qOneButton3.click(function () {
             checkAnswer(this);
         });
-        qOneButton4.click(function() {
+        qOneButton4.click(function () {
             checkAnswer(this);
         });
 
@@ -206,11 +207,11 @@ function loadQuestion(index) {
         img1.unbind("click");
         img2.unbind("click");
 
-        img1.click(function() {
+        img1.click(function () {
             console.log("img1 clicked");
         });
 
-        img2.click(function() {
+        img2.click(function () {
             console.log("img2 clicked");
         });
 
@@ -229,16 +230,16 @@ function loadQuestion(index) {
         $("#qtype3Img3").unbind("click");
         $("#qtype3Img4").unbind("click");
 
-        $("#qtype3Img1").click(function() {
+        $("#qtype3Img1").click(function () {
             checkAnswer(this);
         });
-        $("#qtype3Img2").click(function() {
+        $("#qtype3Img2").click(function () {
             checkAnswer(this);
         });
-        $("#qtype3Img3").click(function() {
+        $("#qtype3Img3").click(function () {
             checkAnswer(this);
         });
-        $("#qtype3Img4").click(function() {
+        $("#qtype3Img4").click(function () {
             checkAnswer(this);
         });
 

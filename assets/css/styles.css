@@ -288,7 +288,23 @@ img {
     padding: 10px;
 }
 
-button {
+#nextQuestion > button {
+    float: right;
+    cursor: pointer;
+    display: block;
+    margin: 0 10px 0 0;
+    font-size: 24px;
+    line-height: 1.1;
+    box-shadow: none;
+    border-radius: 0;
+    color: #fff;
+    background-color: #6496c8;
+    text-shadow: -1px 1px #417cb8;
+    border: none;
+    height: 40px;
+}
+
+.baseButton {
     cursor: pointer;
     display: inline-block;
     margin: 0 10px 0 0;
@@ -303,22 +319,23 @@ button {
     height: 40px;
 }
 
-button :focus {
+#nextQuestion > button:focus {
     outline: none;
 }
 
-button :hover {
+#nextQuestion > button:hover {
     background-color: #346392;
     text-shadow: -1px 1px #27496d;
 }
 
-button :active {
+#nextQuestion > button:active {
     background-color: #346392;
     text-shadow: -1px 1px #27496d;
 }
+
+
 
 /*********end card section****************/
-
 footer {
     background-color: #6B5B95;
     text-align: center;

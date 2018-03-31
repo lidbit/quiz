@@ -1,71 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link href="assets/css/styles_reset.css" rel="stylesheet" type="text/css"> 
+    <link href="assets/css/styles_reset.css" rel="stylesheet" type="text/css">
     <link href="assets/css/styles.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
     <script src="scripts/jquery-3.3.1.min.js"></script>
     <script src="scripts/app.js" type="text/javascript"></script>
-   <!--fonts  -->
-     <link href="https://fonts.googleapis.com/css?family=Audiowide|Caveat|Courgette|Finger+Paint|Fredericka+the+Great|Nothing+You+Could+Do" rel="stylesheet">
-
-
+    <!--fonts  -->
+    <link href="https://fonts.googleapis.com/css?family=Audiowide|Caveat|Courgette|Finger+Paint|Fredericka+the+Great|Nothing+You+Could+Do"
+        rel="stylesheet">
     <title>Colour Quiz</title>
 </head>
+
 <body>
     <!--<header>Colour your live!</header>-->
 
     <div id="hero-section">
         <div id="hero_wrapper">
-            <img id="black_image" src="images/image_hero3_black.jpg" alt="Colour image" >
-            <img id="color_image" src="images/image_hero3_color.jpg" alt="Colour image" >
+            <img id="black_image" src="images/image_hero3_black.jpg" alt="Colour image">
+            <img id="color_image" src="images/image_hero3_color.jpg" alt="Colour image">
             <div id="hero-text-container">
                 <h1 id="hero-title">Colour</h1>
                 <p id="hero-sentence">How much do you know?</p>
                 <button id="quiz-start">Find out</button>
             </div>
-
         </div>
     </div>
 
-<!-- questiontype1-->
-     <!-- header-->
-     <div id="quiz-header" class="col-12">Colour Quiz</div>
-    
-        <!-- question type one card -->
-        <div class="row">
-            <div class="col-2"></div>
-            <div class="col-8"> 
-                <div class="card">
-                     <div="card-container">
-                        <img id="q1-image" src="images/dog_sees.jpg" alt="question image">
-                        <div id="question-container">
-                                <!--<h4><b>Question 1</b></h4>-->
-                                <p>How many colours can you see?</p>
-                        </div> 
-                        <div id="button-group">
-                            <div class="q1button-container"><button id="q1buton1" >3 colours</button></div>
-                            <div class="q1button-container"><button id="q1button2" >2 colours</button></div>
-                            <div class="q1button-container"><button id="q1button3" >only black and white</button></div>
-                            <div class="q1button-container"><button id="q1button4" >4 colours</button></div>
+    <!-- questiontype1-->
+    <!-- header-->
+    <div id="quiz-header" class="col-12">Colour Quiz</div>
+
+    <!-- question type one card -->
+    <div id="qtype1-section" class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <div class="card">
+                <div="card-container">
+                    <img id="q1-image" src="images/dog_sees.jpg" alt="question image">
+                    <div id="question-container">
+                        <p>How many colours can you see?</p>
+                    </div>
+                    <div id="button-group">
+                        <div class="q1button-container">
+                            <button class="baseButton" id="q1buton1">3 colours</button>
+                        </div>
+                        <div class="q1button-container">
+                            <button class="baseButton" id="q1button2">2 colours</button>
+                        </div>
+                        <div class="q1button-container">
+                            <button class="baseButton" id="q1button3">only black and white</button>
+                        </div>
+                        <div class="q1button-container">
+                            <button class="baseButton" id="q1button4">4 colours</button>
                         </div>
                     </div>
-                </div> 
             </div>
-            <div class="col-2"> <button>"NEXT >"</button> </div>
         </div>
-        
+    </div>
+    </div>
+    <div id="nextQuestion" class="col-12">
+        <button class="baseButton">NEXT ></button>
+    </div>
 
-
-
-
-    <!--footer-->    
+    <!--footer-->
     <footer role="contentinfo">
-         <p>&copy; copyright Lydia Douglas. 2018</p>
+        <p>&copy; copyright Lydia Douglas. 2018</p>
     </footer>
 </body>
+
 </html>
