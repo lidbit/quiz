@@ -88,13 +88,13 @@ body {
     /*font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 */
 }
-
+/*
 header {
     height: 40px;
     color: white;
     text-align: center;
     padding: 2%;
-}
+} */
 
 h1 {
     color: #6F9FD8;
@@ -108,7 +108,7 @@ h4 {
 }
 
 p {
-    margin-top: 20px;
+    /* margin-top: 20px; */
     font-size: 22px;
     color: #27496d;
 }
@@ -176,19 +176,17 @@ p {
 }
 
 /*text near the hero image*/
-
 #hero-text-container {
     position: absolute;
     align-items: stretch;
-    top: 40%;
-    left: 38%;
+    top: 30%;
+    left: 36%;
     z-index: 3;
     text-align: center;
     text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue
 }
 
 /*hero text*/
-
 #hero-title {
     /*font-family: 'Akronim', cursive, sans-serif;*/
     font-family: 'Fredericka the Great', cursive;
@@ -217,7 +215,7 @@ p {
     color: #1b75f7;
     font-size: 20px;
     font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    width: 90%;
+    width: 60%;
     transition: background-color 0.5s, color 0.8s, transform 0.5s;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -243,11 +241,17 @@ p {
 /********header************/
 
 #quiz-header {
-    font-family: 'Courier New', Courier, monospace;
+    /*font-family: 'Courier New', Courier, monospace;
     font-size: 36px;
     color: white;
     background-color: #6B5B95;
-    min-height: 8vh;
+    min-height: 8vh;*/
+    font-family: 'Fredericka the Great', cursive;
+    color: #6B5B95;
+    font-size: 66px;
+    letter-spacing: 0.3em;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 /*****card setion******/
@@ -269,7 +273,7 @@ img {
 
 /*style for image in the card*/
 
-#q1-image {
+#qtype1Img {
     width: 100%;
 }
 
@@ -293,6 +297,7 @@ img {
     cursor: pointer;
     display: block;
     margin: 0 10px 0 0;
+    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 24px;
     line-height: 1.1;
     box-shadow: none;
@@ -308,7 +313,8 @@ img {
     cursor: pointer;
     display: inline-block;
     margin: 0 10px 0 0;
-    font-size: 24px;
+    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 22px;
     line-height: 1.1;
     box-shadow: none;
     border-radius: 0;
@@ -337,7 +343,8 @@ img {
 
 /*********end card section****************/
 footer {
+    padding-top: 100px;
+    height: 200px;
     background-color: #6B5B95;
     text-align: center;
-    min-height: 10vh;
 }

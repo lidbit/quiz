@@ -8,8 +8,33 @@ var currentQuestion = 0;
 var question1 = {
     "id": "1",
     "type": "type1",
-    "questionText": "We see our world in combination of three colours: red yellow blue. What about dogs? how many colours do they see?",
+    "questionText": "How how many colours do dogs see?",
     "imageUrl": "images/dog2_color.jpg",
+    "imageCaption": "caption",
+    "answers": [{
+        "choice": "Black and White",
+        "correct": false
+    },
+    {
+        "choice": "2 Colours",
+        "correct": true
+    },
+    {
+        "choice": "3 Colours",
+        "correct": false
+    },
+    {
+        "choice": "4 colours",
+        "correct": false
+    }
+    ]
+};
+/*
+var question2 = {
+    "id": "2",
+    "type": "type1",
+    "questionText": "The importance of colour. Which of these tomotoes are ripe?",
+    "imageUrl": "images/tomato_black_600.jpg",
     "imageCaption": "caption",
     "answers": [{
         "choice": "Black and White",
@@ -28,7 +53,8 @@ var question1 = {
         "correct": false
     }
     ]
-};
+};*/
+
 
 var question2 = {
     "id": "2",
@@ -90,6 +116,12 @@ function hideAllSections() {
     $("#results-section").hide();
     $("#hero-section").hide();
 }
+
+function hideQuestionbase(){
+    $("#quiz-header").hide();
+    $("#nextQuestion").hide();
+}
+
 //initialising document
 function init() {
     $("#statubar").hide();
@@ -97,9 +129,10 @@ function init() {
     $("#qtype1-section").hide();
     $("#qtype2-section").hide();
     $("#qtype3-section").hide();
+    $("#quiz-header").hide();
     $("#nextQuestion").hide();
 
-    //when user clicks start quiz nutton hide all sections and load question
+    //when user clicks start quiz button hide all sections and load question
     $("#quiz-start").click(function () {
         hideAllSections();
         //username = $("#usernameinput").val();
@@ -159,7 +192,7 @@ function loadQuestion(index) {
     var question = questions[index];
 
     if (question.type === "type1") {
-        $(".section").hide();
+        $(".section").hide();//update this code since not using section class
         // update div values and show div
 
         var questionText = $("#type1-question");
