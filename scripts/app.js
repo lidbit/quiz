@@ -10,7 +10,7 @@ var question1 = {
     "id": "1",
     "type": "type1",
     "questionText": "How how many colours do dogs see?",
-    "imageUrl": "images/dog2_color.jpg",
+    "imageUrl": "images/dog_sees.jpg",
     "imageCaption": "caption",
     "answers": [{
         "choice": "Black and White",
@@ -104,6 +104,7 @@ questions.push(question2);
 questions.push(question3);
 questions.push(question4);
 
+//progress bar related info
 var totalSteps = questions.length;
 var stepSize = (1 / totalSteps) * 100;
 
@@ -111,6 +112,7 @@ var stepSize = (1 / totalSteps) * 100;
 $(document).ready(function () {
     init();
 });
+
 
 function updateProgress() {
     var progress = $("#progress-data");
@@ -127,13 +129,15 @@ function resetProgress() {
 }
 
 function resetQuiz() {
+    //making sure the next button is set
     $("#nextQuestion > button").text("Next");
+    //setting event listener
     $("#nextQuestion > button").click(moveNextQuestion);
     currentQuestion = 0;
     resetProgress();
 }
 
-//hiding all sections expect the scroll section
+//hiding all sections not needed for current question
 function hideAllSections() {
     $("#qtype1-section").hide();
     $("#qtype2-section").hide();
@@ -142,17 +146,18 @@ function hideAllSections() {
     $("#hero-section").hide();
 }
 
-function hideQuestionbase() {
-    $("#quiz-header").hide();
-    $("#orientation").hide();
-}
-
+/*checking if not at the end of quiz load question,
+ if are at the end of quiz then change button to restart quiz
+ and load answers
+ */  
 var moveNextQuestion = function() {
     if (currentQuestion < questions.length) {
-        //$("#nextQuestion > button").text("Next >");
-        loadQuestion(currentQuestion);
         currentQuestion++;
         updateProgress();
+        //show how many questions been answered
+        $("#orientation").show();
+         updatestatusMessage(currentQuestion, questions.length)
+        loadQuestion(currentQuestion);
     } else {
         hideAllSections();
         $("#nextQuestion > button").text("Restart");
@@ -162,13 +167,11 @@ var moveNextQuestion = function() {
         loadAnswers();
         $("#results-section").show();
         currentQuestion = 0;
-        resetProgress()
+        resetProgress();
     }
 
-    //show how many questions been answered
-    $("#orientation").show();
-    updatestatusMessage(currentQuestion, questions.length)
-    /*updateStatus();*/
+
+   
 };
 
 //initialising document
@@ -184,9 +187,6 @@ function init() {
     //when user clicks start quiz button hide all sections and load question
     $("#quiz-start").click(function () {
         hideAllSections();
-        //username = $("#usernameinput").val();
-        //$("#name").html(username);
-        // $("#nameInput").hide();
         $("#quiz-start").hide();
         loadQuestion();
         $("#orientation").show();
@@ -202,6 +202,8 @@ function updateStatus() {
     $("#totalQuestions").html(questions.length);
 }*/
 
+
+//orientaion info for user
 function updatestatusMessage(answeredQs, totalQs) {
     var messagetext = "Answered " + answeredQs + " out of " + totalQs + " questions.";
     $("#status-message").html(messagetext);
@@ -221,9 +223,10 @@ function loadQuestion(index) {
     if (typeof (index) === 'undefined' || index === null) {
         index = 0;
     }
+    /*set first question*/
     var question = questions[index];
     hideAllSections();
-    /*question area is the same for all questions*/
+    /*question area appears in all questions*/
     var questionText = $(".question-text");
     questionText.html(question.questionText);
 

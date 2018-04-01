@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <!--<header>Colour your live!</header>-->
+    <!--hero view - what user sees first-->
 
     <div id="hero-section">
         <div id="hero_wrapper">
@@ -32,39 +32,42 @@
         </div>
     </div>
 
-    <!-- questiontype1-->
-    <!-- header-->
+    <!-- header appear for all questions and at the end of the quiz-->
     <div id="quiz-header" class="col-12">Colour Quiz</div>
-
+   
+   
+   
+    <!--############# questiontype1 ################-->
     <!-- question type one card -->
     <div id="qtype1-section" class="row">
-        <div class="col-2"></div>
-        <div class="col-8">
+        <div class="col-1"></div>
+        <div class="col-10">
             <div class="card">
                 <div class="card-container">
-
-                    <img id="qtype1Img" src="images/dog_sees.jpg" alt="question image">
+                    <div class="t1-image-wrapper">
+                        <img id="qtype1Img" src="" alt="question image">
+                    </div>
                     <div class="question-container">
                         <p class="question-text">How many colours can you see?</p>
                     </div>
                     <div id="button-group">
                         <div class="q1button-container">
-                            <button class="baseButton" id="question1button">3 colours</button>
+                            <button class="baseButton" id="question1button"></button>
                         </div>
                         <div class="q1button-container">
-                            <button class="baseButton" id="question2button">2 colours</button>
+                            <button class="baseButton" id="question2button"></button>
                         </div>
                         <div class="q1button-container">
-                            <button class="baseButton" id="question3button">only black and white</button>
+                            <button class="baseButton" id="question3button"></button>
                         </div>
                         <div class="q1button-container">
-                            <button class="baseButton" id="question4button">4 colours</button>
+                            <button class="baseButton" id="question4button"></button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-2"></div>
+        <div class="col-1"></div>
     </div>
     <!-- question type two card -->
     <div id="qtype2-section" class="row">
@@ -114,28 +117,45 @@
         </div>
         <div class="col-1"></div>
     </div>
-    <div class="col-2"></div>
-    <div class="col-8">
-        <div id="progress">
-            <div id="progress-data">
 
+    <div id="answer-section" class="row">
+        <div class="col-1"></div>
+        <div class="col-8">
+                <div class="card">
+                        <div class="card-container">
+                            <div class="t1-image-wrapper">
+                                <img id="atype1Img" src="images/meadowlank2018.jpg" alt="answer image">
+                            </div>
+                            <div class="answer-container">
+                                <p class="answer-text">How many colours can you see?</p>
+                            </div>
+                            
+                        </div>
+                </div>
+        </div>
+        <div class="col-1"></div>
+    <div>
+
+
+
+
+    <!-- orientation -->
+    <div id="orientation" class="row">
+        <div class="col-2"></div>
+        <div id="statusbar" class="col-6">
+            <p id="status-message">this is status message</p>
+            <div id="progress">
+                <div id="progress-data"></div>
             </div>
         </div>
-    </div>
-    <div class="col-2"></div>
-
-    <!-- question -->
-    <div id="orientation" class="row">
         <div class="col-1"></div>
-        <div id="statusbar" class="col-8">
-            <p id="status-message">this is status message</p>
-        </div>
         <div id="nextQuestion" class="col-2">
             <button class="baseButton">Next ></button>
         </div>
         <div class="col-1"></div>
     </div>
 
+    <!--results bar-->
     <div id="results-section" class="row">
         <div class="col-1"></div>
         <div id="results-text" class="col-10">
