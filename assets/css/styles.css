@@ -265,6 +265,19 @@ p {
     min-height: 400px;
 }
 
+#progress {
+    width: 100%;
+    height: 20px;
+    display: inline-block;
+    background-color: white
+}
+
+#progress-data {
+    min-height: 20px;
+    background-color: green;
+    width: 0%;
+    content: ' ';
+}
 
 /* Add rounded corners to the top left and the top right corner of the image */
 

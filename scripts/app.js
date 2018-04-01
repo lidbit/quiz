@@ -1,5 +1,6 @@
 var questions = [];
 var answers = [];
+var progressValue = 0;
 //corectanswers?
 var currentQuestion = 0;
 //var username = "";
@@ -103,10 +104,34 @@ questions.push(question2);
 questions.push(question3);
 questions.push(question4);
 
+var totalSteps = questions.length;
+var stepSize = (1 / totalSteps) * 100;
+
 //calling init function
 $(document).ready(function () {
     init();
 });
+
+function updateProgress() {
+    var progress = $("#progress-data");
+    if (progressValue <= 100) {
+        progressValue += stepSize;
+        progress.width(progressValue + "%");
+    }
+}
+
+function resetProgress() {
+    var progress = $("#progress-data");
+    progressValue = 0;
+    progress.width(progressValue + "%");
+}
+
+function resetQuiz() {
+    $("#nextQuestion > button").text("Next");
+    $("#nextQuestion > button").click(moveNextQuestion);
+    currentQuestion = 0;
+    resetProgress();
+}
 
 //hiding all sections expect the scroll section
 function hideAllSections() {
@@ -117,20 +142,44 @@ function hideAllSections() {
     $("#hero-section").hide();
 }
 
-function hideQuestionbase(){
+function hideQuestionbase() {
     $("#quiz-header").hide();
-    $("#nextQuestion").hide();
+    $("#orientation").hide();
 }
+
+var moveNextQuestion = function() {
+    if (currentQuestion < questions.length) {
+        //$("#nextQuestion > button").text("Next >");
+        loadQuestion(currentQuestion);
+        currentQuestion++;
+        updateProgress();
+    } else {
+        hideAllSections();
+        $("#nextQuestion > button").text("Restart");
+        $("#nextQuestion > button").click(function(){
+            resetQuiz();
+        });
+        loadAnswers();
+        $("#results-section").show();
+        currentQuestion = 0;
+        resetProgress()
+    }
+
+    //show how many questions been answered
+    $("#orientation").show();
+    updatestatusMessage(currentQuestion, questions.length)
+    /*updateStatus();*/
+};
 
 //initialising document
 function init() {
-    $("#statubar").hide();
-    $("#results-section").hide();
+    $("#results-section").hide();  //results section or results page - need to decide
     $("#qtype1-section").hide();
     $("#qtype2-section").hide();
     $("#qtype3-section").hide();
     $("#quiz-header").hide();
-    $("#nextQuestion").hide();
+    $("#orientation").hide();
+    $("#results-page").hide();
 
     //when user clicks start quiz button hide all sections and load question
     $("#quiz-start").click(function () {
@@ -140,34 +189,24 @@ function init() {
         // $("#nameInput").hide();
         $("#quiz-start").hide();
         loadQuestion();
-        $("#nextQuestion").show();
+        $("#orientation").show();
         $("#quiz-header").show();
     });
 
     //when next button is clicked load next question, if test finished load answers 
-    $("#nextQuestion").click(function () {
-        if (currentQuestion < questions.length) {
-            //$("#nextQuestion > button").text("Next >");
-            loadQuestion(currentQuestion);
-            currentQuestion++;
-        } else {
-            hideAllSections();
-            $("#nextQuestion > button").text("Restart");
-            loadAnswers();
-            $("#results-section").show();
-            currentQuestion = 0;
-        }
-
-        //show how many questions been answered
-        $("#statusbar").show();
-        updateStatus();
-    });
+    $("#nextQuestion > button").click(moveNextQuestion);
 }
-
+/*
 function updateStatus() {
     $("#answeredQuestions").html(currentQuestion);
     $("#totalQuestions").html(questions.length);
+}*/
+
+function updatestatusMessage(answeredQs, totalQs) {
+    var messagetext = "Answered " + answeredQs + " out of " + totalQs + " questions.";
+    $("#status-message").html(messagetext);
 }
+
 
 // TODO
 function loadAnswers() {
@@ -176,14 +215,6 @@ function loadAnswers() {
         const element = answers[index];
         $("#results-page").append(ansElement);
     }
-}
-
-function appendTextExample() {
-    var txt1 = "<p>Text.</p>"; // Create element with HTML  
-    var txt2 = $("<p></p>").text("Text."); // Create with jQuery
-    var txt3 = document.createElement("p"); // Create with DOM
-    txt3.innerHTML = "Text.";
-    $("body").append(txt1, txt2, txt3); // Append the new elements 
 }
 
 function loadQuestion(index) {
@@ -196,7 +227,6 @@ function loadQuestion(index) {
     var questionText = $(".question-text");
     questionText.html(question.questionText);
 
-
     if (question.type === "type1") {
 
         var img = $("#qtype1Img");
@@ -207,9 +237,13 @@ function loadQuestion(index) {
         var qOneButton3 = $("#question3button");
         var qOneButton4 = $("#question4button");
         qOneButton1.html(question.answers[0].choice);
+        qOneButton1.attr("data-ans-val", question.answers[0].correct);
         qOneButton2.html(question.answers[1].choice);
+        qOneButton2.attr("data-ans-val", question.answers[1].correct);
         qOneButton3.html(question.answers[2].choice);
+        qOneButton3.attr("data-ans-val", question.answers[2].correct);
         qOneButton4.html(question.answers[3].choice);
+        qOneButton4.attr("data-ans-val", question.answers[3].correct);
 
         qOneButton1.unbind("click");
         qOneButton2.unbind("click");
@@ -235,26 +269,32 @@ function loadQuestion(index) {
         var img2 = $("#type2-img2");
 
         img1.prop("src", question.answers[0].imageUrl);
+        img1.attr("data-ans-val", question.answers[0].correct);
         img2.prop("src", question.answers[1].imageUrl);
+        img2.attr("data-ans-val", question.answers[1].correct);
 
         img1.unbind("click");
         img2.unbind("click");
 
         img1.click(function () {
-            console.log("img1 clicked");
+            checkAnswer(this);
         });
 
         img2.click(function () {
-            console.log("img2 clicked");
+            checkAnswer(this);
         });
 
 
         $("#qtype2-section").show();
     } else if (question.type === "type3") {
         $("#qtype3Img1").prop("src", question.answers[0].imageUrl);
+        $("#qtype3Img1").attr("data-ans-val", question.answers[0].correct);
         $("#qtype3Img2").prop("src", question.answers[1].imageUrl);
+        $("#qtype3Img2").attr("data-ans-val", question.answers[0].correct);
         $("#qtype3Img3").prop("src", question.answers[2].imageUrl);
+        $("#qtype3Img3").attr("data-ans-val", question.answers[0].correct);
         $("#qtype3Img4").prop("src", question.answers[3].imageUrl);
+        $("#qtype3Img4").attr("data-ans-val", question.answers[0].correct);
 
         $("#qtype3Img1").unbind("click");
         $("#qtype3Img2").unbind("click");
@@ -280,6 +320,9 @@ function loadQuestion(index) {
 
 // TODO
 function checkAnswer(element) {
-    $(element).attr("data-ans-val", true);
-    answers.push($(element).attr("data-ans-val"));
+    var answerResult = $(element).attr("data-ans-val")
+    console.log($(element).attr("data-ans-val"));
+    if (answerResult) {
+        answers.push(1);
+    }
 }
