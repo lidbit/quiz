@@ -147,7 +147,7 @@ function init() {
     //when next button is clicked load next question, if test finished load answers 
     $("#nextQuestion").click(function () {
         if (currentQuestion < questions.length) {
-            $("#nextQuestion > button").text("Next");
+            //$("#nextQuestion > button").text("Next >");
             loadQuestion(currentQuestion);
             currentQuestion++;
         } else {
