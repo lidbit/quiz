@@ -262,8 +262,9 @@ p {
     border-radius: 5px;
     /* 5px rounded corners */
     background-color: aliceblue;
-    min-height: 600px
+    min-height: 400px;
 }
+
 
 /* Add rounded corners to the top left and the top right corner of the image */
 
@@ -277,8 +278,12 @@ img {
     width: 100%;
 }
 
-#question-container {
+.question-container {
     margin-top: 10px;
+}
+
+.question-container > p {
+    padding-bottom: 20px;
 }
 
 #button-group {
@@ -324,7 +329,7 @@ img {
     border: none;
     height: 40px;
 }
-
+/*********end card section****************/
 #nextQuestion > button:focus {
     outline: none;
 }
@@ -340,8 +345,22 @@ img {
 }
 
 
+.image-group{
+    display: flex;
+    margin-bottom: 10px;
 
-/*********end card section****************/
+}
+.image-wrapper {
+    display:inline-block;
+    background-color: cadetblue;
+    width:49%;
+    margin-top:3%;
+}
+
+.images{
+    width: 70%;
+}
+
 footer {
     padding-top: 100px;
     height: 200px;

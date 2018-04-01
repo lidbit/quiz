@@ -29,7 +29,7 @@ var question1 = {
     }
     ]
 };
-/*
+
 var question2 = {
     "id": "2",
     "type": "type1",
@@ -37,37 +37,36 @@ var question2 = {
     "imageUrl": "images/tomato_black_600.jpg",
     "imageCaption": "caption",
     "answers": [{
-        "choice": "Black and White",
+        "choice": "drerf",
         "correct": false
     },
     {
-        "choice": "Combination of 2 Colours",
+        "choice": "crtvce",
         "correct": true
     },
     {
-        "choice": "Combination of 3 Colours",
+        "choice": " ntyrbdv",
         "correct": false
     },
     {
-        "choice": "Combination of 4 colours",
+        "choice": " tbdfvds",
         "correct": false
     }
     ]
-};*/
+};
 
 
-var question2 = {
+var question4 = {
     "id": "2",
     "type": "type2",
     "questionText": "What are three primary numbers?",
     imageUrl: "images/tomato_black_600.jpg",
     "answers": [{
-        "imageUrl": "images/tomato_black_600.jpg",
+        "imageUrl": "images/frog_image.jpg",
         "correct": false
-
     },
     {
-        "imageUrl": "images/tomato_color_600.jpg",
+        "imageUrl": "images/frog_image.jpg",
         "correct": true
     },
     ]
@@ -102,6 +101,7 @@ var question3 = {
 questions.push(question1);
 questions.push(question2);
 questions.push(question3);
+questions.push(question4);
 
 //calling init function
 $(document).ready(function () {
@@ -141,17 +141,18 @@ function init() {
         $("#quiz-start").hide();
         loadQuestion();
         $("#nextQuestion").show();
+        $("#quiz-header").show();
     });
 
     //when next button is clicked load next question, if test finished load answers 
     $("#nextQuestion").click(function () {
         if (currentQuestion < questions.length) {
-            $("#nextQuestion").html("Next");
+            $("#nextQuestion > button").text("Next");
             loadQuestion(currentQuestion);
             currentQuestion++;
         } else {
             hideAllSections();
-            $("#nextQuestion").html("Restart");
+            $("#nextQuestion > button").text("Restart");
             loadAnswers();
             $("#results-section").show();
             currentQuestion = 0;
@@ -190,13 +191,14 @@ function loadQuestion(index) {
         index = 0;
     }
     var question = questions[index];
+    hideAllSections();
+    /*question area is the same for all questions*/
+    var questionText = $(".question-text");
+    questionText.html(question.questionText);
+
 
     if (question.type === "type1") {
-        $(".section").hide();//update this code since not using section class
-        // update div values and show div
 
-        var questionText = $("#type1-question");
-        questionText.html(question.questionText);
         var img = $("#qtype1Img");
         img.prop("src", question.imageUrl);
 
@@ -229,8 +231,6 @@ function loadQuestion(index) {
 
         $("#qtype1-section").show();
     } else if (question.type === "type2") {
-        $(".section").hide();
-
         var img1 = $("#type2-img1");
         var img2 = $("#type2-img2");
 
@@ -251,8 +251,6 @@ function loadQuestion(index) {
 
         $("#qtype2-section").show();
     } else if (question.type === "type3") {
-        $(".section").hide();
-
         $("#qtype3Img1").prop("src", question.answers[0].imageUrl);
         $("#qtype3Img2").prop("src", question.answers[1].imageUrl);
         $("#qtype3Img3").prop("src", question.answers[2].imageUrl);
