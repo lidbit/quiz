@@ -238,12 +238,16 @@ function loadQuestion(index) {
         var qOneButton4 = $("#question4button");
         qOneButton1.html(question.answers[0].choice);
         qOneButton1.attr("data-ans-val", question.answers[0].correct);
+        qOneButton1.attr("data-question-type", question.type);
         qOneButton2.html(question.answers[1].choice);
         qOneButton2.attr("data-ans-val", question.answers[1].correct);
+        qOneButton2.attr("data-question-type", question.type);
         qOneButton3.html(question.answers[2].choice);
         qOneButton3.attr("data-ans-val", question.answers[2].correct);
+        qOneButton3.attr("data-question-type", question.type);
         qOneButton4.html(question.answers[3].choice);
         qOneButton4.attr("data-ans-val", question.answers[3].correct);
+        qOneButton4.attr("data-question-type", question.type);
 
         qOneButton1.unbind("click");
         qOneButton2.unbind("click");
@@ -270,8 +274,10 @@ function loadQuestion(index) {
 
         img1.prop("src", question.answers[0].imageUrl);
         img1.attr("data-ans-val", question.answers[0].correct);
+        img1.attr("data-question-type", question.type);
         img2.prop("src", question.answers[1].imageUrl);
         img2.attr("data-ans-val", question.answers[1].correct);
+        img2.attr("data-question-type", question.type);
 
         img1.unbind("click");
         img2.unbind("click");
@@ -289,12 +295,16 @@ function loadQuestion(index) {
     } else if (question.type === "type3") {
         $("#qtype3Img1").prop("src", question.answers[0].imageUrl);
         $("#qtype3Img1").attr("data-ans-val", question.answers[0].correct);
+        $("#qtype3Img1").attr("data-question-type", question.type);
         $("#qtype3Img2").prop("src", question.answers[1].imageUrl);
+        $("#qtype3Img2").attr("data-question-type", question.type);
         $("#qtype3Img2").attr("data-ans-val", question.answers[0].correct);
         $("#qtype3Img3").prop("src", question.answers[2].imageUrl);
         $("#qtype3Img3").attr("data-ans-val", question.answers[0].correct);
+        $("#qtype3Img3").attr("data-question-type", question.type);
         $("#qtype3Img4").prop("src", question.answers[3].imageUrl);
         $("#qtype3Img4").attr("data-ans-val", question.answers[0].correct);
+        $("#qtype3Img4").attr("data-question-type", question.type);
 
         $("#qtype3Img1").unbind("click");
         $("#qtype3Img2").unbind("click");
@@ -320,8 +330,23 @@ function loadQuestion(index) {
 
 // TODO
 function checkAnswer(element) {
-    var answerResult = $(element).attr("data-ans-val")
-    console.log($(element).attr("data-ans-val"));
+    var questionType = $(element).attr("data-question-type");
+    var answerResult = $(element).attr("data-ans-val");
+
+    var answerResult = $(element).attr("data-ans-val");
+    var userChoice = $(element).text();
+    console.log("You choose " + userChoice + "which is " + answerResult);
+
+    var questions = $('[data-question-type="' + questionType + '"]');
+    var correctAnswer = {};
+
+    questions.each((i,v) => {
+        console.log($(v).attr("data-ans-val"));
+        if ($(v).attr("data-ans-val") === "true") {
+            console.log("The correct answer is " + $(v).text());
+        }
+    });
+
     if (answerResult) {
         answers.push(1);
     }
