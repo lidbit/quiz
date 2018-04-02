@@ -11,6 +11,8 @@ var question1 = {
     "type": "type1",
     "questionText": "How how many colours do dogs see?",
     "imageUrl": "images/dog_sees.jpg",
+    "answerImageUrl": "images/pink_lavender2018.jpg",
+    "answerText": "The dog can only see 2 colors: Yellow and Blue. It would see this.",
     "imageCaption": "caption",
     "answers": [{
         "choice": "Black and White",
@@ -36,6 +38,8 @@ var question2 = {
     "type": "type1",
     "questionText": "The importance of colour. Which of these tomotoes are ripe?",
     "imageUrl": "images/tomato_black_600.jpg",
+    "answerImageUrl": "images/pink_lavender2018.jpg",
+    "answerText": "The dog can only see 2 colors: Yellow and Blue. It would see this.",
     "imageCaption": "caption",
     "answers": [{
         "choice": "drerf",
@@ -61,7 +65,8 @@ var question4 = {
     "id": "2",
     "type": "type2",
     "questionText": "What are three primary numbers?",
-    imageUrl: "images/tomato_black_600.jpg",
+    "answerImageUrl": "images/lime_Punch2018.jpg",
+    "answerText": "Make frog jump",
     "answers": [{
         "imageUrl": "images/frog_image.jpg",
         "correct": false
@@ -78,6 +83,8 @@ var question3 = {
     "type": "type3",
     "questionText": "What is the colour of the year 2018, according to the Pantone colour institute.",
     "imageUrl": "images/colour2018.jpg",
+    "answerImageUrl": "images/colour2018.jpg",
+    "answerText": "Ultraviolet 2018",
     "imageCaption": "caption",
     "answers": [{
         "imageUrl": "images/meadowlank2018.jpg",
@@ -145,7 +152,6 @@ function hideAllSections() {
     $("#qtype3-section").hide();
     $("#results-section").hide();
     $("#hero-section").hide();
-    $("#answer-section").hide();
 }
 
 function enableNextButton() {
@@ -162,11 +168,13 @@ function disableNextButton() {
  */
 var moveNextQuestion = function () {
     currentQuestion++;    
+    updateProgress();
+    updatestatusMessage(currentQuestion, questions.length);
     if (currentQuestion < questions.length) {
-        updateProgress();
+        //updateProgress();
         //show how many questions been answered
         $("#orientation").show();
-        updatestatusMessage(currentQuestion, questions.length)
+        
         loadQuestion(currentQuestion);
     } else {
         hideAllSections();
@@ -176,10 +184,11 @@ var moveNextQuestion = function () {
         // $("#nextQuestion > button").click(function () {
             // resetQuiz();
         // });
+        
         loadAnswers();
         $("#results-section").show();
         currentQuestion = 0;
-        resetProgress();
+        //resetProgress();
     }
 };
 
@@ -192,7 +201,6 @@ function init() {
     $("#quiz-header").hide();
     $("#orientation").hide();
     $("#results-page").hide();
-    $("#answer-section").hide();
     disableNextButton();
 
     //when user clicks start quiz button hide all sections and load question
@@ -251,7 +259,7 @@ function loadQuestion(index) {
 
         var img = $("#qtype1Img");
         img.prop("src", question.imageUrl);
-
+        
         var qOneButton1 = $("#question1button");
         var qOneButton2 = $("#question2button");
         var qOneButton3 = $("#question3button");
@@ -277,22 +285,27 @@ function loadQuestion(index) {
         qOneButton1.click(function () {
             checkAnswer(this);
             enableNextButton();
-            $("#answer-section").show();
+            img.prop("src", question.answerImageUrl);
+            questionText.html(question.answerText);
+
         });
         qOneButton2.click(function () {
             checkAnswer(this);
             enableNextButton();
-            $("#answer-section").show();
+            img.prop("src", question.answerImageUrl);
+            questionText.html(question.answerText);
         });
         qOneButton3.click(function () {
             checkAnswer(this);
             enableNextButton();
-            $("#answer-section").show();
+            img.prop("src", question.answerImageUrl);
+            questionText.html(question.answerText);
         });
         qOneButton4.click(function () {
             checkAnswer(this);
             enableNextButton();
-            $("#answer-section").show();
+            img.prop("src", question.answerImageUrl);
+            questionText.html(question.answerText);
         });
 
         $("#qtype1-section").show();
@@ -313,13 +326,17 @@ function loadQuestion(index) {
         img1.click(function () {
             checkAnswer(this);
             enableNextButton();
-            $("#answer-section").show();
+            img1.prop("src", question.answerImageUrl);
+            img2.prop("src", question.answerImageUrl);
+            questionText.html(question.answerText);
         });
 
         img2.click(function () {
             checkAnswer(this);
             enableNextButton();
-            $("#answer-section").show();
+            img2.prop("src", question.answerImageUrl);
+            img1.prop("src", question.answerImageUrl);
+            questionText.html(question.answerText);
         });
 
 
@@ -346,22 +363,38 @@ function loadQuestion(index) {
         $("#qtype3Img1").click(function () {
             checkAnswer(this);
             enableNextButton();
-            $("#answer-section").show();
+            $("#qtype3Img1").prop("src", question.answerImageUrl);
+            $("#qtype3Img2").prop("src", question.answerImageUrl);
+            $("#qtype3Img3").prop("src", question.answerImageUrl);
+            $("#qtype3Img4").prop("src", question.answerImageUrl);
+            questionText.html(question.answerText);
         });
         $("#qtype3Img2").click(function () {
             checkAnswer(this);
             enableNextButton();
-            $("#answer-section").show();
+            $("#qtype3Img1").prop("src", question.answerImageUrl);
+            $("#qtype3Img2").prop("src", question.answerImageUrl);
+            $("#qtype3Img3").prop("src", question.answerImageUrl);
+            $("#qtype3Img4").prop("src", question.answerImageUrl);
+            questionText.html(question.answerText);
         });
         $("#qtype3Img3").click(function () {
             checkAnswer(this);
             enableNextButton();
-            $("#answer-section").show();
+            $("#qtype3Img1").prop("src", question.answerImageUrl);
+            $("#qtype3Img2").prop("src", question.answerImageUrl);
+            $("#qtype3Img3").prop("src", question.answerImageUrl);
+            $("#qtype3Img4").prop("src", question.answerImageUrl);
+            questionText.html(question.answerText);
         });
         $("#qtype3Img4").click(function () {
             checkAnswer(this);
             enableNextButton();
-            $("#answer-section").show();
+            $("#qtype3Img1").prop("src", question.answerImageUrl);
+            $("#qtype3Img2").prop("src", question.answerImageUrl);
+            $("#qtype3Img3").prop("src", question.answerImageUrl);
+            $("#qtype3Img4").prop("src", question.answerImageUrl);
+            questionText.html(question.answerText);
         });
 
         $("#qtype3-section").show();
