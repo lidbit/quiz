@@ -252,6 +252,10 @@ p {
     letter-spacing: 0.3em;
     margin-top: 5px;
     margin-bottom: 5px;
+    
+}
+
+#quiz-header > a {
     text-decoration: none;
 }
 
