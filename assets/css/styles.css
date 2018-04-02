@@ -382,7 +382,8 @@ img {
     cursor: not-allowed;
 }
 
-[data-question-type="type1"]:disabled {
+/* All disabled type1, type2, typeN question disabled buttons */
+[data-question-type^="type"]:disabled {
     background: none repeat scroll 0 0 rgb(152, 160, 159);
     cursor: not-allowed;
 }
