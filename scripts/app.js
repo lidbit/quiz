@@ -188,7 +188,7 @@ var moveNextQuestion = function () {
         //TODO - PRINT OUT THE HOW CORECT UT OF HOW MNY completed
         $("#progress").hide();
         $("#status-message").hide();
-        $("#correctAnswers").text(correctAnswers + " out of " + questions.length);
+        $("#correctAnswers").text(correctAnswers + " out of " + questions.length + ": " + answerToPercent());
         $("#results-section").show();
         currentQuestion = 0;
         //resetProgress();
@@ -433,10 +433,6 @@ So we need to extract it from this element this would be userAnswer
 
 need a for loop to loop through question.answers and compare question.answers[0].choice 
 
-
-
-
-
 */
 // TODO
 function checkAnswer(element) {
@@ -457,4 +453,9 @@ function checkAnswer(element) {
             console.log("The correct answer is " + $(v).text());
         }
     });
+}
+
+function answerToPercent() {
+    var percent = (correctAnswers / questions.length) * 100;
+    return "" + percent + " %";
 }
