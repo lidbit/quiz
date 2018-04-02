@@ -16,21 +16,21 @@ var question1 = {
     "answerText": "The dog can only see 2 colors: Yellow and Blue. It would see this.",
     "imageCaption": "caption",
     "answers": [{
-        "choice": "Black and White",
-        "correct": false
-    },
-    {
-        "choice": "2 Colours",
-        "correct": true
-    },
-    {
-        "choice": "3 Colours",
-        "correct": false
-    },
-    {
-        "choice": "4 colours",
-        "correct": false
-    }
+            "choice": "Black and White",
+            "correct": false
+        },
+        {
+            "choice": "2 Colours",
+            "correct": true
+        },
+        {
+            "choice": "3 Colours",
+            "correct": false
+        },
+        {
+            "choice": "4 colours",
+            "correct": false
+        }
     ]
 };
 
@@ -43,21 +43,21 @@ var question2 = {
     "answerText": "The dog can only see 2 colors: Yellow and Blue. It would see this.",
     "imageCaption": "caption",
     "answers": [{
-        "choice": "drerf",
-        "correct": false
-    },
-    {
-        "choice": "crtvce",
-        "correct": true
-    },
-    {
-        "choice": " ntyrbdv",
-        "correct": false
-    },
-    {
-        "choice": " tbdfvds",
-        "correct": false
-    }
+            "choice": "drerf",
+            "correct": false
+        },
+        {
+            "choice": "crtvce",
+            "correct": true
+        },
+        {
+            "choice": " ntyrbdv",
+            "correct": false
+        },
+        {
+            "choice": " tbdfvds",
+            "correct": false
+        }
     ]
 };
 
@@ -69,13 +69,13 @@ var question4 = {
     "answerImageUrl": "images/tomato_color_600.jpg",
     "answerText": "Make frog jump",
     "answers": [{
-        "imageUrl": "images/tomato_color_600.jpg",
-        "correct": false
-    },
-    {
-        "imageUrl": "images/tomato_black_600.jpg",
-        "correct": true
-    },
+            "imageUrl": "images/tomato_color_600.jpg",
+            "correct": false
+        },
+        {
+            "imageUrl": "images/tomato_black_600.jpg",
+            "correct": true
+        },
     ]
 };
 
@@ -88,21 +88,21 @@ var question3 = {
     "answerText": "Ultraviolet 2018",
     "imageCaption": "caption",
     "answers": [{
-        "imageUrl": "images/meadowlank2018.jpg",
-        "correct": false
-    },
-    {
-        "imageUrl": "images/littleboyblue2018.jpg",
-        "correct": false
-    },
-    {
-        "imageUrl": "images/cherry_tomato2018.jpg",
-        "correct": false
-    },
-    {
-        "imageUrl": "images/colour2018.jpg",
-        "correct": true
-    }
+            "imageUrl": "images/meadowlank2018.jpg",
+            "correct": false
+        },
+        {
+            "imageUrl": "images/littleboyblue2018.jpg",
+            "correct": false
+        },
+        {
+            "imageUrl": "images/cherry_tomato2018.jpg",
+            "correct": false
+        },
+        {
+            "imageUrl": "images/colour2018.jpg",
+            "correct": true
+        }
     ]
 };
 
@@ -117,7 +117,7 @@ var totalSteps = questions.length;
 var stepSize = (1 / totalSteps) * 100;
 
 //calling init function
-$(document).ready(function () {
+$(document).ready(function() {
     init();
 });
 
@@ -167,7 +167,7 @@ function disableNextButton() {
  if are at the end of quiz then change button to restart quiz
  and load answers
  */
-var moveNextQuestion = function () {
+var moveNextQuestion = function() {
     currentQuestion++;
     updateProgress();
     updatestatusMessage(currentQuestion, questions.length);
@@ -197,7 +197,7 @@ var moveNextQuestion = function () {
 
 //initialising document
 function init() {
-    $("#results-section").hide();  //results section or results page - need to decide
+    $("#results-section").hide(); //results section or results page - need to decide
     $("#qtype1-section").hide();
     $("#qtype2-section").hide();
     $("#qtype3-section").hide();
@@ -207,7 +207,7 @@ function init() {
     disableNextButton();
 
     //when user clicks start quiz button hide all sections and load question
-    $("#quiz-start").click(function () {
+    $("#quiz-start").click(function() {
         hideAllSections();
         $("#quiz-start").hide();
         loadQuestion();
@@ -249,7 +249,7 @@ function loadQuestion(index) {
         return;
     }
     disableNextButton();
-    if (typeof (index) === 'undefined' || index === null) {
+    if (typeof(index) === 'undefined' || index === null) {
         index = 0;
     }
     /*set first question*/
@@ -290,7 +290,7 @@ function loadQuestion(index) {
         qOneButton3.unbind("click");
         qOneButton4.unbind("click");
 
-        qOneButton1.click(function () {
+        qOneButton1.click(function() {
             checkAnswer(this);
             /*  answerAnalysis(question, this);
               console.log("this is a question   " + question );
@@ -301,19 +301,19 @@ function loadQuestion(index) {
             questionText.html(question.answerText);
 
         });
-        qOneButton2.click(function () {
+        qOneButton2.click(function() {
             checkAnswer(this);
             enableNextButton();
             img.prop("src", question.answerImageUrl);
             questionText.html(question.answerText);
         });
-        qOneButton3.click(function () {
+        qOneButton3.click(function() {
             checkAnswer(this);
             enableNextButton();
             img.prop("src", question.answerImageUrl);
             questionText.html(question.answerText);
         });
-        qOneButton4.click(function () {
+        qOneButton4.click(function() {
             checkAnswer(this);
             enableNextButton();
             img.prop("src", question.answerImageUrl);
@@ -335,7 +335,7 @@ function loadQuestion(index) {
         img1.unbind("click");
         img2.unbind("click");
 
-        img1.click(function () {
+        img1.click(function() {
             checkAnswer(this);
             enableNextButton();
             img1.prop("src", question.answerImageUrl);
@@ -343,7 +343,7 @@ function loadQuestion(index) {
             questionText.html(question.answerText);
         });
 
-        img2.click(function () {
+        img2.click(function() {
             checkAnswer(this);
             enableNextButton();
             img2.prop("src", question.answerImageUrl);
@@ -372,7 +372,7 @@ function loadQuestion(index) {
         $("#qtype3Img3").unbind("click");
         $("#qtype3Img4").unbind("click");
 
-        $("#qtype3Img1").click(function () {
+        $("#qtype3Img1").click(function() {
             checkAnswer(this);
             enableNextButton();
             $("#qtype3Img1").prop("src", question.answerImageUrl);
@@ -381,7 +381,7 @@ function loadQuestion(index) {
             $("#qtype3Img4").prop("src", question.answerImageUrl);
             questionText.html(question.answerText);
         });
-        $("#qtype3Img2").click(function () {
+        $("#qtype3Img2").click(function() {
             checkAnswer(this);
             enableNextButton();
             $("#qtype3Img1").prop("src", question.answerImageUrl);
@@ -390,7 +390,7 @@ function loadQuestion(index) {
             $("#qtype3Img4").prop("src", question.answerImageUrl);
             questionText.html(question.answerText);
         });
-        $("#qtype3Img3").click(function () {
+        $("#qtype3Img3").click(function() {
             checkAnswer(this);
             enableNextButton();
             $("#qtype3Img1").prop("src", question.answerImageUrl);
@@ -399,7 +399,7 @@ function loadQuestion(index) {
             $("#qtype3Img4").prop("src", question.answerImageUrl);
             questionText.html(question.answerText);
         });
-        $("#qtype3Img4").click(function () {
+        $("#qtype3Img4").click(function() {
             checkAnswer(this);
             enableNextButton();
             $("#qtype3Img1").prop("src", question.answerImageUrl);
@@ -436,7 +436,8 @@ need a for loop to loop through question.answers and compare question.answers[0]
 */
 // TODO
 function checkAnswer(element) {
-    //
+    console.log(element);
+
     var parent = $(element).parent().parent();
     var questionType = $(element).attr("data-question-type");
     var answerResult = $(element).attr("data-ans-val");
@@ -444,15 +445,29 @@ function checkAnswer(element) {
     if (answerResult == "true") {
         correctAnswers++;
     }
-    //
-    var questions = $(parent).find('[data-question-type="' + questionType + '"]');
 
-    questions.each((i, v) => {
-        $(v).prop("disabled", true);
-        if ($(v).attr("data-ans-val") === "true") {
-            console.log("The correct answer is " + $(v).text());
-        }
-    });
+    if ($(element).is('img')) {
+        console.log("its an image");
+        var imageParent = $(element).parent().parent();
+
+        var imageQuestions = $(imageParent).find('img[data-question-type="' + questionType + '"]');
+        imageQuestions.each((i, v) => {
+            var imageWrapper = $(v).parent();
+            $(imageWrapper).addClass("disabled");
+            $(v).addClass("disabled");
+        });
+    }
+
+    if ($(element).is('button')) {
+        var questions = $(parent).find('[data-question-type="' + questionType + '"]');
+
+        questions.each((i, v) => {
+            $(v).prop("disabled", true);
+            if ($(v).attr("data-ans-val") === "true") {
+                console.log("The correct answer is " + $(v).text());
+            }
+        });
+    }
 }
 
 function answerToPercent() {
