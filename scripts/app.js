@@ -444,16 +444,16 @@ function checkAnswer(element) {
     var parent = $(element).parent().parent();
     var questionType = $(element).attr("data-question-type");
     var answerResult = $(element).attr("data-ans-val");
+
+    if (answerResult == true) {
+        correctAnswers++;
+    }
     //
-    var answerResult = $(element).attr("data-ans-val");
     var questions = $(parent).find('[data-question-type="' + questionType + '"]');
-    var correctAnswer = {};
 
     questions.each((i, v) => {
         $(v).prop("disabled", true);
         if ($(v).attr("data-ans-val") === "true") {
-            correctAnswers++;
-            answers.push(1);
             console.log("The correct answer is " + $(v).text());
         }
     });
