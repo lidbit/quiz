@@ -70,7 +70,7 @@ var question4 = {
     "answerText": "Make frog jump",
     "answers": [{
         "imageUrl": "images/frog_image.jpg",
-        "correct": true
+        "correct": false
     },
     {
         "imageUrl": "images/frog_image.jpg",
@@ -359,12 +359,12 @@ function loadQuestion(index) {
         $("#qtype3Img1").attr("data-question-type", question.type);
         $("#qtype3Img2").prop("src", question.answers[1].imageUrl);
         $("#qtype3Img2").attr("data-question-type", question.type);
-        $("#qtype3Img2").attr("data-ans-val", question.answers[0].correct);
+        $("#qtype3Img2").attr("data-ans-val", question.answers[1].correct);
         $("#qtype3Img3").prop("src", question.answers[2].imageUrl);
-        $("#qtype3Img3").attr("data-ans-val", question.answers[0].correct);
+        $("#qtype3Img3").attr("data-ans-val", question.answers[2].correct);
         $("#qtype3Img3").attr("data-question-type", question.type);
         $("#qtype3Img4").prop("src", question.answers[3].imageUrl);
-        $("#qtype3Img4").attr("data-ans-val", question.answers[0].correct);
+        $("#qtype3Img4").attr("data-ans-val", question.answers[3].correct);
         $("#qtype3Img4").attr("data-question-type", question.type);
 
         $("#qtype3Img1").unbind("click");
@@ -445,7 +445,7 @@ function checkAnswer(element) {
     var questionType = $(element).attr("data-question-type");
     var answerResult = $(element).attr("data-ans-val");
 
-    if (answerResult == true) {
+    if (answerResult == "true") {
         correctAnswers++;
     }
     //
