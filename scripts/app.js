@@ -146,6 +146,10 @@ function hideAllSections() {
     $("#hero-section").hide();
 }
 
+function enableNextButton() {
+    $("#nextQuestion > button").prop("disabled", false);
+}
+
 /*checking if not at the end of quiz load question,
  if are at the end of quiz then change button to restart quiz
  and load answers
@@ -220,6 +224,7 @@ function loadAnswers() {
 }
 
 function loadQuestion(index) {
+    $("#nextQuestion > button").prop("disabled", true);
     if (typeof (index) === 'undefined' || index === null) {
         index = 0;
     }
@@ -259,15 +264,19 @@ function loadQuestion(index) {
 
         qOneButton1.click(function () {
             checkAnswer(this);
+            enableNextButton();
         });
         qOneButton2.click(function () {
             checkAnswer(this);
+            enableNextButton();            
         });
         qOneButton3.click(function () {
             checkAnswer(this);
+            enableNextButton();
         });
         qOneButton4.click(function () {
             checkAnswer(this);
+            enableNextButton();            
         });
 
         $("#qtype1-section").show();
@@ -287,10 +296,12 @@ function loadQuestion(index) {
 
         img1.click(function () {
             checkAnswer(this);
+            enableNextButton();            
         });
 
         img2.click(function () {
             checkAnswer(this);
+            enableNextButton();            
         });
 
 
@@ -316,15 +327,19 @@ function loadQuestion(index) {
 
         $("#qtype3Img1").click(function () {
             checkAnswer(this);
+            enableNextButton();
         });
         $("#qtype3Img2").click(function () {
             checkAnswer(this);
+            enableNextButton();
         });
         $("#qtype3Img3").click(function () {
             checkAnswer(this);
+            enableNextButton();
         });
         $("#qtype3Img4").click(function () {
             checkAnswer(this);
+            enableNextButton();
         });
 
         $("#qtype3-section").show();

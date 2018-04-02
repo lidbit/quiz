@@ -369,6 +369,11 @@ img {
     text-shadow: -1px 1px #27496d;
 }
 
+#nextQuestion > button:disabled {
+    background: none repeat scroll 0 0 rgb(152, 160, 159);
+    cursor: not-allowed;
+}
+
 /******** progress bar *******************/
 #progress {
     width: 100%;
@@ -399,6 +404,5 @@ footer {
 
 .disabled
 {
-    background: none repeat scroll 0 0 burlyWood;
-    cursor: default !important;
+
 }
