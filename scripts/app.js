@@ -254,6 +254,10 @@ function loadQuestion(index) {
     /*question area appears in all questions*/
     var questionText = $(".question-text");
     questionText.html(question.questionText);
+    var questionButtons = $('[data-question-type="' + question.type + '"]');
+    questionButtons.each((i,v) => {
+        $(v).prop("disabled", false);
+    });
 
     if (question.type === "type1") {
 
@@ -403,6 +407,7 @@ function loadQuestion(index) {
 
 // TODO
 function checkAnswer(element) {
+    var parent = $(element).parent().parent();
     var questionType = $(element).attr("data-question-type");
     var answerResult = $(element).attr("data-ans-val");
 
@@ -410,11 +415,12 @@ function checkAnswer(element) {
     var userChoice = $(element).text();
     console.log("You choose " + userChoice + "which is " + answerResult);
 
-    var questions = $('[data-question-type="' + questionType + '"]');
+    var questions = $(parent).find('[data-question-type="' + questionType + '"]');
+    console.log(questions);
     var correctAnswer = {};
 
     questions.each((i, v) => {
-        console.log($(v).attr("data-ans-val"));
+        $(v).prop("disabled", true);
         if ($(v).attr("data-ans-val") === "true") {
             console.log("The correct answer is " + $(v).text());
         }

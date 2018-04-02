@@ -382,6 +382,11 @@ img {
     cursor: not-allowed;
 }
 
+[data-question-type="type1"]:disabled {
+    background: none repeat scroll 0 0 rgb(152, 160, 159);
+    cursor: not-allowed;
+}
+
 /******** progress bar *******************/
 #progress {
     width: 100%;
