@@ -252,6 +252,7 @@ p {
     letter-spacing: 0.3em;
     margin-top: 5px;
     margin-bottom: 5px;
+    text-decoration: none;
 }
 
 #answer-section {
@@ -281,11 +282,10 @@ img {
 }
 
 /*style for image in the card*/
-/*
 #qtype1Img {
     width: 100%;
-    max-height: 350;
-}*/
+    max-height: 400;
+}
 
 
 /**/

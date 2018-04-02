@@ -11,8 +11,8 @@ var question1 = {
     "id": "1",
     "type": "type1",
     "questionText": "How many colours do dogs see?",
-    "imageUrl": "images/dog_sees.jpg",
-    "answerImageUrl": "images/pink_lavender2018.jpg",
+    "imageUrl": "images/dog800_350.jpg",
+    "answerImageUrl": "images/dog800_350.jpg",
     "answerText": "The dog can only see 2 colors: Yellow and Blue. It would see this.",
     "imageCaption": "caption",
     "answers": [{
@@ -66,14 +66,14 @@ var question4 = {
     "id": "2",
     "type": "type2",
     "questionText": "What are three primary numbers?",
-    "answerImageUrl": "images/lime_Punch2018.jpg",
+    "answerImageUrl": "images/dog800_400.jpg",
     "answerText": "Make frog jump",
     "answers": [{
-        "imageUrl": "images/frog_image.jpg",
+        "imageUrl": "images/tomato_color_600.jpg",
         "correct": false
     },
     {
-        "imageUrl": "images/frog_image.jpg",
+        "imageUrl": "images/tomato_black_600.jpg",
         "correct": true
     },
     ]
