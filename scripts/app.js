@@ -12,7 +12,7 @@ var question1 = {
     "type": "type1",
     "questionText": "How many colours do dogs see?",
     "imageUrl": "images/dog800_350.jpg",
-    "answerImageUrl": "images/dog800_350.jpg",
+    "answerImageUrl": "images/dog800_350_dog_vision.png",
     "answerText": "The dog can only see 2 colors: Yellow and Blue. It would see this.",
     "imageCaption": "caption",
     "answers": [{
@@ -66,7 +66,7 @@ var question4 = {
     "id": "2",
     "type": "type2",
     "questionText": "What are three primary numbers?",
-    "answerImageUrl": "images/dog800_400.jpg",
+    "answerImageUrl": "images/tomato_color_600.jpg",
     "answerText": "Make frog jump",
     "answers": [{
         "imageUrl": "images/tomato_color_600.jpg",
