@@ -87,11 +87,24 @@ div[class*='col-']>img {
 /*----------------------end setting up grid----------------------------------*/
 
 body {
-    background-color: #d3acc698;
+   /* background-color: #d3acc698;*/
+    background-color: #E4C5C8;
     font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, sans-serif;
     /*font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 */
+background-image:
+linear-gradient(
+
+    rgba(71, 108, 145, 0.904), 
+    rgba(88, 215, 177, 0.862),
+    rgba(238, 80, 162, 0.432),
+    rgba(71, 108, 145, 0.904)
+
+);
+    height:100vh;
+
 }
+
 
 
 /*
@@ -196,7 +209,7 @@ p {
     left: 36%;
     z-index: 3;
     text-align: center;
-    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue
+    text-shadow: 1px 1px 2px black, 0 0 25px #6F9FD8, 0 0 5px rgba(71, 108, 145, 0.904)
 }
 
 
@@ -293,7 +306,7 @@ p {
     transition: 0.3s;
     border-radius: 5px;
     /* 5px rounded corners */
-    background-color: rgb(173, 218, 236);
+    background-color: #E0E3E0;
     min-height: 400px;
 }
 
@@ -308,7 +321,7 @@ img {
 /*style for image in the card*/
 
 #qtype1Img {
-    width: 100%;
+    width: 80%;
     max-height: 400;
 }
 
@@ -467,10 +480,16 @@ img {
 /******** footer *******************/
 
 footer {
-    padding-top: 100px;
+    padding-top: 5%;
     height: 200px;
-    background-color: #6B5B95;
+    background-color: rgba(107, 91, 149, 0.404);
     text-align: center;
+    background-image:
+    linear-gradient(
+      rgba(27, 119, 247, 0.295), 
+      rgba(27, 119, 247, 0),
+      rgb(224, 227, 224, 0.2)   
+    );
 }
 
 
