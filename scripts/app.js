@@ -145,6 +145,7 @@ function hideAllSections() {
     $("#qtype3-section").hide();
     $("#results-section").hide();
     $("#hero-section").hide();
+    $("#answer-section").hide();
 }
 
 function enableNextButton() {
@@ -191,6 +192,7 @@ function init() {
     $("#quiz-header").hide();
     $("#orientation").hide();
     $("#results-page").hide();
+    $("#answer-section").hide();
     disableNextButton();
 
     //when user clicks start quiz button hide all sections and load question
@@ -275,18 +277,22 @@ function loadQuestion(index) {
         qOneButton1.click(function () {
             checkAnswer(this);
             enableNextButton();
+            $("#answer-section").show();
         });
         qOneButton2.click(function () {
             checkAnswer(this);
             enableNextButton();
+            $("#answer-section").show();
         });
         qOneButton3.click(function () {
             checkAnswer(this);
             enableNextButton();
+            $("#answer-section").show();
         });
         qOneButton4.click(function () {
             checkAnswer(this);
             enableNextButton();
+            $("#answer-section").show();
         });
 
         $("#qtype1-section").show();
@@ -307,11 +313,13 @@ function loadQuestion(index) {
         img1.click(function () {
             checkAnswer(this);
             enableNextButton();
+            $("#answer-section").show();
         });
 
         img2.click(function () {
             checkAnswer(this);
             enableNextButton();
+            $("#answer-section").show();
         });
 
 
@@ -338,18 +346,22 @@ function loadQuestion(index) {
         $("#qtype3Img1").click(function () {
             checkAnswer(this);
             enableNextButton();
+            $("#answer-section").show();
         });
         $("#qtype3Img2").click(function () {
             checkAnswer(this);
             enableNextButton();
+            $("#answer-section").show();
         });
         $("#qtype3Img3").click(function () {
             checkAnswer(this);
             enableNextButton();
+            $("#answer-section").show();
         });
         $("#qtype3Img4").click(function () {
             checkAnswer(this);
             enableNextButton();
+            $("#answer-section").show();
         });
 
         $("#qtype3-section").show();
