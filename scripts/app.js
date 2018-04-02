@@ -204,6 +204,8 @@ function init() {
 
     //when next button is clicked load next question, if test finished load answers 
     $("#nextQuestion > button").click(moveNextQuestion);
+    /*$("#quiz-header").click(resetQuiz);*/
+
 }
 /*
 function updateStatus() {
