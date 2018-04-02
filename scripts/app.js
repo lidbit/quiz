@@ -1,6 +1,7 @@
 var questions = [];
 var answers = [];
 var progressValue = 0;
+var correctAnswers = 0;
 //corectanswers?
 var currentQuestion = 0;
 //var username = "";
@@ -9,7 +10,7 @@ var currentQuestion = 0;
 var question1 = {
     "id": "1",
     "type": "type1",
-    "questionText": "How how many colours do dogs see?",
+    "questionText": "How many colours do dogs see?",
     "imageUrl": "images/dog_sees.jpg",
     "answerImageUrl": "images/pink_lavender2018.jpg",
     "answerText": "The dog can only see 2 colors: Yellow and Blue. It would see this.",
@@ -69,7 +70,7 @@ var question4 = {
     "answerText": "Make frog jump",
     "answers": [{
         "imageUrl": "images/frog_image.jpg",
-        "correct": false
+        "correct": true
     },
     {
         "imageUrl": "images/frog_image.jpg",
@@ -167,14 +168,13 @@ function disableNextButton() {
  and load answers
  */
 var moveNextQuestion = function () {
-    currentQuestion++;    
+    currentQuestion++;
     updateProgress();
     updatestatusMessage(currentQuestion, questions.length);
     if (currentQuestion < questions.length) {
         //updateProgress();
         //show how many questions been answered
         $("#orientation").show();
-        
         loadQuestion(currentQuestion);
     } else {
         hideAllSections();
@@ -182,10 +182,13 @@ var moveNextQuestion = function () {
         $("#nextQuestion > button").hide();
         // $("#nextQuestion > button").text("Restart");
         // $("#nextQuestion > button").click(function () {
-            // resetQuiz();
+        // resetQuiz();
         // });
-        
-        loadAnswers();
+        /*loadAnswers();*/
+        //TODO - PRINT OUT THE HOW CORECT UT OF HOW MNY completed
+        $("#progress").hide();
+        $("#status-message").hide();
+        $("#correctAnswers").text(correctAnswers + " out of " + questions.length);
         $("#results-section").show();
         currentQuestion = 0;
         //resetProgress();
@@ -230,7 +233,7 @@ function updatestatusMessage(answeredQs, totalQs) {
     $("#status-message").html(messagetext);
 }
 
-
+/*
 // TODO
 function loadAnswers() {
     for (let index = 0; index < answers.length; index++) {
@@ -238,7 +241,8 @@ function loadAnswers() {
         const element = answers[index];
         $("#results-page").append(ansElement);
     }
-}
+    $("#correctAnswers").text(correctAnswer);
+}*/
 
 function loadQuestion(index) {
     if (currentQuestion >= questions.length) {
@@ -255,7 +259,7 @@ function loadQuestion(index) {
     var questionText = $(".question-text");
     questionText.html(question.questionText);
     var questionButtons = $('[data-question-type="' + question.type + '"]');
-    questionButtons.each((i,v) => {
+    questionButtons.each((i, v) => {
         $(v).prop("disabled", false);
     });
 
@@ -263,7 +267,7 @@ function loadQuestion(index) {
 
         var img = $("#qtype1Img");
         img.prop("src", question.imageUrl);
-        
+
         var qOneButton1 = $("#question1button");
         var qOneButton2 = $("#question2button");
         var qOneButton3 = $("#question3button");
@@ -288,6 +292,10 @@ function loadQuestion(index) {
 
         qOneButton1.click(function () {
             checkAnswer(this);
+            /*  answerAnalysis(question, this);
+              console.log("this is a question   " + question );
+              console.log("this is a this:   " + this);
+              console.log("this is a this text:   " + $(this).text);*/
             enableNextButton();
             img.prop("src", question.answerImageUrl);
             questionText.html(question.answerText);
@@ -404,29 +412,49 @@ function loadQuestion(index) {
         $("#qtype3-section").show();
     }
 }
+/*
+function answerAnalysis(question, element){
+    // Question type 1 analysis
+    var correctQ1AnswerChoicefromButton;
+    var userAnswerChoiceString;
 
+    for (var i = 0; i = question.answers.length; i++) {
+        if(question.answers[i].correct){
+            correctQ1Answer = question.answers[i].choice;
+            console.log( "the correct choice for this question is : " + );
+        }
+    }
+    
+}*/
+/*
+Question type1: we have buttons
+We have set the button html in load question like this:qOneButton1.html(question.answers[0].choice);
+So we need to extract it from this element this would be userAnswer
+
+need a for loop to loop through question.answers and compare question.answers[0].choice 
+
+
+
+
+
+*/
 // TODO
 function checkAnswer(element) {
+    //
     var parent = $(element).parent().parent();
     var questionType = $(element).attr("data-question-type");
     var answerResult = $(element).attr("data-ans-val");
-
+    //
     var answerResult = $(element).attr("data-ans-val");
-    var userChoice = $(element).text();
-    console.log("You choose " + userChoice + "which is " + answerResult);
-
     var questions = $(parent).find('[data-question-type="' + questionType + '"]');
-    console.log(questions);
     var correctAnswer = {};
 
     questions.each((i, v) => {
         $(v).prop("disabled", true);
         if ($(v).attr("data-ans-val") === "true") {
+            correctAnswers++;
+            answers.push(1);
             console.log("The correct answer is " + $(v).text());
         }
     });
-
-    if (answerResult) {
-        answers.push(1);
-    }
 }
