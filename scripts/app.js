@@ -135,6 +135,7 @@ function resetQuiz() {
     $("#nextQuestion > button").click(moveNextQuestion);
     currentQuestion = 0;
     resetProgress();
+    enableNextButton();
 }
 
 //hiding all sections not needed for current question
@@ -150,32 +151,35 @@ function enableNextButton() {
     $("#nextQuestion > button").prop("disabled", false);
 }
 
+function disableNextButton() {
+    $("#nextQuestion > button").prop("disabled", true);
+}
+
 /*checking if not at the end of quiz load question,
  if are at the end of quiz then change button to restart quiz
  and load answers
- */  
-var moveNextQuestion = function() {
+ */
+var moveNextQuestion = function () {
+    currentQuestion++;    
     if (currentQuestion < questions.length) {
-        currentQuestion++;
         updateProgress();
         //show how many questions been answered
         $("#orientation").show();
-         updatestatusMessage(currentQuestion, questions.length)
+        updatestatusMessage(currentQuestion, questions.length)
         loadQuestion(currentQuestion);
     } else {
         hideAllSections();
-        $("#nextQuestion > button").text("Restart");
-        $("#nextQuestion > button").click(function(){
-            resetQuiz();
-        });
+        // disableNextButton();
+        $("#nextQuestion > button").hide();
+        // $("#nextQuestion > button").text("Restart");
+        // $("#nextQuestion > button").click(function () {
+            // resetQuiz();
+        // });
         loadAnswers();
         $("#results-section").show();
         currentQuestion = 0;
         resetProgress();
     }
-
-
-   
 };
 
 //initialising document
@@ -187,6 +191,7 @@ function init() {
     $("#quiz-header").hide();
     $("#orientation").hide();
     $("#results-page").hide();
+    disableNextButton();
 
     //when user clicks start quiz button hide all sections and load question
     $("#quiz-start").click(function () {
@@ -224,7 +229,10 @@ function loadAnswers() {
 }
 
 function loadQuestion(index) {
-    $("#nextQuestion > button").prop("disabled", true);
+    if (currentQuestion >= questions.length) {
+        return;
+    }
+    disableNextButton();
     if (typeof (index) === 'undefined' || index === null) {
         index = 0;
     }
@@ -268,7 +276,7 @@ function loadQuestion(index) {
         });
         qOneButton2.click(function () {
             checkAnswer(this);
-            enableNextButton();            
+            enableNextButton();
         });
         qOneButton3.click(function () {
             checkAnswer(this);
@@ -276,7 +284,7 @@ function loadQuestion(index) {
         });
         qOneButton4.click(function () {
             checkAnswer(this);
-            enableNextButton();            
+            enableNextButton();
         });
 
         $("#qtype1-section").show();
@@ -296,12 +304,12 @@ function loadQuestion(index) {
 
         img1.click(function () {
             checkAnswer(this);
-            enableNextButton();            
+            enableNextButton();
         });
 
         img2.click(function () {
             checkAnswer(this);
-            enableNextButton();            
+            enableNextButton();
         });
 
 
@@ -358,7 +366,7 @@ function checkAnswer(element) {
     var questions = $('[data-question-type="' + questionType + '"]');
     var correctAnswer = {};
 
-    questions.each((i,v) => {
+    questions.each((i, v) => {
         console.log($(v).attr("data-ans-val"));
         if ($(v).attr("data-ans-val") === "true") {
             console.log("The correct answer is " + $(v).text());
