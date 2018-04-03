@@ -332,6 +332,7 @@ footer {
 #button-group {
     margin-top: 10px;
     display: inline-flex;
+    flex-wrap: wrap;
 }
 
 
@@ -379,13 +380,20 @@ footer {
 }
 
 .image-wrapper {
-    display: inline-block;
-    width: 49%;
+    display: flex;
+    flex-wrap:wrap;
+    width: 100%;
     margin-top: 3%;
+    
+}
+.imagetype3{
+    width:49%;
+    height:49%;
 }
 
-.images {
+.imagetype2 {
     width: 70%;
+    height:70%;
 }
 
 
