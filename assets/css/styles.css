@@ -496,11 +496,17 @@ footer {
 
 
 
-
 .progress-container{
     display:flex;
     justify-content: space-evenly;
     align-items:baseline;
+}
+
+
+
+#results-message-container{
+    background-color: blue;
+    min-height: 80vh;
 }
 
 /*****Question type 1  answer div ********************/

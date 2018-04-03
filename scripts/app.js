@@ -8,7 +8,7 @@ var currentQuestion = 0;
 
 //creating question objects
 var question1 = {
-    "id": "1",
+    "id": "4",
     "type": "type1",
     "questionText": "How many colours do dogs see?",
     "imageUrl": "images/dog800_350.jpg",
@@ -38,9 +38,9 @@ var question2 = {
     "id": "2",
     "type": "type1",
     "questionText": "The importance of colour. Which of these tomotoes are ripe?",
-    "imageUrl": "images/tomato_black_600.jpg",
-    "answerImageUrl": "images/pink_lavender2018.jpg",
-    "answerText": "The dog can only see 2 colors: Yellow and Blue. It would see this.",
+    "imageUrl": "images/tomato_black_400.jpg",
+    "answerImageUrl": "images/tomato_color_400.jpg",
+    "answerText": "The foloowing combination is correct: ",
     "imageCaption": "caption",
     "answers": [{
             "choice": "drerf",
@@ -63,17 +63,17 @@ var question2 = {
 
 
 var question4 = {
-    "id": "2",
+    "id": "1",
     "type": "type2",
     "questionText": "What are three primary numbers?",
-    "answerImageUrl": "images/tomato_color_600.jpg",
+    "answerImageUrl": "images/rock_400.jpg",
     "answerText": "Make frog jump",
     "answers": [{
-            "imageUrl": "images/tomato_color_600.jpg",
+            "imageUrl": "images/jellyfish_400.jpg",
             "correct": false
         },
         {
-            "imageUrl": "images/tomato_black_600.jpg",
+            "imageUrl": "images/rock_400.jpg",
             "correct": true
         },
     ]
@@ -184,6 +184,13 @@ var moveNextQuestion = function() {
         $(".progress").hide();
         $("#status-message").hide();
         $("#correctAnswers").text(correctAnswers + " out of " + questions.length + ": " + answerToPercent());
+     /*   if( 45 < 50 )
+        {
+            $("#results-message-container").attr("background-color", red);
+        }else{
+            $("#results-message-container").attr("background-color", green);
+        }*/
+        
         $("#results-section").show();
         currentQuestion = 0;
         //resetProgress();
@@ -228,17 +235,6 @@ function updatestatusMessage(answeredQs, totalQs) {
     var messagetext = "Answered " + answeredQs + " out of " + totalQs + " questions.";
     $("#status-message").html(messagetext);
 }
-
-/*
-// TODO
-function loadAnswers() {
-    for (let index = 0; index < answers.length; index++) {
-        var ansElement = $("<div></div>").text(answers[index]);
-        const element = answers[index];
-        $("#results-page").append(ansElement);
-    }
-    $("#correctAnswers").text(correctAnswer);
-}*/
 
 function loadQuestion(index) {
     if (currentQuestion >= questions.length) {
