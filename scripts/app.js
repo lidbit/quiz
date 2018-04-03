@@ -123,7 +123,7 @@ $(document).ready(function() {
 
 
 function updateProgress() {
-    var progress = $("#progress-data");
+    var progress = $(".progress-data");
     if (progressValue <= 100) {
         progressValue += stepSize;
         progress.width(progressValue + "%");
@@ -131,7 +131,7 @@ function updateProgress() {
 }
 
 function resetProgress() {
-    var progress = $("#progress-data");
+    var progress = $(".progress-data");
     progressValue = 0;
     progress.width(progressValue + "%");
 }
@@ -181,7 +181,7 @@ var moveNextQuestion = function() {
         // disableNextButton();
         $(".nextQuestion > button").hide();
         //TODO - PRINT OUT THE HOW CORECT UT OF HOW MNY completed
-        $("#progress").hide();
+        $(".progress").hide();
         $("#status-message").hide();
         $("#correctAnswers").text(correctAnswers + " out of " + questions.length + ": " + answerToPercent());
         $("#results-section").show();

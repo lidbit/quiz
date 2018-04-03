@@ -471,18 +471,27 @@ footer {
 
 /******** progress bar *******************/
 
-#progress {
-    width: 90%;
+.progress {
+    width: 100%;
     height: 20px;
     display: inline-block;
-    background-color: rgb(137, 168, 197)
+    background-color: #F4D8D3;
+    background-image:
+    linear-gradient(
+      rgba(199, 202, 206, 0.295), 
+      rgba(166, 202, 252, 0),
+      rgba(198, 235, 198, 0.2)   
+    );
+    margin-bottom:10px;
+    border-radius: 8px;
 }
 
-#progress-data {
+.progress-data {
     min-height: 20px;
-    background-color: green;
+    background-color:#6B5B95;
     width: 0%;
     content: ' ';
+    border-radius: 2px;
 }
 
 
