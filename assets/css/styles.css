@@ -472,7 +472,7 @@ footer {
 /******** progress bar *******************/
 
 .progress {
-    width: 100%;
+    width: 90%;
     height: 20px;
     display: inline-block;
     background-color: #F4D8D3;
@@ -488,7 +488,7 @@ footer {
 
 .progress-data {
     min-height: 20px;
-    background-color:#6B5B95;
+    background-color:rgba(107, 91, 149, 0.411);
     width: 0%;
     content: ' ';
     border-radius: 2px;
