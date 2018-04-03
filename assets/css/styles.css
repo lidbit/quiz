@@ -295,7 +295,7 @@ p {
 
 #qtype1Img {
     width: 100%;
-    progress-height: 400;
+    min-height: 350;
 }
 
 
@@ -383,8 +383,8 @@ p {
 
 /**/
 
-#nextQuestion>button {
-    float: right;
+.nextQuestion>button {
+    /*float: right;*/
     cursor: pointer;
     display: block;
     margin: 0 10px 0 0;
@@ -400,21 +400,21 @@ p {
     height: 40px;
 }
 
-#nextQuestion>button:focus {
+.nextQuestion>button:focus {
     outline: none;
 }
 
-#nextQuestion>button:hover {
+.nextQuestion>button:hover {
     background-color: #346392;
     text-shadow: -1px 1px #27496d;
 }
 
-#nextQuestion>button:active {
+.nextQuestion>button:active {
     background-color: #346392;
     text-shadow: -1px 1px #27496d;
 }
 
-#nextQuestion>button:disabled {
+.nextQuestion>button:disabled {
     background: none repeat scroll 0 0 rgb(152, 160, 159);
     cursor: not-allowed;
 }

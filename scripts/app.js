@@ -138,9 +138,9 @@ function resetProgress() {
 
 function resetQuiz() {
     //making sure the next button is set
-    $("#nextQuestion > button").text("Next");
+    $(".nextQuestion > button").text("Next");
     //setting event listener
-    $("#nextQuestion > button").click(moveNextQuestion);
+    $(".nextQuestion > button").click(moveNextQuestion);
     currentQuestion = 0;
     resetProgress();
     enableNextButton();
@@ -156,11 +156,11 @@ function hideAllSections() {
 }
 
 function enableNextButton() {
-    $("#nextQuestion > button").prop("disabled", false);
+    $(".nextQuestion > button").prop("disabled", false);
 }
 
 function disableNextButton() {
-    $("#nextQuestion > button").prop("disabled", true);
+    $(".nextQuestion > button").prop("disabled", true);
 }
 
 /*checking if not at the end of quiz load question,
@@ -179,12 +179,7 @@ var moveNextQuestion = function() {
     } else {
         hideAllSections();
         // disableNextButton();
-        $("#nextQuestion > button").hide();
-        // $("#nextQuestion > button").text("Restart");
-        // $("#nextQuestion > button").click(function () {
-        // resetQuiz();
-        // });
-        /*loadAnswers();*/
+        $(".nextQuestion > button").hide();
         //TODO - PRINT OUT THE HOW CORECT UT OF HOW MNY completed
         $("#progress").hide();
         $("#status-message").hide();
@@ -213,10 +208,11 @@ function init() {
         loadQuestion();
         $("#orientation").show();
         $("#quiz-header").show();
+        $(footer).show();
     });
 
     //when next button is clicked load next question, if test finished load answers 
-    $("#nextQuestion > button").click(moveNextQuestion);
+    $(".nextQuestion > button").click(moveNextQuestion);
     /*$("#quiz-header").click(resetQuiz);*/
 
 }
@@ -249,12 +245,15 @@ function loadQuestion(index) {
         return;
     }
     disableNextButton();
+    $(".nextQuestion").hide();
     if (typeof(index) === 'undefined' || index === null) {
         index = 0;
     }
+
     /*set first question*/
     var question = questions[index];
     hideAllSections();
+  
     /*question area appears in all questions*/
     var questionText = $(".question-text");
     questionText.html(question.questionText);
@@ -289,6 +288,8 @@ function loadQuestion(index) {
         qOneButton2.unbind("click");
         qOneButton3.unbind("click");
         qOneButton4.unbind("click");
+        //show question buttons
+        $("#button-group").show();
 
         qOneButton1.click(function() {
             checkAnswer(this);
@@ -297,6 +298,7 @@ function loadQuestion(index) {
               console.log("this is a this:   " + this);
               console.log("this is a this text:   " + $(this).text);*/
             enableNextButton();
+            $("#button-group").hide();
             img.prop("src", question.answerImageUrl);
             questionText.html(question.answerText);
 
@@ -304,18 +306,21 @@ function loadQuestion(index) {
         qOneButton2.click(function() {
             checkAnswer(this);
             enableNextButton();
+            $("#button-group").hide();
             img.prop("src", question.answerImageUrl);
             questionText.html(question.answerText);
         });
         qOneButton3.click(function() {
             checkAnswer(this);
             enableNextButton();
+            $("#button-group").hide();
             img.prop("src", question.answerImageUrl);
             questionText.html(question.answerText);
         });
         qOneButton4.click(function() {
             checkAnswer(this);
             enableNextButton();
+            $("#button-group").hide();
             img.prop("src", question.answerImageUrl);
             questionText.html(question.answerText);
         });
@@ -468,6 +473,7 @@ function checkAnswer(element) {
             }
         });
     }
+    $(".nextQuestion").show();
 }
 
 function answerToPercent() {
