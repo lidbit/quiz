@@ -109,6 +109,20 @@ p {
     color: #27496d;
 }
 
+/******** footer *******************/
+
+footer {
+    padding-top: 5%;
+    height: 10%;
+    background-color: rgba(107, 91, 149, 0.404);
+    text-align: center;
+    background-image:
+    linear-gradient(
+      rgba(27, 119, 247, 0.295), 
+      rgba(27, 119, 247, 0),
+      rgb(224, 227, 224, 0.2)   
+    );
+}
 
 /******************** Hero section  ****************************/
 
@@ -458,20 +472,7 @@ p {
 }
 
 
-/******** footer *******************/
 
-footer {
-    padding-top: 5%;
-    height: 200px;
-    background-color: rgba(107, 91, 149, 0.404);
-    text-align: center;
-    background-image:
-    linear-gradient(
-      rgba(27, 119, 247, 0.295), 
-      rgba(27, 119, 247, 0),
-      rgb(224, 227, 224, 0.2)   
-    );
-}
 
 .progress-container{
     display:flex;
