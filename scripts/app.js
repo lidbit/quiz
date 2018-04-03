@@ -184,13 +184,13 @@ var moveNextQuestion = function() {
         $(".progress").hide();
         $("#status-message").hide();
         $("#correctAnswers").text(correctAnswers + " out of " + questions.length + ": " + answerToPercent());
-     /*   if( 45 < 50 )
-        {
-            $("#results-message-container").attr("background-color", red);
-        }else{
-            $("#results-message-container").attr("background-color", green);
-        }*/
-        
+        /*   if( 45 < 50 )
+           {
+               $("#results-message-container").attr("background-color", red);
+           }else{
+               $("#results-message-container").attr("background-color", green);
+           }*/
+
         $("#results-section").show();
         currentQuestion = 0;
         //resetProgress();
@@ -215,7 +215,7 @@ function init() {
         loadQuestion();
         $("#orientation").show();
         $("#quiz-header").show();
-        $(footer).show();
+        $("footer").show();
     });
 
     //when next button is clicked load next question, if test finished load answers 
@@ -249,7 +249,7 @@ function loadQuestion(index) {
     /*set first question*/
     var question = questions[index];
     hideAllSections();
-  
+
     /*question area appears in all questions*/
     var questionText = $(".question-text");
     questionText.html(question.questionText);
