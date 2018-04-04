@@ -35,6 +35,24 @@ var question1 = {
         },
     ]
 };
+
+var question6 = {
+    "id": "6",
+    "type": "type2",
+    "questionText": "Which of these colour schemes is Analogous?",
+    "answerImageUrl": "images/Analogous_C_scheme.jpg",
+    "answerText": "This is Analogous(similar hue).<br>The other one is Monochromatic Scheme.(same hue different shades, tones and tints.) ",
+    "answers": [{
+            "imageUrl": "images/Monochromatic_C_scheme.jpg",
+            "correct": false
+        },
+        {
+            "imageUrl": "images/Analogous_C_scheme.jpg",
+            "correct": true
+        },
+    ]
+};
+
 var question2 = {
     "id": "2",
     "type": "type1",
@@ -143,24 +161,6 @@ var question5 = {
     ]
 };
 
-/*
-var question6 = {
-    "id": "6",
-    "type": "type2",
-    "questionText": "Which of these colour schemes is Analogous?",
-    "answerImageUrl": "images/Analogous_C_scheme.jpg",
-    "answerText": "This is Analogous(similar hue).<br>The other one is Monochromatic Scheme.(same hue different shades, tones and tints.) ",
-    "answers": [{
-            "imageUrl": "images/Monochromatic_C_scheme.jpg",
-            "correct": false
-        },
-        {
-            "imageUrl": "images/Analogous_C_scheme.jpg",
-            "correct": true
-        },
-    ]
-};*/
-
 
 //putting question objects into questions array
 questions.push(question1);
@@ -168,7 +168,7 @@ questions.push(question2);
 questions.push(question3);
 questions.push(question4);
 questions.push(question5);
-/*questions.push(question6);*/
+questions.push(question6);
 
 //progress bar related info
 var totalSteps = questions.length;
@@ -243,12 +243,6 @@ var moveNextQuestion = function() {
         $("#status-message").hide();
         $("#score").html(correctAnswers + " out of " + questions.length + ": " + answerToPercent() + " %");
         var scorePercent = answerToPercent();
-
-        /*
-        tryagain_image
-        welldone_image
-        brilliant_image
-        */
 
         if (scorePercent < 50) {
             $("#tryagain_image").show();
@@ -354,6 +348,7 @@ function loadQuestion(index) {
         qOneButton2.unbind("click");
         qOneButton3.unbind("click");
         qOneButton4.unbind("click");
+
         //show question buttons
         $("#button-group").show();
 
@@ -402,6 +397,13 @@ function loadQuestion(index) {
         img2.prop("src", question.answers[1].imageUrl);
         img2.attr("data-ans-val", question.answers[1].correct);
         img2.attr("data-question-type", question.type);
+
+        var imageQuestions = $('img[data-question-type="' + question.type + '"]');
+        imageQuestions.each((i, v) => {
+            var imageWrapper = $(v).parent();
+            $(imageWrapper).removeClass("disabled");
+            $(v).removeClass("disabled");
+        });
 
         img1.unbind("click");
         img2.unbind("click");
