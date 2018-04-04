@@ -1,10 +1,21 @@
+/* Colour quiz created by Lydia Douglas 2018 */
+/* This quiz has been created to be extendable in the future*/
+/* The questions are stored as an array of objects which contain 
+the question and answers and the type of question and layout supporting info.*/
+/* currently these questions are coded but could in future come from a database*/
+/*  These are 3 types of questions:
+    Type 1  = has an image, question and 4 buttons(number of buttons could change if neded)
+    Type 2 = has two clickable images and question text
+    Type 3 = has 4 clickable images and question text )
+*/
+
+
+
 var questions = [];
 var answers = [];
 var progressValue = 0;
 var correctAnswers = 0;
-//corectanswers?
 var currentQuestion = 0;
-//var username = "";
 
 //creating question objects
 var question1 = {
