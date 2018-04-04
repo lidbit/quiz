@@ -215,7 +215,7 @@ p {
     font-size: 66px;
     letter-spacing: 0.3em;
     margin-bottom: 30px;
-    z-index: 5;
+    z-index: 4;
 }
 
 /*tag line text under hero text*/
@@ -225,7 +225,7 @@ p {
     color: #6F9FD8;
     font-size: 20px;
     margin-bottom: 20px;
-    z-index: 5;
+    z-index: 4;
 }
 
 /*start button*/
@@ -244,7 +244,7 @@ p {
     transition: background-color 0.5s, color 0.8s, transform 0.5s;
     padding-top: 5px;
     padding-bottom: 5px;
-    z-index: 5;
+    z-index: 4;
 }
 
 #quiz-start:hover {
@@ -458,7 +458,7 @@ p {
     cursor: not-allowed;
 }
 
-.image-wrapper>img.disabled {
+.image-wrapper>img.disabled {p
     pointer-events: none;
 }
 
