@@ -10,7 +10,7 @@ the question and answers and the type of question and layout supporting info.*/
 */
 
 
-
+/*** declare global variables **/
 var questions = [];
 var answers = [];
 var progressValue = 0;
@@ -179,7 +179,7 @@ $(document).ready(function() {
     init();
 });
 
-
+//updating the progress bar data
 function updateProgress() {
     var progress = $(".progress-data");
     if (progressValue <= 100) {
@@ -188,6 +188,7 @@ function updateProgress() {
     }
 }
 
+//resetting progress bar to empty
 function resetProgress() {
     var progress = $(".progress-data");
     progressValue = 0;
@@ -213,10 +214,12 @@ function hideAllSections() {
     $("#hero-section").hide();
 }
 
+//enabling the next button when question has been answered
 function enableNextButton() {
     $(".nextQuestion > button").prop("disabled", false);
 }
 
+//disabling the next button when question has been answered
 function disableNextButton() {
     $(".nextQuestion > button").prop("disabled", true);
 }
@@ -228,11 +231,9 @@ function disableNextButton() {
 var moveNextQuestion = function() {
     currentQuestion++;
     updateProgress();
-    updatestatusMessage(currentQuestion, questions.length);
+    //checking if at end of quiz
     if (currentQuestion < questions.length) {
-        //updateProgress();
-        //show how many questions been answered
-        $("#orientation").show();
+        //load questions
         loadQuestion(currentQuestion);
     } else {
         hideAllSections();
@@ -293,18 +294,6 @@ function init() {
     $(".nextQuestion > button").click(moveNextQuestion);
     /*$("#quiz-header").click(resetQuiz);*/
 
-}
-/*
-function updateStatus() {
-    $("#answeredQuestions").html(currentQuestion);
-    $("#totalQuestions").html(questions.length);
-}*/
-
-
-//orientaion info for user
-function updatestatusMessage(answeredQs, totalQs) {
-    var messagetext = "Answered " + answeredQs + " out of " + totalQs + " questions.";
-    $("#status-message").html(messagetext);
 }
 
 function loadQuestion(index) {
