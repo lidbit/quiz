@@ -195,7 +195,7 @@ p {
 #hero-text-container {
     position: absolute;
    /* align-items: stretch;*/
-    top: 30%;
+    top: 20%;
     left: 0;
     width:100%;
     z-index: 3;
@@ -233,14 +233,12 @@ p {
 #quiz-start {
     cursor: pointer;
     background-color: rgba(107, 91, 149, 0.315);
-
     border: 2px solid #17a7ac;
     border-radius: 8px;
     color: #17a7ac;
     font-size: 20px;
     font-family: 'Amaranth', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    width: 14%;
-    min-width: 60px;
+    min-width: 110px;
     transition: background-color 0.5s, color 0.8s, transform 0.5s;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -402,7 +400,6 @@ p {
     width: 90%;
     height: 95%;
 }
-
 /*********end card section****************/
 
 /******** next button**********************/
@@ -458,10 +455,10 @@ p {
     cursor: not-allowed;
 }
 
-.image-wrapper>img.disabled {p
+.image-wrapper>img.disabled {
     pointer-events: none;
 }
-
+   
 /* All disabled type1, type2, typeN question disabled buttons */
 
 [data-question-type^="type"]:disabled {
@@ -574,13 +571,14 @@ p {
     color: white;
 
 }
-h2{
+#score{
     font-family: 'Nothing You Could Do', cursive;
     font-size: 26px;
     margin-bottom: 20px;
     color: white;
 
 }
+
 #quiz_again{
     font-size:36px;
     color : white;
