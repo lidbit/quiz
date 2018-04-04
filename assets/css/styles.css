@@ -342,13 +342,14 @@ p {
 .baseButton {
     display: inline-block;
     /*text-shadow: -1px 1px rgba(70, 9, 214, 0.527);*/
-    padding: 14px 28px;
+    padding: 12px 32px;
+    width:120%;
     font-size: 1.5em;
     font-family: 'Amaranth', 'Roboto', sans-serif;
     cursor: pointer;
     color: #6B5B95;
-    background-image: linear-gradient( to right,
-    rgb(20, 21, 84)  3%, #46bbbb 6%, rgba(224, 76, 172, 0.7), 25%, rgba(224, 76, 172, 0.7), 75%, #46bbbb 95%, rgb(20, 21, 84) 97% );
+    border: none;
+    background-image: linear-gradient( to right, #17195C, rgb(20, 21, 84) 10%, rgba(53, 221, 215, 0.61) 30%, #17a7ac 70%, rgb(20, 21, 84) 90%,#17195C 98%);
     
 }
 
@@ -372,6 +373,7 @@ p {
     display: inline-block;
     width: 49%;
     margin-top: 1%;
+    overflow: hidden;
 }
 
 .imagetype3 {
@@ -490,6 +492,7 @@ p {
     position: relative;
     left: 0px;
     top: 0px;
+    min-height: 90vh;
 }
 
 /*results images*/
@@ -500,6 +503,8 @@ p {
     top: 0px;
     left: 0px;
     right: 0px;
+    min-height: 300px;
+    
 }
 
 /*top image with colour*/
@@ -511,6 +516,7 @@ p {
     left: 0px;
     right: 0px;
     z-index: 2;
+    min-height: 300px;
 }
 
 #brilliant_image {
@@ -520,6 +526,7 @@ p {
     left: 0px;
     right: 0px;
     z-index: 3;
+    min-height: 300px;
 }
 
 /*text on top of results window*/
@@ -527,10 +534,9 @@ p {
 #results-message {
     position: absolute;
    /* align-items: stretch;*/
-    top: 40%;
-    bottom:40%;
-    left: 30%;
-    right:30%;
+   top:20%; 
+   left: 0;
+    width:100%;
     z-index: 4;
     text-align: center;
    /* text-shadow: 1px 1px 2px  #46bbbb, 0 0 25px #6F9FD8, 0 0 5px rgba(71, 108, 145, 0.904);
@@ -538,34 +544,29 @@ p {
    /* width: 100%;*/
     padding: 20px 10px;
     background: rgba(0, 0, 0, 0.5);
-    background-attachment: fixed;
-    overflow: hidden;
-
+    text-overflow: wrap;
 }
 
 
 /*results message*/
 
-#p {
-    font-family: 'Nothing You Could Do', cursive;
-   /* color:#16165e;
-    font-size: 3em;
-    margin-bottom: 20px;*/
+#results-text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    margin-bottom: 20px;
     color: white;
 
 }
 h2{
     font-family: 'Nothing You Could Do', cursive;
-    /*color: rgb(13, 216, 243);
-    font-size: 3em;
-    margin-bottom: 20px;*/
+    font-size: 20px;
+    margin-bottom: 20px;
     color: white;
 
 }
 #quiz_again{
-
-    color: white;
-
+    font-size:33px;
+    color : white;
  }
 
 
