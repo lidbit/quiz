@@ -202,7 +202,6 @@ p {
     text-align: center;
     text-shadow: 1px 1px 2px black, 0 0 25px #6F9FD8, 0 0 5px rgba(71, 108, 145, 0.904);
     padding: 20px 10px;
-   /* background: rgba(118, 237, 241, 0.274);*/
     text-overflow: wrap;
 }
 
@@ -237,7 +236,7 @@ p {
     border-radius: 8px;
     color: #17a7ac;
     font-size: 20px;
-    font-family: 'Amaranth', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     min-width: 110px;
     transition: background-color 0.5s, color 0.8s, transform 0.5s;
     padding-top: 5px;
@@ -262,7 +261,7 @@ p {
 
 /*****end hero section****/
 
-/********header************/
+/********Quiz header will be visible during the quiz************/
 
 #quiz-header {
     font-family: 'Fredericka the Great', cursive;
@@ -578,5 +577,14 @@ h2{
     color : rgb(142, 210, 236);
  }
 
+ quiz_again :hover{
+    color : rgb(152, 68, 173);
+    transform: scale(1.1) translate(1px, 1px);
+ }
 
-
+quiz_again :active{
+    color : rgb(112, 68, 192);
+}
+quiz_again :visited{
+color : rgb(142, 210, 236);
+}
