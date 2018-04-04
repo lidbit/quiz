@@ -546,5 +546,5 @@ function checkAnswer(element) {
 
 function answerToPercent() {
     var percent = (correctAnswers / questions.length) * 100;
-    return percent;
+    return Math.round(percent);
 }
