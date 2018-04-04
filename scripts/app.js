@@ -18,13 +18,84 @@ var correctAnswers = 0;
 var currentQuestion = 0;
 
 //creating question objects
+
 var question1 = {
+    "id": "1",
+    "type": "type2",
+    "questionText": "Click on the image that shows bioluminescence.",
+    "answerImageUrl": "images/rock_400.jpg",
+    "answerText": "Jellyfish - Bioluminescent <br>This occurs due to chemical reaction in the body of a creature. No UV light needed to glow.<br>The rock is Fluorescent <br>This occurs due to physical reaction. The UV light makes the rock glow.",
+    "answers": [{
+            "imageUrl": "images/jellyfish_400.jpg",
+            "correct": true
+        },
+        {
+            "imageUrl": "images/rock_400.jpg",
+            "correct": false
+        },
+    ]
+};
+var question2 = {
+    "id": "2",
+    "type": "type1",
+    "questionText": "The importance of colour. Which of these tomatoes are ripe?",
+    "imageUrl": "images/tomatoes_black_800.jpg",
+    "answerImageUrl": "images/tomatoes_color_800.jpg",
+    "answerText": "The following combination is correct: A B E",
+    "imageCaption": "caption",
+    "answers": [{
+            "choice": " B D E ",
+            "correct": false
+        },
+        {
+            "choice": " C E F ",
+            "correct": true
+        },
+        {
+            "choice": " A C D ",
+            "correct": false
+        },
+        {
+            "choice": " A B E ",
+            "correct": false
+        }
+    ]
+};
+
+var question3 = {
+    "id": "3",
+    "type": "type3",
+    "questionText": "What is the colour of the year 2018, according to the Pantone colour institute?<br><br>Ever noticed how everyone seems to start wearing pink all of a sudden?<br> or Salmon pink/grey websites start poping up like mushrooms after the rain?)",
+    "imageUrl": "images/colour2018.jpg",
+    "answerImageUrl": "images/colour2018.jpg",
+    "answerText": "Ultraviolet 2018!<br>Watch how suddenly lilacs and purples will appear in the media and shops. Honestly!",
+    "imageCaption": "caption",
+    "answers": [{
+        "imageUrl": "images/colour2018.jpg",
+        "correct": true    
+        },
+        {
+            "imageUrl": "images/littleboyblue2018.jpg",
+            "correct": false
+        },
+        {
+            "imageUrl": "images/cherry_tomato2018.jpg",
+            "correct": false
+        },
+        {      
+        "imageUrl": "images/meadowlank2018.jpg",
+        "correct": false
+        }
+    ]
+};
+
+var question4 = {
     "id": "4",
     "type": "type1",
-    "questionText": "How many colours do dogs see?",
+    "questionText": "How many colours can dogs see?",
     "imageUrl": "images/dog800_350.jpg",
     "answerImageUrl": "images/dog800_350_dog_vision.png",
-    "answerText": "The dog can only see 2 colors: Yellow and Blue. It would see this.",
+    "answerText": "The dog can only see 2 colors: Yellow and Blue.<br>Mostly likely the dog will see this.",
     "imageCaption": "caption",
     "answers": [{
             "choice": "Black and White",
@@ -45,83 +116,59 @@ var question1 = {
     ]
 };
 
-var question2 = {
-    "id": "2",
+var question5 = {
+    "id": "5",
     "type": "type1",
-    "questionText": "The importance of colour. Which of these tomotoes are ripe?",
-    "imageUrl": "images/tomato_black_400.jpg",
-    "answerImageUrl": "images/tomato_color_400.jpg",
-    "answerText": "The foloowing combination is correct: ",
+    "questionText": "How many colours make the bar in the middle?",
+    "imageUrl": "images/contrastExperiment800_q.jpg",
+    "answerImageUrl": "images/contrastExperiment800_a.jpg",
+    "answerText": "It is the same colour! Ahhh the power of contrast...",
     "imageCaption": "caption",
     "answers": [{
-            "choice": "drerf",
-            "correct": false
-        },
-        {
-            "choice": "crtvce",
+            "choice": " 1 colours ",
             "correct": true
         },
         {
-            "choice": " ntyrbdv",
+            "choice": " 2 colours ",
             "correct": false
         },
         {
-            "choice": " tbdfvds",
+            "choice": " 3 colours ",
+            "correct": false
+        },
+        {
+            "choice": " 4 colours ",
             "correct": false
         }
     ]
 };
 
-
-var question4 = {
-    "id": "1",
+/*
+var question6 = {
+    "id": "6",
     "type": "type2",
-    "questionText": "What are three primary numbers?",
-    "answerImageUrl": "images/rock_400.jpg",
-    "answerText": "Make frog jump",
+    "questionText": "Which of these colour schemes is Analogous?",
+    "answerImageUrl": "images/Analogous_C_scheme.jpg",
+    "answerText": "This is Analogous(similar hue).<br>The other one is Monochromatic Scheme.(same hue different shades, tones and tints.) ",
     "answers": [{
-            "imageUrl": "images/jellyfish_400.jpg",
+            "imageUrl": "images/Monochromatic_C_scheme.jpg",
             "correct": false
         },
         {
-            "imageUrl": "images/rock_400.jpg",
+            "imageUrl": "images/Analogous_C_scheme.jpg",
             "correct": true
         },
     ]
-};
+};*/
 
-var question3 = {
-    "id": "3",
-    "type": "type3",
-    "questionText": "What is the colour of the year 2018, according to the Pantone colour institute.",
-    "imageUrl": "images/colour2018.jpg",
-    "answerImageUrl": "images/colour2018.jpg",
-    "answerText": "Ultraviolet 2018",
-    "imageCaption": "caption",
-    "answers": [{
-            "imageUrl": "images/meadowlank2018.jpg",
-            "correct": false
-        },
-        {
-            "imageUrl": "images/littleboyblue2018.jpg",
-            "correct": false
-        },
-        {
-            "imageUrl": "images/cherry_tomato2018.jpg",
-            "correct": false
-        },
-        {
-            "imageUrl": "images/colour2018.jpg",
-            "correct": true
-        }
-    ]
-};
 
 //putting question objects into questions array
 questions.push(question1);
 questions.push(question2);
 questions.push(question3);
 questions.push(question4);
+questions.push(question5);
+/*questions.push(question6);*/
 
 //progress bar related info
 var totalSteps = questions.length;
@@ -147,15 +194,15 @@ function resetProgress() {
     progress.width(progressValue + "%");
 }
 
+/*can use this code later is decide that take quiz again should be a button
+and reset quiz rather than go to homepage
 function resetQuiz() {
-    //making sure the next button is set
-    $(".nextQuestion > button").text("Next");
     //setting event listener
     $(".nextQuestion > button").click(moveNextQuestion);
     currentQuestion = 0;
     resetProgress();
     enableNextButton();
-}
+}*/
 
 //hiding all sections not needed for current question
 function hideAllSections() {
