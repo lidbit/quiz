@@ -1,0 +1,15 @@
+
+TASK1 
+
+
+if under 50%
+$("#tryagain_image").show();
+$("#results-text").html("No need to be blue! <br>Click the link below to try again.");
+
+if 50% to 57%
+$("#welldone_image").show("Well done! Keep exploring!<br> May the colour be with you!");
+
+if above 75
+$("#brilliant_image").show("You are brilliant! Celebrate!");
+
+
