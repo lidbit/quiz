@@ -241,7 +241,9 @@ var moveNextQuestion = function() {
         //TODO - PRINT OUT THE HOW CORECT UT OF HOW MNY completed
         $(".progress").hide();
         $("#status-message").hide();
-        $("#correctAnswers").text(correctAnswers + " out of " + questions.length + ": " + answerToPercent());
+        $("#score").html(correctAnswers + " out of " + questions.length + ": " + answerToPercent());
+
+
         /*   if( 45 < 50 )
            {
                $("#results-message-container").attr("background-color", red);
