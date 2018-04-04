@@ -179,6 +179,33 @@ $(document).ready(function() {
     init();
 });
 
+//initialising document
+function init() {
+    $("#results-section").hide(); //results section or results page - need to decide
+    $("#qtype1-section").hide();
+    $("#qtype2-section").hide();
+    $("#qtype3-section").hide();
+    $("#quiz-header").hide();
+    $("#orientation").hide();
+    $("#results-page").hide();
+    disableNextButton();
+
+    //when user clicks start quiz button hide all sections and load question
+    $("#quiz-start").click(function() {
+        hideAllSections();
+        $("#quiz-start").hide();
+        loadQuestion();
+        $("#orientation").show();
+        $("#quiz-header").show();
+        $("footer").show();
+    });
+
+    //when next button is clicked load next question, if test finished load answers 
+    $(".nextQuestion > button").click(moveNextQuestion);
+    /*$("#quiz-header").click(resetQuiz);*/
+
+}
+
 //updating the progress bar data
 function updateProgress() {
     var progress = $(".progress-data");
@@ -231,20 +258,19 @@ function disableNextButton() {
 var moveNextQuestion = function() {
     currentQuestion++;
     updateProgress();
-    //checking if at end of quiz
+    //checking if at end of quiz load qs or show results
     if (currentQuestion < questions.length) {
-        //load questions
         loadQuestion(currentQuestion);
     } else {
+        //hide everything related to quiz and show results
         hideAllSections();
-        // disableNextButton();
         $(".nextQuestion > button").hide();
-        //TODO - PRINT OUT THE HOW CORECT UT OF HOW MNY completed
         $(".progress").hide();
-        $("#status-message").hide();
-        $("#score").html(correctAnswers + " out of " + questions.length + ": " + answerToPercent() + " %");
-        var scorePercent = answerToPercent();
         hideResultImages();
+        //set score message
+        $("#score").html(correctAnswers + " out of " + questions.length + ": " + answerToPercent() + " %");
+        //decide which image and encouraging message to show and set it
+        var scorePercent = answerToPercent();
         if (scorePercent < 50) {
             $("#tryagain_image").show();
             $("#results-text").html("No need to be blue! <br>Click the link below to try again.");
@@ -255,88 +281,224 @@ var moveNextQuestion = function() {
             $("#brilliant_image").show();
             $("#results-text").html("You are brilliant! Celebrate!");
         }
-
+        //show results section with all info pre set
         $("#results-section").show();
         currentQuestion = 0;
-        //resetProgress();
+
     }
 };
 
+//hiding all three result images
 function hideResultImages(){
     $("#tryagain_image").hide();
     $("#welldone_image").hide();
     $("#brilliant_image").hide();
 }
 
-
-//initialising document
-function init() {
-    $("#results-section").hide(); //results section or results page - need to decide
-    $("#qtype1-section").hide();
-    $("#qtype2-section").hide();
-    $("#qtype3-section").hide();
-    $("#quiz-header").hide();
-    $("#orientation").hide();
-    $("#results-page").hide();
-    disableNextButton();
-
-    //when user clicks start quiz button hide all sections and load question
-    $("#quiz-start").click(function() {
-        hideAllSections();
-        $("#quiz-start").hide();
-        loadQuestion();
-        $("#orientation").show();
-        $("#quiz-header").show();
-        $("footer").show();
-    });
-
-    //when next button is clicked load next question, if test finished load answers 
-    $(".nextQuestion > button").click(moveNextQuestion);
-    /*$("#quiz-header").click(resetQuiz);*/
-
-}
-
+//getting the question data and loading it into question card
 function loadQuestion(index) {
+    //if no more questions do nothing
     if (currentQuestion >= questions.length) {
         return;
     }
+
+    //disable and hide next button
     disableNextButton();
     $(".nextQuestion").hide();
     if (typeof(index) === 'undefined' || index === null) {
         index = 0;
     }
 
-    /*set first question*/
-    var question = questions[index];
+    //make sure no sectins showing
     hideAllSections();
 
-    /*question area appears in all questions*/
-
+    //get current question and set question related data
+    var question = questions[index];
     initQuestion(question);
 }
-/*
-function answerAnalysis(question, element){
-    // Question type 1 analysis
-    var correctQ1AnswerChoicefromButton;
-    var userAnswerChoiceString;
 
-    for (var i = 0; i = question.answers.length; i++) {
-        if(question.answers[i].correct){
-            correctQ1Answer = question.answers[i].choice;
-            console.log( "the correct choice for this question is : " + );
-        }
+//get data from question object and put it into question card
+function initQuestion(question) {
+    var questionText = $(".question-text");
+    var questionButtons = $('[data-question-type="' + question.type + '"]');
+    questionButtons.each((i, v) => {
+        $(v).prop("disabled", false);
+    });
+    //set question related data depending on question type
+    if (question.type === "type1") {
+        initQuestionType1(question, questionText);
+        $("#qtype1-section").show();
+    } else if (question.type === "type2") {
+        initQuestionType2(question, questionText);
+        $("#qtype2-section").show();
+    } else if (question.type === "type3") {
+        initQuestionType3(question, questionText);
+        $("#qtype3-section").show();
     }
-    
-}*/
-/*
-Question type1: we have buttons
-We have set the button html in load question like this:qOneButton1.html(question.answers[0].choice);
-So we need to extract it from this element this would be userAnswer
-
-need a for loop to loop through question.answers and compare question.answers[0].choice 
-
+}
+/* setting information related to type1 question. 
+In future implementation this would be broken down into related functions
 */
-// TODO
+function initQuestionType1(question, questionText) {
+
+    questionText.html(question.questionText);
+    var img = $("#qtype1Img");
+    img.prop("src", question.imageUrl);
+
+    var qOneButton1 = $("#question1button");
+    var qOneButton2 = $("#question2button");
+    var qOneButton3 = $("#question3button");
+    var qOneButton4 = $("#question4button");
+    qOneButton1.html(question.answers[0].choice);
+    qOneButton1.attr("data-ans-val", question.answers[0].correct);
+    qOneButton1.attr("data-question-type", question.type);
+    qOneButton2.html(question.answers[1].choice);
+    qOneButton2.attr("data-ans-val", question.answers[1].correct);
+    qOneButton2.attr("data-question-type", question.type);
+    qOneButton3.html(question.answers[2].choice);
+    qOneButton3.attr("data-ans-val", question.answers[2].correct);
+    qOneButton3.attr("data-question-type", question.type);
+    qOneButton4.html(question.answers[3].choice);
+    qOneButton4.attr("data-ans-val", question.answers[3].correct);
+    qOneButton4.attr("data-question-type", question.type);
+
+    qOneButton1.unbind("click");
+    qOneButton2.unbind("click");
+    qOneButton3.unbind("click");
+    qOneButton4.unbind("click");
+
+    //show question buttons
+    $("#button-group").show();
+
+    qOneButton1.click(function() {
+        checkAnswer(this);
+        enableNextButton();
+        $("#button-group").hide();
+        img.prop("src", question.answerImageUrl);
+        questionText.html(question.answerText);
+
+    });
+    qOneButton2.click(function() {
+        checkAnswer(this);
+        enableNextButton();
+        $("#button-group").hide();
+        img.prop("src", question.answerImageUrl);
+        questionText.html(question.answerText);
+    });
+    qOneButton3.click(function() {
+        checkAnswer(this);
+        enableNextButton();
+        $("#button-group").hide();
+        img.prop("src", question.answerImageUrl);
+        questionText.html(question.answerText);
+    });
+    qOneButton4.click(function() {
+        checkAnswer(this);
+        enableNextButton();
+        $("#button-group").hide();
+        img.prop("src", question.answerImageUrl);
+        questionText.html(question.answerText);
+    });
+}
+
+
+/* setting information related to type2 question. 
+In future implementation this would be broken down into related functions
+*/
+function initQuestionType2(question, questionText) {
+    questionText.html(question.questionText);
+    var img1 = $("#type2-img1");
+    var img2 = $("#type2-img2");
+
+    img1.prop("src", question.answers[0].imageUrl);
+    img1.attr("data-ans-val", question.answers[0].correct);
+    img1.attr("data-question-type", question.type);
+    img2.prop("src", question.answers[1].imageUrl);
+    img2.attr("data-ans-val", question.answers[1].correct);
+    img2.attr("data-question-type", question.type);
+
+    var imageQuestions = $('img[data-question-type="' + question.type + '"]');
+    imageQuestions.each((i, v) => {
+        var imageWrapper = $(v).parent();
+        $(imageWrapper).removeClass("disabled");
+        $(v).removeClass("disabled");
+    });
+
+    img1.unbind("click");
+    img2.unbind("click");
+
+    img1.click(function() {
+        checkAnswer(this);
+        enableNextButton();
+        img1.prop("src", question.answerImageUrl);
+        img2.prop("src", question.answerImageUrl);
+        questionText.html(question.answerText);
+    });
+
+    img2.click(function() {
+        checkAnswer(this);
+        enableNextButton();
+        img2.prop("src", question.answerImageUrl);
+        img1.prop("src", question.answerImageUrl);
+        questionText.html(question.answerText);
+    });
+}
+
+/* setting information related to type1 question. 
+In future implementation this would be broken down into related functions
+*/
+function initQuestionType3(question, questionText) {
+    questionText.html(question.questionText);
+    $("#qtype3Img1").prop("src", question.answers[0].imageUrl);
+    $("#qtype3Img1").attr("data-ans-val", question.answers[0].correct);
+    $("#qtype3Img1").attr("data-question-type", question.type);
+    $("#qtype3Img2").prop("src", question.answers[1].imageUrl);
+    $("#qtype3Img2").attr("data-question-type", question.type);
+    $("#qtype3Img2").attr("data-ans-val", question.answers[1].correct);
+    $("#qtype3Img3").prop("src", question.answers[2].imageUrl);
+    $("#qtype3Img3").attr("data-ans-val", question.answers[2].correct);
+    $("#qtype3Img3").attr("data-question-type", question.type);
+    $("#qtype3Img4").prop("src", question.answers[3].imageUrl);
+    $("#qtype3Img4").attr("data-ans-val", question.answers[3].correct);
+    $("#qtype3Img4").attr("data-question-type", question.type);
+
+    $("#qtype3Img1").unbind("click");
+    $("#qtype3Img2").unbind("click");
+    $("#qtype3Img3").unbind("click");
+    $("#qtype3Img4").unbind("click");
+
+    $("#qtype3Img1").click(function() {
+        checkAnswer(this);
+        enableNextButton();
+        setT3Answer(question);
+    });
+    $("#qtype3Img2").click(function() {
+        checkAnswer(this);
+        enableNextButton();
+        setT3Answer(question);
+    });
+    $("#qtype3Img3").click(function() {
+        checkAnswer(this);
+        enableNextButton();
+        setT3Answer(question);
+    });
+    $("#qtype3Img4").click(function() {
+        checkAnswer(this);
+        enableNextButton();
+        setT3Answer(question);
+    });
+}
+
+//setting all images to answer image and setting answer text
+function setT3Answer(question){
+    $("#qtype3Img1").prop("src", question.answerImageUrl);
+    $("#qtype3Img2").prop("src", question.answerImageUrl);
+    $("#qtype3Img3").prop("src", question.answerImageUrl);
+    $("#qtype3Img4").prop("src", question.answerImageUrl);
+    questionText.html(question.answerText);
+}
+
+
 function checkAnswer(element) {
     console.log(element);
 
@@ -378,183 +540,7 @@ function answerToPercent() {
     return Math.round(percent);
 }
 
-function initQuestionType3(question, questionText) {
-    questionText.html(question.questionText);
-    $("#qtype3Img1").prop("src", question.answers[0].imageUrl);
-    $("#qtype3Img1").attr("data-ans-val", question.answers[0].correct);
-    $("#qtype3Img1").attr("data-question-type", question.type);
-    $("#qtype3Img2").prop("src", question.answers[1].imageUrl);
-    $("#qtype3Img2").attr("data-question-type", question.type);
-    $("#qtype3Img2").attr("data-ans-val", question.answers[1].correct);
-    $("#qtype3Img3").prop("src", question.answers[2].imageUrl);
-    $("#qtype3Img3").attr("data-ans-val", question.answers[2].correct);
-    $("#qtype3Img3").attr("data-question-type", question.type);
-    $("#qtype3Img4").prop("src", question.answers[3].imageUrl);
-    $("#qtype3Img4").attr("data-ans-val", question.answers[3].correct);
-    $("#qtype3Img4").attr("data-question-type", question.type);
 
-    $("#qtype3Img1").unbind("click");
-    $("#qtype3Img2").unbind("click");
-    $("#qtype3Img3").unbind("click");
-    $("#qtype3Img4").unbind("click");
 
-    $("#qtype3Img1").click(function() {
-        checkAnswer(this);
-        enableNextButton();
-        $("#qtype3Img1").prop("src", question.answerImageUrl);
-        $("#qtype3Img2").prop("src", question.answerImageUrl);
-        $("#qtype3Img3").prop("src", question.answerImageUrl);
-        $("#qtype3Img4").prop("src", question.answerImageUrl);
-        questionText.html(question.answerText);
-    });
-    $("#qtype3Img2").click(function() {
-        checkAnswer(this);
-        enableNextButton();
-        $("#qtype3Img1").prop("src", question.answerImageUrl);
-        $("#qtype3Img2").prop("src", question.answerImageUrl);
-        $("#qtype3Img3").prop("src", question.answerImageUrl);
-        $("#qtype3Img4").prop("src", question.answerImageUrl);
-        questionText.html(question.answerText);
-    });
-    $("#qtype3Img3").click(function() {
-        checkAnswer(this);
-        enableNextButton();
-        $("#qtype3Img1").prop("src", question.answerImageUrl);
-        $("#qtype3Img2").prop("src", question.answerImageUrl);
-        $("#qtype3Img3").prop("src", question.answerImageUrl);
-        $("#qtype3Img4").prop("src", question.answerImageUrl);
-        questionText.html(question.answerText);
-    });
-    $("#qtype3Img4").click(function() {
-        checkAnswer(this);
-        enableNextButton();
-        $("#qtype3Img1").prop("src", question.answerImageUrl);
-        $("#qtype3Img2").prop("src", question.answerImageUrl);
-        $("#qtype3Img3").prop("src", question.answerImageUrl);
-        $("#qtype3Img4").prop("src", question.answerImageUrl);
-        questionText.html(question.answerText);
-    });
-}
 
-function initQuestionType2(question, questionText) {
-    questionText.html(question.questionText);
-    var img1 = $("#type2-img1");
-    var img2 = $("#type2-img2");
 
-    img1.prop("src", question.answers[0].imageUrl);
-    img1.attr("data-ans-val", question.answers[0].correct);
-    img1.attr("data-question-type", question.type);
-    img2.prop("src", question.answers[1].imageUrl);
-    img2.attr("data-ans-val", question.answers[1].correct);
-    img2.attr("data-question-type", question.type);
-
-    var imageQuestions = $('img[data-question-type="' + question.type + '"]');
-    imageQuestions.each((i, v) => {
-        var imageWrapper = $(v).parent();
-        $(imageWrapper).removeClass("disabled");
-        $(v).removeClass("disabled");
-    });
-
-    img1.unbind("click");
-    img2.unbind("click");
-
-    img1.click(function() {
-        checkAnswer(this);
-        enableNextButton();
-        img1.prop("src", question.answerImageUrl);
-        img2.prop("src", question.answerImageUrl);
-        questionText.html(question.answerText);
-    });
-
-    img2.click(function() {
-        checkAnswer(this);
-        enableNextButton();
-        img2.prop("src", question.answerImageUrl);
-        img1.prop("src", question.answerImageUrl);
-        questionText.html(question.answerText);
-    });
-}
-
-function initQuestionType1(question, questionText) {
-
-    questionText.html(question.questionText);
-    var img = $("#qtype1Img");
-    img.prop("src", question.imageUrl);
-
-    var qOneButton1 = $("#question1button");
-    var qOneButton2 = $("#question2button");
-    var qOneButton3 = $("#question3button");
-    var qOneButton4 = $("#question4button");
-    qOneButton1.html(question.answers[0].choice);
-    qOneButton1.attr("data-ans-val", question.answers[0].correct);
-    qOneButton1.attr("data-question-type", question.type);
-    qOneButton2.html(question.answers[1].choice);
-    qOneButton2.attr("data-ans-val", question.answers[1].correct);
-    qOneButton2.attr("data-question-type", question.type);
-    qOneButton3.html(question.answers[2].choice);
-    qOneButton3.attr("data-ans-val", question.answers[2].correct);
-    qOneButton3.attr("data-question-type", question.type);
-    qOneButton4.html(question.answers[3].choice);
-    qOneButton4.attr("data-ans-val", question.answers[3].correct);
-    qOneButton4.attr("data-question-type", question.type);
-
-    qOneButton1.unbind("click");
-    qOneButton2.unbind("click");
-    qOneButton3.unbind("click");
-    qOneButton4.unbind("click");
-
-    //show question buttons
-    $("#button-group").show();
-
-    qOneButton1.click(function() {
-        checkAnswer(this);
-        /*  answerAnalysis(question, this);
-          console.log("this is a question   " + question );
-          console.log("this is a this:   " + this);
-          console.log("this is a this text:   " + $(this).text);*/
-        enableNextButton();
-        $("#button-group").hide();
-        img.prop("src", question.answerImageUrl);
-        questionText.html(question.answerText);
-
-    });
-    qOneButton2.click(function() {
-        checkAnswer(this);
-        enableNextButton();
-        $("#button-group").hide();
-        img.prop("src", question.answerImageUrl);
-        questionText.html(question.answerText);
-    });
-    qOneButton3.click(function() {
-        checkAnswer(this);
-        enableNextButton();
-        $("#button-group").hide();
-        img.prop("src", question.answerImageUrl);
-        questionText.html(question.answerText);
-    });
-    qOneButton4.click(function() {
-        checkAnswer(this);
-        enableNextButton();
-        $("#button-group").hide();
-        img.prop("src", question.answerImageUrl);
-        questionText.html(question.answerText);
-    });
-}
-
-function initQuestion(question) {
-    var questionText = $(".question-text");
-    var questionButtons = $('[data-question-type="' + question.type + '"]');
-    questionButtons.each((i, v) => {
-        $(v).prop("disabled", false);
-    });
-    if (question.type === "type1") {
-        initQuestionType1(question, questionText);
-        $("#qtype1-section").show();
-    } else if (question.type === "type2") {
-        initQuestionType2(question, questionText);
-        $("#qtype2-section").show();
-    } else if (question.type === "type3") {
-        initQuestionType3(question, questionText);
-        $("#qtype3-section").show();
-    }
-}
