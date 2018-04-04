@@ -370,35 +370,33 @@ function initQuestionType1(question, questionText) {
     //show question buttons
     $("#button-group").show();
 
+    //setting click events
     qOneButton1.click(function() {
         checkAnswer(this);
-        enableNextButton();
-        $("#button-group").hide();
-        img.prop("src", question.answerImageUrl);
-        questionText.html(question.answerText);
+        setT1Answer(question, img, questionText);
 
     });
     qOneButton2.click(function() {
         checkAnswer(this);
-        enableNextButton();
-        $("#button-group").hide();
-        img.prop("src", question.answerImageUrl);
-        questionText.html(question.answerText);
+        setT1Answer(question, img, questionText);
     });
     qOneButton3.click(function() {
         checkAnswer(this);
-        enableNextButton();
-        $("#button-group").hide();
-        img.prop("src", question.answerImageUrl);
-        questionText.html(question.answerText);
+        setT1Answer(question, img, questionText);
+      
     });
     qOneButton4.click(function() {
         checkAnswer(this);
-        enableNextButton();
-        $("#button-group").hide();
-        img.prop("src", question.answerImageUrl);
-        questionText.html(question.answerText);
+        setT1Answer(question, img, questionText);
     });
+}
+
+//setting all images to answer image and setting answer text
+function setT1Answer(question, img, questionText ){
+    enableNextButton();
+    $("#button-group").hide();
+    img.prop("src", question.answerImageUrl);
+    questionText.html(question.answerText);
 }
 
 
@@ -427,6 +425,7 @@ function initQuestionType2(question, questionText) {
     img1.unbind("click");
     img2.unbind("click");
 
+    //setting click events
     img1.click(function() {
         checkAnswer(this);
         enableNextButton();
@@ -467,30 +466,28 @@ function initQuestionType3(question, questionText) {
     $("#qtype3Img3").unbind("click");
     $("#qtype3Img4").unbind("click");
 
+    //setting click events
     $("#qtype3Img1").click(function() {
         checkAnswer(this);
-        enableNextButton();
         setT3Answer(question);
     });
     $("#qtype3Img2").click(function() {
         checkAnswer(this);
-        enableNextButton();
         setT3Answer(question);
     });
     $("#qtype3Img3").click(function() {
         checkAnswer(this);
-        enableNextButton();
         setT3Answer(question);
     });
     $("#qtype3Img4").click(function() {
         checkAnswer(this);
-        enableNextButton();
         setT3Answer(question);
     });
 }
 
 //setting all images to answer image and setting answer text
 function setT3Answer(question){
+    enableNextButton();
     $("#qtype3Img1").prop("src", question.answerImageUrl);
     $("#qtype3Img2").prop("src", question.answerImageUrl);
     $("#qtype3Img3").prop("src", question.answerImageUrl);
