@@ -271,20 +271,16 @@ p {
     letter-spacing: 0.3em;
     padding-top: 1%;
     padding-bottom: 1%;
-    
     text-shadow: 2px 2px 3px rgba(41, 52, 151, 0.699), 0 0 25px rgba(236, 210, 236, 0.89), 0 0 5px rgba(247, 199, 244, 0.904);
     background-image: linear-gradient( to right, #10073a, rgb(20, 21, 84) 10%, rgba(53, 221, 215, 0.61) 20%, #17a7ac 80%, rgb(20, 21, 84) 90%,#10073a 98%);
-    box-shadow: 0 4px 8px 2 #46bbbb;
     height: 10%;
 }
 
-
+/*removing underline in the home link/header text*/
 #quiz-header>a {
     text-decoration: none;
 }
-#quiz-header {
-    color: whitesmoke;
-}
+
 
 #answer-section {
     width: 600px;
@@ -529,7 +525,6 @@ p {
     top: 0px;
     left: 0px;
     right: 0px;
-    z-index: 2;
     min-height: 300px;
 }
 
@@ -539,7 +534,6 @@ p {
     top: 0px;
     left: 0px;
     right: 0px;
-    z-index: 3;
     min-height: 300px;
 }
 
@@ -571,7 +565,7 @@ p {
     color: white;
 
 }
-#score{
+h2{
     font-family: 'Nothing You Could Do', cursive;
     font-size: 26px;
     margin-bottom: 20px;
@@ -581,7 +575,7 @@ p {
 
 #quiz_again{
     font-size:36px;
-    color : white;
+    color : rgb(142, 210, 236);
  }
 
 
