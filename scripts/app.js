@@ -26,13 +26,13 @@ var question1 = {
     "answerImageUrl": "images/jellyfish_400.jpg",
     "answerText": "Jellyfish - Bioluminescent <br>This occurs due to chemical reaction in the body of a creature. No UV light needed to glow.<br>The rock is Fluorescent <br>This occurs due to physical reaction. The UV light makes the rock glow.",
     "answers": [{
-            "imageUrl": "images/jellyfish_400.jpg",
-            "correct": true
-        },
-        {
-            "imageUrl": "images/rock_400.jpg",
-            "correct": false
-        },
+        "imageUrl": "images/jellyfish_400.jpg",
+        "correct": true
+    },
+    {
+        "imageUrl": "images/rock_400.jpg",
+        "correct": false
+    },
     ]
 };
 
@@ -43,13 +43,13 @@ var question6 = {
     "answerImageUrl": "images/Analogous_C_scheme.jpg",
     "answerText": "This is Analogous(similar hue).<br>The other one is Monochromatic Scheme.(same hue different shades, tones and tints.) ",
     "answers": [{
-            "imageUrl": "images/Monochromatic_C_scheme.jpg",
-            "correct": false
-        },
-        {
-            "imageUrl": "images/Analogous_C_scheme.jpg",
-            "correct": true
-        },
+        "imageUrl": "images/Monochromatic_C_scheme.jpg",
+        "correct": false
+    },
+    {
+        "imageUrl": "images/Analogous_C_scheme.jpg",
+        "correct": true
+    },
     ]
 };
 
@@ -62,21 +62,21 @@ var question2 = {
     "answerText": "The following combination is correct: A B E",
     "imageCaption": "caption",
     "answers": [{
-            "choice": " B D E ",
-            "correct": false
-        },
-        {
-            "choice": " C E F ",
-            "correct": false
-        },
-        {
-            "choice": " A C D ",
-            "correct": false
-        },
-        {
-            "choice": " A B E ",
-            "correct": true
-        }
+        "choice": " B D E ",
+        "correct": false
+    },
+    {
+        "choice": " C E F ",
+        "correct": false
+    },
+    {
+        "choice": " A C D ",
+        "correct": false
+    },
+    {
+        "choice": " A B E ",
+        "correct": true
+    }
     ]
 };
 
@@ -89,21 +89,21 @@ var question3 = {
     "answerText": "Ultraviolet 2018!<br>Watch how suddenly lilacs and purples will appear in the media and shops. Honestly!",
     "imageCaption": "caption",
     "answers": [{
-            "imageUrl": "images/colour2018.jpg",
-            "correct": true
-        },
-        {
-            "imageUrl": "images/littleboyblue2018.jpg",
-            "correct": false
-        },
-        {
-            "imageUrl": "images/cherry_tomato2018.jpg",
-            "correct": false
-        },
-        {
-            "imageUrl": "images/meadowlank2018.jpg",
-            "correct": false
-        }
+        "imageUrl": "images/colour2018.jpg",
+        "correct": true
+    },
+    {
+        "imageUrl": "images/littleboyblue2018.jpg",
+        "correct": false
+    },
+    {
+        "imageUrl": "images/cherry_tomato2018.jpg",
+        "correct": false
+    },
+    {
+        "imageUrl": "images/meadowlank2018.jpg",
+        "correct": false
+    }
     ]
 };
 
@@ -116,21 +116,21 @@ var question4 = {
     "answerText": "The dog can only see 2 colors: Yellow and Blue.<br>Mostly likely the dog will see this.",
     "imageCaption": "caption",
     "answers": [{
-            "choice": "Black and White",
-            "correct": false
-        },
-        {
-            "choice": "2 Colours",
-            "correct": true
-        },
-        {
-            "choice": "3 Colours",
-            "correct": false
-        },
-        {
-            "choice": "4 colours",
-            "correct": false
-        }
+        "choice": "Black and White",
+        "correct": false
+    },
+    {
+        "choice": "2 Colours",
+        "correct": true
+    },
+    {
+        "choice": "3 Colours",
+        "correct": false
+    },
+    {
+        "choice": "4 colours",
+        "correct": false
+    }
     ]
 };
 
@@ -143,21 +143,21 @@ var question5 = {
     "answerText": "It is the same colour! Ahhh the power of contrast...",
     "imageCaption": "caption",
     "answers": [{
-            "choice": " 1 colours ",
-            "correct": true
-        },
-        {
-            "choice": " 2 colours ",
-            "correct": false
-        },
-        {
-            "choice": " 3 colours ",
-            "correct": false
-        },
-        {
-            "choice": " 4 colours ",
-            "correct": false
-        }
+        "choice": " 1 colours ",
+        "correct": true
+    },
+    {
+        "choice": " 2 colours ",
+        "correct": false
+    },
+    {
+        "choice": " 3 colours ",
+        "correct": false
+    },
+    {
+        "choice": " 4 colours ",
+        "correct": false
+    }
     ]
 };
 
@@ -175,7 +175,7 @@ var totalSteps = questions.length;
 var stepSize = (1 / totalSteps) * 100;
 
 //calling init function
-$(document).ready(function() {
+$(document).ready(function () {
     init();
 });
 
@@ -191,7 +191,7 @@ function init() {
     disableNextButton();
 
     //when user clicks start quiz button hide all sections and load question
-    $("#quiz-start").click(function() {
+    $("#quiz-start").click(function () {
         hideAllSections();
         $("#quiz-start").hide();
         loadQuestion();
@@ -255,7 +255,7 @@ function disableNextButton() {
  if are at the end of quiz then change button to restart quiz
  and load answers
  */
-var moveNextQuestion = function() {
+var moveNextQuestion = function () {
     currentQuestion++;
     updateProgress();
     //checking if at end of quiz load qs or show results
@@ -289,7 +289,7 @@ var moveNextQuestion = function() {
 };
 
 //hiding all three result images
-function hideResultImages(){
+function hideResultImages() {
     $("#tryagain_image").hide();
     $("#welldone_image").hide();
     $("#brilliant_image").hide();
@@ -305,7 +305,7 @@ function loadQuestion(index) {
     //disable and hide next button
     disableNextButton();
     $(".nextQuestion").hide();
-    if (typeof(index) === 'undefined' || index === null) {
+    if (typeof (index) === 'undefined' || index === null) {
         index = 0;
     }
 
@@ -371,28 +371,28 @@ function initQuestionType1(question, questionText) {
     $("#button-group").show();
 
     //setting click events
-    qOneButton1.click(function() {
+    qOneButton1.click(function () {
         checkAnswer(this);
         setT1Answer(question, img, questionText);
 
     });
-    qOneButton2.click(function() {
+    qOneButton2.click(function () {
         checkAnswer(this);
         setT1Answer(question, img, questionText);
     });
-    qOneButton3.click(function() {
+    qOneButton3.click(function () {
         checkAnswer(this);
         setT1Answer(question, img, questionText);
-      
+
     });
-    qOneButton4.click(function() {
+    qOneButton4.click(function () {
         checkAnswer(this);
         setT1Answer(question, img, questionText);
     });
 }
 
 //setting all images to answer image and setting answer text
-function setT1Answer(question, img, questionText ){
+function setT1Answer(question, img, questionText) {
     enableNextButton();
     $("#button-group").hide();
     img.prop("src", question.answerImageUrl);
@@ -426,7 +426,7 @@ function initQuestionType2(question, questionText) {
     img2.unbind("click");
 
     //setting click events
-    img1.click(function() {
+    img1.click(function () {
         checkAnswer(this);
         enableNextButton();
         img1.prop("src", question.answerImageUrl);
@@ -434,7 +434,7 @@ function initQuestionType2(question, questionText) {
         questionText.html(question.answerText);
     });
 
-    img2.click(function() {
+    img2.click(function () {
         checkAnswer(this);
         enableNextButton();
         img2.prop("src", question.answerImageUrl);
@@ -467,26 +467,26 @@ function initQuestionType3(question, questionText) {
     $("#qtype3Img4").unbind("click");
 
     //setting click events
-    $("#qtype3Img1").click(function() {
+    $("#qtype3Img1").click(function () {
         checkAnswer(this);
         setT3Answer(question);
     });
-    $("#qtype3Img2").click(function() {
+    $("#qtype3Img2").click(function () {
         checkAnswer(this);
         setT3Answer(question);
     });
-    $("#qtype3Img3").click(function() {
+    $("#qtype3Img3").click(function () {
         checkAnswer(this);
         setT3Answer(question);
     });
-    $("#qtype3Img4").click(function() {
+    $("#qtype3Img4").click(function () {
         checkAnswer(this);
         setT3Answer(question);
     });
 }
 
 //setting all images to answer image and setting answer text
-function setT3Answer(question){
+function setT3Answer(question) {
     enableNextButton();
     $("#qtype3Img1").prop("src", question.answerImageUrl);
     $("#qtype3Img2").prop("src", question.answerImageUrl);

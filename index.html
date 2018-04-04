@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <!-- Colour Quiz by Lydia Douglas -->
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,8 +14,7 @@
     <script src="scripts/jquery-3.3.1.min.js"></script>
     <script src="scripts/app.js" type="text/javascript"></script>
     <!--fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Amaranth|Fredericka+the+Great|Nothing+You+Could+Do"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amaranth|Fredericka+the+Great|Nothing+You+Could+Do" rel="stylesheet">
 
     <title>Colour Quiz</title>
 </head>
@@ -78,8 +78,8 @@
                     </div>
                     <!--progress bar orientate user to where they are in the quiz-->
                     <div class="progress">
-                            <div class="progress-data"></div>
-                        </div>
+                        <div class="progress-data"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -110,7 +110,7 @@
                     </div>
                     <!--progress bar orientate user to where they are in the quiz-->
                     <div class="progress">
-                            <div class="progress-data"></div>
+                        <div class="progress-data"></div>
                     </div>
                 </div>
             </div>
@@ -126,18 +126,18 @@
             the images are no longer clickable and next button is enabled-->
             <div class="card">
                 <div class="card-container">
-                        <div class="image-wrapper">
-                            <img id="qtype3Img1" class="imagetype3" src="" alt="question image">
-                        </div>
-                        <div class="image-wrapper">
-                            <img id="qtype3Img2" class="imagetype3" src="" alt="question image">
-                        </div>
-                        <div class="image-wrapper">
-                            <img id="qtype3Img3" class="imagetype3" src="" alt="question image">
-                        </div>
-                        <div class="image-wrapper">
-                            <img id="qtype3Img4" class="imagetype3" src="" alt="question image">
-                        </div>
+                    <div class="image-wrapper">
+                        <img id="qtype3Img1" class="imagetype3" src="" alt="question image">
+                    </div>
+                    <div class="image-wrapper">
+                        <img id="qtype3Img2" class="imagetype3" src="" alt="question image">
+                    </div>
+                    <div class="image-wrapper">
+                        <img id="qtype3Img3" class="imagetype3" src="" alt="question image">
+                    </div>
+                    <div class="image-wrapper">
+                        <img id="qtype3Img4" class="imagetype3" src="" alt="question image">
+                    </div>
                     <div class="question-container">
                         <p class="question-text"></p>
                     </div>
@@ -147,8 +147,8 @@
                     </div>
                     <!--progress bar orientate user to where they are in the quiz-->
                     <div class="progress">
-                            <div class="progress-data"></div>
-                        </div>
+                        <div class="progress-data"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -157,23 +157,25 @@
 
     <!--results section-->
     <div id="results-section">
-            <div id="results_wrapper">
-                <!--only one image is shown depending on quiz score -->
-                <img id="tryagain_image" src="images/result_tryagain.jpg" alt="Try Again Image">
-                <img id="welldone_image" src="images/result_welldone.jpg" alt="Well done!">
-                <img id="brilliant_image" src="images/result_brilliant.jpg" alt="Brilliant!!">
+        <div id="results_wrapper">
+            <!--only one image is shown depending on quiz score -->
+            <img id="tryagain_image" src="images/result_tryagain.jpg" alt="Try Again Image">
+            <img id="welldone_image" src="images/result_welldone.jpg" alt="Well done!">
+            <img id="brilliant_image" src="images/result_brilliant.jpg" alt="Brilliant!!">
 
-                <div id="results-message">
-                    <!-- Score, encouraging text and do-quiz-again button-->
-                    <h2 id="score">Your Score is </h2>
-                    <p id="results-text"></p>
-                    <h2><a id="quiz_again" href="/">Quiz Me Again!</a></h2>
-                </div>
+            <div id="results-message">
+                <!-- Score, encouraging text and do-quiz-again button-->
+                <h2 id="score">Your Score is </h2>
+                <p id="results-text"></p>
+                <h2>
+                    <a id="quiz_again" href="/">Quiz Me Again!</a>
+                </h2>
             </div>
+        </div>
     </div>
 
     <!--footer section-->
-    <footer id ="footer" role="contentinfo">
+    <footer id="footer" role="contentinfo">
         <p>&copy; copyright Lydia Douglas. 2018</p>
     </footer>
 </body>
