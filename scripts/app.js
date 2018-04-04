@@ -23,7 +23,7 @@ var question1 = {
     "id": "1",
     "type": "type2",
     "questionText": "Click on the image that shows bioluminescence.",
-    "answerImageUrl": "images/rock_400.jpg",
+    "answerImageUrl": "images/jellyfish_400.jpg",
     "answerText": "Jellyfish - Bioluminescent <br>This occurs due to chemical reaction in the body of a creature. No UV light needed to glow.<br>The rock is Fluorescent <br>This occurs due to physical reaction. The UV light makes the rock glow.",
     "answers": [{
             "imageUrl": "images/jellyfish_400.jpg",
@@ -67,7 +67,7 @@ var question2 = {
         },
         {
             "choice": " C E F ",
-            "correct": true
+            "correct": false
         },
         {
             "choice": " A C D ",
@@ -75,7 +75,7 @@ var question2 = {
         },
         {
             "choice": " A B E ",
-            "correct": false
+            "correct": true
         }
     ]
 };
@@ -83,7 +83,7 @@ var question2 = {
 var question3 = {
     "id": "3",
     "type": "type3",
-    "questionText": "What is the colour of the year 2018, according to the Pantone colour institute?<br><br>Ever noticed how everyone seems to start wearing pink all of a sudden?<br> or Salmon pink/grey websites start poping up like mushrooms after the rain?)",
+    "questionText": "What is the colour of the year 2018, according to the Pantone colour institute?<br><br>Ever noticed how everyone seems to start wearing pink all of a sudden?<br> or Salmon pink/grey websites start poping up like mushrooms after the rain?",
     "imageUrl": "images/colour2018.jpg",
     "answerImageUrl": "images/colour2018.jpg",
     "answerText": "Ultraviolet 2018!<br>Watch how suddenly lilacs and purples will appear in the media and shops. Honestly!",
@@ -243,7 +243,7 @@ var moveNextQuestion = function() {
         $("#status-message").hide();
         $("#score").html(correctAnswers + " out of " + questions.length + ": " + answerToPercent() + " %");
         var scorePercent = answerToPercent();
-
+        hideResultImages();
         if (scorePercent < 50) {
             $("#tryagain_image").show();
             $("#results-text").html("No need to be blue! <br>Click the link below to try again.");
@@ -260,6 +260,13 @@ var moveNextQuestion = function() {
         //resetProgress();
     }
 };
+
+function hideResultImages(){
+    $("#tryagain_image").hide();
+    $("#welldone_image").hide();
+    $("#brilliant_image").hide();
+}
+
 
 //initialising document
 function init() {
