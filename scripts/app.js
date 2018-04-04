@@ -71,8 +71,8 @@ var question3 = {
     "answerText": "Ultraviolet 2018!<br>Watch how suddenly lilacs and purples will appear in the media and shops. Honestly!",
     "imageCaption": "caption",
     "answers": [{
-        "imageUrl": "images/colour2018.jpg",
-        "correct": true    
+            "imageUrl": "images/colour2018.jpg",
+            "correct": true
         },
         {
             "imageUrl": "images/littleboyblue2018.jpg",
@@ -82,9 +82,9 @@ var question3 = {
             "imageUrl": "images/cherry_tomato2018.jpg",
             "correct": false
         },
-        {      
-        "imageUrl": "images/meadowlank2018.jpg",
-        "correct": false
+        {
+            "imageUrl": "images/meadowlank2018.jpg",
+            "correct": false
         }
     ]
 };
@@ -241,15 +241,25 @@ var moveNextQuestion = function() {
         //TODO - PRINT OUT THE HOW CORECT UT OF HOW MNY completed
         $(".progress").hide();
         $("#status-message").hide();
-        $("#score").html(correctAnswers + " out of " + questions.length + ": " + answerToPercent());
+        $("#score").html(correctAnswers + " out of " + questions.length + ": " + answerToPercent() + " %");
+        var scorePercent = answerToPercent();
 
+        /*
+        tryagain_image
+        welldone_image
+        brilliant_image
+        */
 
-        /*   if( 45 < 50 )
-           {
-               $("#results-message-container").attr("background-color", red);
-           }else{
-               $("#results-message-container").attr("background-color", green);
-           }*/
+        if (scorePercent < 50) {
+            $("#tryagain_image").show();
+            $("#results-text").html("No need to be blue! <br>Click the link below to try again.");
+        } else if (scorePercent >= 50 && scorePercent < 75) {
+            $("#welldone_image").show();
+            $("#results-text").html("Well done! Keep exploring!<br> May the colour be with you!");
+        } else if (scorePercent >= 75) {
+            $("#brilliant_image").show();
+            $("#results-text").html("You are brilliant! Celebrate!");
+        }
 
         $("#results-section").show();
         currentQuestion = 0;
@@ -534,5 +544,5 @@ function checkAnswer(element) {
 
 function answerToPercent() {
     var percent = (correctAnswers / questions.length) * 100;
-    return "" + percent + " %";
+    return percent;
 }

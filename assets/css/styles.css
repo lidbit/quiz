@@ -1,9 +1,17 @@
 /* Colour quiz created by Lydia Douglas 2018 */
+
+
 /* This quiz has been created to be extendable in the future*/
+
+
 /* There is a landing section, main quiz area, results section and footer*/
+
+
 /* The questions and answers are displayed in the card. The card, button and 
 other helper classes class allows for unified look and feel as well as maikng 
 it easier to change layout in future*/
+
+
 /*Alhough this site does not have complete responsive design implementation 
 most of the layout has been designed to allow the site to scale.
 */
@@ -12,9 +20,12 @@ html {
     box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
     box-sizing: inherit;
 }
+
 
 /*---------------------Setting up grid--(this grid comes fro W3Schools)---------------------------------*/
 
@@ -90,17 +101,20 @@ div[class*='col-']>img {
     cursor: pointer;
 }
 
+
 /*----------------------end setting up grid----------------------------------*/
 
 body {
     color: #E4C5C8;
-    background-color:#10073a ;
-    font-family:  'Segoe UI', 'Oxygen', 'Ubuntu', 'Cantarell', 'Open Sans', 'Helvetica Neue', sans-serif, sans-serif;
+    background-color: #10073a;
+    font-family: 'Segoe UI', 'Oxygen', 'Ubuntu', 'Cantarell', 'Open Sans', 'Helvetica Neue', sans-serif, sans-serif;
 }
 
 h1 {
     color: #6F9FD8;
 }
+
+
 /*
 
 h4 {
@@ -110,6 +124,7 @@ h4 {
     color: #E0E3E0;
 }
 */
+
 p {
     font-family: 'Roboto', sans-serif;
     font-size: 1em;
@@ -118,9 +133,10 @@ p {
     line-height: 1.6;
 }
 
+
 /******** footer *******************/
 
- #footer{
+#footer {
     padding-top: 0.5%;
     min-height: 80px;
     background-color: rgba(107, 91, 149, 0.404);
@@ -128,12 +144,14 @@ p {
     background-image: linear-gradient( rgba(27, 119, 247, 0.295), rgba(27, 119, 247, 0), rgb(224, 227, 224, 0.2));
 }
 
+
 /******************** Hero section  ****************************/
 
 #hero-section {
     margin-left: 0;
     margin-right: 0;
 }
+
 
 /*container for hero  images*/
 
@@ -143,6 +161,7 @@ p {
     top: 0px;
     background-color: #6B5B95;
 }
+
 
 /*hero images for animations*/
 
@@ -154,6 +173,7 @@ p {
     right: 0px;
 }
 
+
 /*top image with colour*/
 
 #color_image {
@@ -164,6 +184,7 @@ p {
     right: 0px;
     z-index: 2;
 }
+
 
 /*hero image animations */
 
@@ -190,6 +211,7 @@ p {
     animation-direction: alternate;
 }
 
+
 /*text near the hero image*/
 
 #hero-text-container {
@@ -202,6 +224,7 @@ p {
     text-shadow: 1px 1px 2px black, 0 0 25px #6F9FD8, 0 0 5px rgba(71, 108, 145, 0.904)
 }
 
+
 /*hero text*/
 
 #hero-title {
@@ -213,6 +236,7 @@ p {
     margin-bottom: 30px;
 }
 
+
 /*tag line text under hero text*/
 
 #hero-sentence {
@@ -221,6 +245,7 @@ p {
     font-size: 20px;
     margin-bottom: 20px;
 }
+
 
 /*start button*/
 
@@ -253,7 +278,9 @@ p {
     outline: 0;
 }
 
+
 /*****end hero section****/
+
 
 /********header************/
 
@@ -264,17 +291,16 @@ p {
     letter-spacing: 0.3em;
     padding-top: 1%;
     padding-bottom: 1%;
-    
     text-shadow: 2px 2px 3px rgba(41, 52, 151, 0.699), 0 0 25px rgba(236, 210, 236, 0.89), 0 0 5px rgba(247, 199, 244, 0.904);
-    background-image: linear-gradient( to right, #10073a, rgb(20, 21, 84) 10%, rgba(53, 221, 215, 0.61) 20%, #17a7ac 80%, rgb(20, 21, 84) 90%,#10073a 98%);
+    background-image: linear-gradient( to right, #10073a, rgb(20, 21, 84) 10%, rgba(53, 221, 215, 0.61) 20%, #17a7ac 80%, rgb(20, 21, 84) 90%, #10073a 98%);
     box-shadow: 0 4px 8px 2 #46bbbb;
     height: 10%;
 }
 
-
 #quiz-header>a {
     text-decoration: none;
 }
+
 #quiz-header {
     color: whitesmoke;
 }
@@ -287,6 +313,7 @@ p {
     background-color: rgba(0, 0, 0, 0.2);
 }
 
+
 /***** card setion all the element that can be found in the card******/
 
 .card {
@@ -294,18 +321,19 @@ p {
     transition: 0.3s;
     border-radius: 5px;
     /* 5px rounded corners */
-    background-color:#16165e;
+    background-color: #16165e;
     min-height: 450px;
-    box-shadow: 0  -132 145 -113 #90f0f0;
-    -moz-box-shadow:    inset 0 0 10px #46bbbb;
+    box-shadow: 0 -132 145 -113 #90f0f0;
+    -moz-box-shadow: inset 0 0 10px #46bbbb;
     -webkit-box-shadow: inset 0 0 10px #46bbbb;
-    box-shadow:         inset 0 0 10px #46bbbb;
+    box-shadow: inset 0 0 10px #46bbbb;
     padding-top: 20px;
-    padding-bottom:20px;
-    padding-right: 20px ;
+    padding-bottom: 20px;
+    padding-right: 20px;
     padding-left: 20px;
-    margin-top:15px;
+    margin-top: 15px;
 }
+
 
 /*style for image in the card , inset*/
 
@@ -314,17 +342,20 @@ p {
     min-height: 350;
 }
 
+
 /**/
 
 .question-container {
     margin-top: 10px;
 }
 
+
 /**/
 
 .question-container>p {
     padding-bottom: 20px;
 }
+
 
 /**/
 
@@ -335,6 +366,7 @@ p {
     padding-bottom: 20px;
 }
 
+
 /**/
 
 .q1button-container {
@@ -343,21 +375,23 @@ p {
     padding: 10px;
 }
 
+
 /************* styling for buttons *************/
 
 .baseButton {
     display: inline-block;
     /*text-shadow: -1px 1px rgba(70, 9, 214, 0.527);*/
     padding: 12px 32px;
-    width:120%;
+    width: 120%;
     line-height: 1.1;
     font-size: 1.2em;
-    font-family:  'Nothing You Could Do', 'Roboto', sans-serif;
+    font-family: 'Nothing You Could Do', 'Roboto', sans-serif;
     cursor: pointer;
-    color: rgb(28, 14, 63);;/*#6B5B95;*/
+    color: rgb(28, 14, 63);
+    ;
+    /*#6B5B95;*/
     border: none;
-    background-image: linear-gradient( to right, #17195C, rgb(20, 21, 84) 10%, rgba(53, 221, 215, 0.61) 30%, #17a7ac 70%, rgb(20, 21, 84) 90%,#17195C 98%);
-    
+    background-image: linear-gradient( to right, #17195C, rgb(20, 21, 84) 10%, rgba(53, 221, 215, 0.61) 30%, #17a7ac 70%, rgb(20, 21, 84) 90%, #17195C 98%);
 }
 
 .success:hover {
@@ -365,7 +399,9 @@ p {
     color: white;
 }
 
+
 /**this applies to images in q1 and q2*/
+
 
 /*
 .image-group {
@@ -385,7 +421,7 @@ p {
 
 .imagetype3 {
     /*width: 55%;*/
-    height:35%;
+    height: 35%;
 }
 
 .imagetype2 {
@@ -393,9 +429,12 @@ p {
     height: 95%;
 }
 
+
 /*********end card section****************/
 
+
 /******** next button**********************/
+
 
 /**/
 
@@ -404,20 +443,20 @@ p {
     cursor: pointer;
     display: block;
     margin: 0 10px 0 0;
-    font-family: 'Nothing You Could Do', 'Roboto', 'Segoe UI', Tahoma,  Verdana, sans-serif;
+    font-family: 'Nothing You Could Do', 'Roboto', 'Segoe UI', Tahoma, Verdana, sans-serif;
     font-size: 24px;
     line-height: 1.1;
     box-shadow: none;
     border-radius: 0;
-    color:rgb(28, 14, 63);
+    color: rgb(28, 14, 63);
     background-color: #6496c8;
     text-shadow: -1px 1px #417cb8;
     border: none;
     height: 40px;
     width: 100%;
-   
 }
-.nextQuestion{
+
+.nextQuestion {
     margin: 0, auto;
 }
 
@@ -452,6 +491,7 @@ p {
     pointer-events: none;
 }
 
+
 /* All disabled type1, type2, typeN question disabled buttons */
 
 [data-question-type^="type"]:disabled {
@@ -460,6 +500,7 @@ p {
     /* pointer-events: none; */
 }
 
+
 /******** progress bar *******************/
 
 .progress {
@@ -467,8 +508,8 @@ p {
     height: 20px;
     display: inline-block;
     background-color: rgba(58, 70, 75, 0.411);
-   /*border-color:  #46bbbb;*/
-    margin-top:15px;
+    /*border-color:  #46bbbb;*/
+    margin-top: 15px;
     margin-bottom: 10px;
     border-radius: 8px;
 }
@@ -493,6 +534,7 @@ p {
     margin-right: 0;
 }
 
+
 /*container for results images*/
 
 #results_wrapper {
@@ -501,6 +543,7 @@ p {
     top: 0px;
     min-height: 90vh;
 }
+
 
 /*results images*/
 
@@ -511,8 +554,9 @@ p {
     left: 0px;
     right: 0px;
     min-height: 300px;
-    
+    display: none;
 }
+
 
 /*top image with colour*/
 
@@ -524,6 +568,7 @@ p {
     right: 0px;
     z-index: 2;
     min-height: 300px;
+    display: none;
 }
 
 #brilliant_image {
@@ -534,21 +579,23 @@ p {
     right: 0px;
     z-index: 3;
     min-height: 300px;
+    display: none;
 }
+
 
 /*text on top of results window*/
 
 #results-message {
     position: absolute;
-   /* align-items: stretch;*/
-   top:20%; 
-   left: 0;
-    width:100%;
+    /* align-items: stretch;*/
+    top: 20%;
+    left: 0;
+    width: 100%;
     z-index: 4;
     text-align: center;
-   /* text-shadow: 1px 1px 2px  #46bbbb, 0 0 25px #6F9FD8, 0 0 5px rgba(71, 108, 145, 0.904);
+    /* text-shadow: 1px 1px 2px  #46bbbb, 0 0 25px #6F9FD8, 0 0 5px rgba(71, 108, 145, 0.904);
     background-color: #333 ;*/
-   /* width: 100%;*/
+    /* width: 100%;*/
     padding: 20px 10px;
     background: rgba(0, 0, 0, 0.5);
     text-overflow: wrap;
@@ -562,19 +609,16 @@ p {
     font-size: 20px;
     margin-bottom: 20px;
     color: white;
-
 }
-h2{
+
+h2 {
     font-family: 'Nothing You Could Do', cursive;
     font-size: 26px;
     margin-bottom: 20px;
     color: white;
-
 }
-#quiz_again{
-    font-size:36px;
-    color : white;
- }
 
-
-
+#quiz_again {
+    font-size: 36px;
+    color: white;
+}
