@@ -156,18 +156,19 @@
     </div> -->
 
     <!--results -->
-    <div id="results-section" class="row">
-        <div class="col-1"></div>
-        <div id="results-text" class="col-10">
-            <div id = "results-message-container">
+    <div id="results-section">
+            <div id="results_wrapper">
+                <img id="tryagain_image" src="images/result_tryagain.jpg" alt="Try Again Image">
+                <img id="welldone_image" src="images/result_welldone.jpg" alt="Well done!">
+                <img id="brilliant_image" src="images/result_brilliant.jpg" alt="Brilliant!!">
 
-                <p>Well Done you have completed the colour quiz!!!</p>
-                <p>Your score is
-                 <span id="correctAnswers"></span>
-                </p>
-             </div>
-        </div>
-        <div class="col-1"></div>
+                <div id="results-message">
+                    <!-- formally known as correctAnswers-->
+                    <h2 id="score">Your Score is </h3>
+                    <p id="results-text">Well Done you have completed the colour quiz!!!</p>
+                    <h2><a id="quiz_again" href="/" >Quiz Me Again!</a></h2>
+                </div>
+            </div>
     </div>
 
     <!--footer-->
